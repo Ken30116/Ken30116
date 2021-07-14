@@ -18,6 +18,117 @@
     <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
 
     <style>
+        .slideshow {
+            width: 100%;
+            clip-path: polygon(100% 0, 100% 80%, 50% 98%, 0 80%, 0 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slideshow_img img {
+            width: 200%;
+            margin-left: -55%;
+            vertical-align: top;
+        }
+
+        .btn {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #ffffff;
+            opacity: .5;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.2rem#000000;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        .btn_left {
+            left: 1rem;
+            cursor: pointer;
+        }
+
+        .btn_right {
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .btn::after {
+            content: "";
+            width: 0.8rem;
+            height: 0.8rem;
+            border-bottom: 0.1rem solid #008080;
+            position: absolute;
+            top: 22%;
+        }
+
+        .btn_left::after {
+            border-left: 0.1rem solid #008080;
+            transform: rotate(45deg);
+            right: 12%;
+        }
+
+        .btn_right::after {
+            border-right: 0.1rem solid #008080;
+            transform: rotate(-45deg);
+            left: 12%;
+        }
+
+        .btn:hover {
+            background-color: #00c234;
+            opacity: 1;
+            box-shadow: 0 0 0.2rem #00c234;
+        }
+
+        .btn_left:hover::after {
+            border-bottom: 0.1rem solid #ffffff;
+            border-left: 0.1rem solid #ffffff;
+            opacity: 1;
+        }
+
+        .btn_right:hover::after {
+            border-bottom: 0.1rem solid #ffffff;
+            border-right: 0.1rem solid #ffffff;
+            opacity: 1;
+        }
+
+
+
+        .about {
+            display: block;
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 0.8rem;
+            text-align: center; 
+            padding: 0.2rem 0 0.9rem 0;
+            background-color: rgba(0, 128, 128, 0.9);
+            position: relative;
+        }
+
+        .about::after {
+            content: "⌵";
+            position: absolute;
+            animation:about .8s  infinite;
+        }
+
+        .about:hover {
+            background-color: #00c234;
+        }
+
+
+
+
+
+        @keyframes about {
+            from {
+                top: 0;
+            }
+
+            to {
+                top: 12%;
+            }
+        }
+
         @media screen and (min-width: 414px) {
             html {
                 font-size: 22px;
@@ -96,8 +207,56 @@
             }
 
             .item:hover {
-                background-color:transparent;
+                background-color: transparent;
                 padding: 0.7em 0 0.3em 0;
+            }
+
+            .slideshow_img img {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .slideshow-selector {
+                width: 8rem;
+                height: 0.9rem;
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                transform: translateX(-50%);
+                bottom: 3rem;
+                left: 50%;
+            }
+
+            .slideshow-selector span {
+                width: 0.9rem;
+                height: 0.9rem;
+                background-color: #ffffff;
+                opacity: .5;
+                border-radius: 50%;
+                box-shadow: 0.1rem 0.1rem 0.2rem #000000;
+                cursor: pointer;
+            }
+
+            .slideshow-selector span:hover {
+                box-shadow: 0 0 0.2rem #00c234;
+            }
+
+            .btn {
+                width: 2.2rem;
+                height: 2.2rem;
+            }
+
+            .btn_left {
+                left: 2rem;
+            }
+
+            .btn_right {
+                right: 2rem;
+            }
+
+            .btn::after {
+                width: 1rem;
+                height: 1rem;
             }
 
             */ #new,
@@ -105,6 +264,8 @@
             .footer-size {
                 max-width: 700px;
             }
+
+
         }
 
         @media screen and (min-width: 1024px) {
@@ -143,141 +304,123 @@
             }
         }
 
-        .slideshow {
+
+
+
+
+
+
+
+        /* .slideshow {
+            clip-path: polygon(100% 0, 100% 75%, 50% 98%, 0 75%, 0 0);
             position: relative;
-            clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
-            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
-            overflow: hidden;
         }
-
-
 
         .slideshow_img img {
             width: 100%;
             vertical-align: top;
         }
 
-        .slideshow_img img:nth-of-type(2) {
-            position: absolute;
-            left: 100%
-        }
-
-        .slideshow_img img:nth-of-type(3) {
-            position: absolute;
-            left: 200%
-        }
-
-        .slideshow_img img:nth-of-type(4) {
-            position: absolute;
-            left: 300%
-        }
-
-        .slideshow_img img:nth-of-type(5) {
-            position: absolute;
-            left: 400%
-        }
-
         .slideshow-selector {
-            width: 220px;
-            height: 25px;
-            position: absolute;
-            transform: translate(-50%, -100%);
-            left: 50%;
-            bottom: 40px;
+            width: 8rem;
+            height: 0.9rem;
             display: flex;
             justify-content: space-between;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 3.7rem;
+            left: 50%;          
         }
 
         .slideshow-selector span {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
+            width: 0.9rem;
+            height: 0.9rem;
             background-color: #ffffff;
             opacity: .5;
-            box-shadow: 3px 3px 5px #000000;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.2rem #000000;
             cursor: pointer;
         }
 
         .slideshow-selector span:hover {
-            box-shadow: 0px 0px 5px #00c234;
+            box-shadow: 0 0 0.2rem #00c234;
         }
 
         .btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 2.2rem ;
+            height: 2.2rem;
             background-color: #ffffff;
             opacity: .5;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.2rem#000000;
             position: absolute;
-            box-shadow: 5px 5px 5px #000000;
             transform: translateY(-50%);
             top: 50%;
         }
 
         .btn_left {
-            left: 50px;
+            left: 2rem;
             cursor: pointer;
         }
 
         .btn_right {
-            right: 50px;
+            right:2rem;
             cursor: pointer;
         }
 
         .btn::after {
             content: "";
-            width: 30px;
-            height: 30px;
-            border-bottom: 3px solid #008080;
+            width: 1rem;
+            height: 1rem;
+            border-bottom: 0.1rem solid #008080;
             position: absolute;
             top: 22%;
         }
 
         .btn_left::after {
-            border-left: 3px solid #008080;
+            border-left: 0.1rem solid #008080;
             transform: rotate(45deg);
-            right: 10%;
+            right: 12%;
         }
 
         .btn_right::after {
-            border-right: 3px solid #008080;
+            border-right: 0.1rem solid #008080;
             transform: rotate(-45deg);
-            left: 10%;
+            left: 12%;
         }
 
         .btn:hover {
             background-color: #00c234;
-            box-shadow: 0px 0px 5px #00c234;
             opacity: 1;
+            box-shadow: 0 0 0.2rem #00c234;
         }
 
         .btn_left:hover::after {
-            border-bottom: 3px solid #ffffff;
-            border-left: 3px solid #ffffff;
+            border-bottom: 0.1rem solid #ffffff;
+            border-left: 0.1rem solid #ffffff;
             opacity: 1;
         }
 
         .btn_right:hover::after {
-            border-bottom: 3px solid #ffffff;
-            border-right: 3px solid #ffffff;
+            border-bottom: 0.1rem solid #ffffff;
+            border-right:0.1rem solid #ffffff;
             opacity: 1;
         }
 
         .about {
+            display: block;
             color: #ffffff;
             font-family: "華康墨字體";
-            font-size: 24px;
+            font-size: 0.8rem;
             text-align: center;
+            padding: 0.2rem 0 0.9rem 0;
+            background-color: rgba(0, 128, 128, 0.9);
             position: relative;
-            padding: 10px 0px 15px 0px;
-            background-color: rgba(0, 128, 128, 0.5);
-            display: block;
         }
 
         .about:hover {
             background-color: #00c234;
-        }
+        } */
 
 
 
@@ -294,8 +437,8 @@
         .main-box {
             margin: 20px 50px 20px 50px;
             padding-bottom: 10px;
-            position: relative;
             background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
             z-index: 2;
         }
 
@@ -741,6 +884,7 @@
             <a class="item" href="#">旅遊指南</a>
         </nav>
         <div id="menu">
+            <div class="menu-close">✖</div>
             <div class="menu-line"></div>
             <div class="menu-line"></div>
             <div class="menu-line"></div>
@@ -749,11 +893,7 @@
     <article>
         <div class="slideshow">
             <div class="slideshow_img">
-                <img src="img/home/slideshow/slideshow0.jpg" alt="slideshow0">
-                <img src="img/home/slideshow/slideshow1.jpg" alt="slideshow1">
-                <img src="img/home/slideshow/slideshow2.jpg" alt="slideshow2">
-                <img src="img/home/slideshow/slideshow3.jpg" alt="slideshow3">
-                <img src="img/home/slideshow/slideshow4.jpg" alt="slideshow4">
+                <img src="img/home/slideshow/slideshow0.jpg" alt="slideshow">
             </div>
             <div class="slideshow-selector">
                 <span></span>
@@ -764,12 +904,12 @@
             </div>
             <div class="btn btn_left" id="left"></div>
             <div class="btn btn_right" id="right"></div>
-            <a href="#introduction" class="about">About Us</a>
+            <a href="#introduction" class="about">簡介</a>
         </div>
     </article>
 
     <script type="text/javascript" src="./javascript/slideshow.js"></script>
-    
+
     <div class="box">
 
     </div>
