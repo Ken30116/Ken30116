@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寧韻美麗島/首頁</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./css/header2.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer2.css">
+    <!-- <script type="text/javascript" src="./javascript/ShowHistory.js"></script>
+    <script type="text/javascript" src="./javascript/showLarge.js"></script> -->
+    <script type="text/javascript" src="./javascript/header-nav.js"></script>
+    <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+
+    <style>
+        @media screen and (min-width: 414px) {
+            html {
+                font-size: 22px;
+            }
+
+            #new,
+            #commodity,
+            .footer-size {
+                max-width: 400px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            html {
+                font-size: 22px;
+            }
+
+            header {
+                padding: 0rem;
+                justify-content: flex-start;
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            #logo {
+                width: 15%;
+                position: absolute;
+                transform: translateX(-50%);
+                top: 0.5rem;
+                left: 50%;
+            }
+
+            nav {
+                width: auto;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-content: stretch;
+                margin: 0.7rem 0;
+                padding: 0;
+                background-color: transparent;
+                position: static;
+                transform: none;
+                transition: ease;
+            }
+
+            .item {
+                width: auto;
+                margin: 0 0.8rem;
+                padding: 0.5em 0;
+                position: relative;
+                transition: all .2s;
+                line-height: 1;
+            }
+
+            #menu {
+                display: none;
+            }
+
+            .item:nth-of-type(1) {
+                margin-left: 2.5em;
+            }
+
+            .item:nth-of-type(2) {
+                margin-right: 11em;
+            }
+
+            .item:hover::after {
+                content: "";
+                width: 100%;
+                height: 0.2rem;
+                background-color: #00c234;
+                position: absolute;
+                transform: translateX(-50%);
+                bottom: 0;
+                left: 50%;
+            }
+
+            .item:hover {
+                background-color:transparent;
+                padding: 0.7em 0 0.3em 0;
+            }
+
+            */ #new,
+            #commodity,
+            .footer-size {
+                max-width: 700px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            html {
+                font-size: 24px;
+            }
+
+            #new,
+            #commodity,
+            .footer-size {
+                max-width: 1000px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 27px;
+            }
+
+            #new,
+            #commodity,
+            .footer-size {
+                max-width: 1150px;
+            }
+        }
+
+        @media screen and (min-width: 1536px) {
+            html {
+                font-size: 30px;
+            }
+
+            #new,
+            #commodity,
+            .footer-size {
+                max-width: 1280px;
+            }
+        }
+
+        .slideshow {
+            position: relative;
+            clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+            overflow: hidden;
+        }
+
+
+
+        .slideshow_img img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .slideshow_img img:nth-of-type(2) {
+            position: absolute;
+            left: 100%
+        }
+
+        .slideshow_img img:nth-of-type(3) {
+            position: absolute;
+            left: 200%
+        }
+
+        .slideshow_img img:nth-of-type(4) {
+            position: absolute;
+            left: 300%
+        }
+
+        .slideshow_img img:nth-of-type(5) {
+            position: absolute;
+            left: 400%
+        }
+
+        .slideshow-selector {
+            width: 220px;
+            height: 25px;
+            position: absolute;
+            transform: translate(-50%, -100%);
+            left: 50%;
+            bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slideshow-selector span {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .5;
+            box-shadow: 3px 3px 5px #000000;
+            cursor: pointer;
+        }
+
+        .slideshow-selector span:hover {
+            box-shadow: 0px 0px 5px #00c234;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .5;
+            position: absolute;
+            box-shadow: 5px 5px 5px #000000;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        .btn_left {
+            left: 50px;
+            cursor: pointer;
+        }
+
+        .btn_right {
+            right: 50px;
+            cursor: pointer;
+        }
+
+        .btn::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-bottom: 3px solid #008080;
+            position: absolute;
+            top: 22%;
+        }
+
+        .btn_left::after {
+            border-left: 3px solid #008080;
+            transform: rotate(45deg);
+            right: 10%;
+        }
+
+        .btn_right::after {
+            border-right: 3px solid #008080;
+            transform: rotate(-45deg);
+            left: 10%;
+        }
+
+        .btn:hover {
+            background-color: #00c234;
+            box-shadow: 0px 0px 5px #00c234;
+            opacity: 1;
+        }
+
+        .btn_left:hover::after {
+            border-bottom: 3px solid #ffffff;
+            border-left: 3px solid #ffffff;
+            opacity: 1;
+        }
+
+        .btn_right:hover::after {
+            border-bottom: 3px solid #ffffff;
+            border-right: 3px solid #ffffff;
+            opacity: 1;
+        }
+
+        .about {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 24px;
+            text-align: center;
+            position: relative;
+            padding: 10px 0px 15px 0px;
+            background-color: rgba(0, 128, 128, 0.5);
+            display: block;
+        }
+
+        .about:hover {
+            background-color: #00c234;
+        }
+
+
+
+        #introduction {
+            position: relative;
+        }
+
+        .main {
+            width: 1280px;
+            height: 750px;
+            margin: 0 auto;
+        }
+
+        .main-box {
+            margin: 20px 50px 20px 50px;
+            padding-bottom: 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+
+        .main-box h1 {
+            margin-top: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            text-align: center;
+            opacity: .9;
+        }
+
+        .main-box span {
+            font-size: 30px;
+        }
+
+        .text-box {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .text-box p {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            opacity: .6;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-indent: 35px;
+            padding: 0px 20px 10px 20px;
+        }
+
+        .text-box-left {
+            width: 50%;
+        }
+
+        .text-box-right {
+            width: 50%;
+            margin-left: -25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .text-box .button a {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgba(0, 128, 128, 0.7);
+            border-radius: 10px;
+        }
+
+        .text-box .button a:hover {
+            background-color: #00c234;
+        }
+
+        .main_img {
+            position: absolute;
+            bottom: -45%;
+            left: 0;
+        }
+
+        .main_img img {
+            width: 100%;
+            opacity: .7;
+        }
+
+        .text {
+            width: 500px;
+            position: absolute;
+            bottom: 35%;
+            right: 0;
+            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.8)
+        }
+
+        .text h3 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            text-align: center;
+            opacity: .9;
+            padding: 20px 0px 10px 0px;
+        }
+
+        .text p {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            opacity: .6;
+            line-height: 24px;
+            letter-spacing: 1px;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .history {
+            position: relative;
+            clip-path: polygon(0 0, 100% 25%, 100% 65%, 0% 100%);
+            background-color: rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: .5;
+        }
+
+
+        .background img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .scroll-bar {
+            width: 1280px;
+            height: 1000px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+
+        .scroll-bar-box {
+            margin: 0px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .history_box {
+            width: 80%;
+            display: flex;
+            overflow: overlay;
+            border-radius: 40% 40% 40% 40%/25% 25% 25% 25%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .history_box img {
+            width: 100%;
+        }
+
+        .history-text-box {
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            right: -7%;
+            top: 50%;
+            padding: 20px;
+            box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .history-text-box h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            background-color: #008080;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #year {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            text-align: center;
+            opacity: .9;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #history-text {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            line-height: 24px;
+            letter-spacing: 1px;
+            opacity: .6;
+            margin-top: 5px;
+        }
+
+        .history_box::-webkit-scrollbar {
+            height: 50px;
+        }
+
+        .history_box::-webkit-scrollbar-track {
+            border-radius: 200px;
+            background: linear-gradient(to right, rgba(0, 128, 128, 0.8), rgba(255, 255, 255, 0.8));
+            margin: 350px;
+        }
+
+
+
+        .history_box::-webkit-scrollbar-thumb {
+            background: conic-gradient(#05bd35 0, #16ab36 90deg, #00c234 260deg, transparent 260deg, transparent 330deg, #00c234 330deg, #05bd35 360deg);
+            border-radius: 50px;
+            box-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .history-msg {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            opacity: .7;
+            padding-left: 17%;
+        }
+
+        .history-msg::after {
+            content: "➚";
+            font-size: 60px;
+        }
+
+        #new {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: -200px;
+        }
+
+        .new-box {
+            margin: 0px 50px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .new-box h2 {
+            margin: 20px 0px;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            opacity: .9;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .new-box h2::before {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-right: 20px;
+        }
+
+        .new-box h2::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-left: 20px;
+        }
+
+        .new_img-click {
+            width: 60%;
+            border-radius: 80px;
+            box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        #large_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 80px;
+            position: relative;
+            z-index: -1;
+            vertical-align: top;
+        }
+
+
+        .small_img {
+            width: 20%;
+            transform: perspective(400px) rotateY(50deg);
+            position: absolute;
+            bottom: -17%;
+            clip-path: circle(30% at 25% 50%);
+            cursor: pointer;
+            opacity: .5;
+            transition: all 0.25s;
+        }
+
+        .small_img:hover {
+            width: 25%;
+            transform: perspective(400px) rotateY(0deg);
+            opacity: 1;
+            bottom: -20%;
+            z-index: 2;
+        }
+
+
+        .small_img:nth-of-type(1) {
+            left: 40%;
+        }
+
+        .small_img:nth-of-type(2) {
+            left: 48%;
+        }
+
+        .small_img:nth-of-type(3) {
+            left: 56%;
+        }
+
+        .small_img:nth-of-type(4) {
+            left: 64%;
+        }
+
+        .small_img:nth-of-type(5) {
+            left: 72%;
+        }
+
+        .new-msg {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            opacity: .7;
+            position: absolute;
+            bottom: -25%;
+            left: 27%
+        }
+
+        .new-msg::after {
+            content: "➚";
+            font-size: 60px;
+        }
+
+        #commodity {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        #commodity h2 {
+            margin: 30px 0px;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20%;
+            position: relative;
+            z-index: 1;
+        }
+
+        #commodity h2::before {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-right: 20px;
+        }
+
+        #commodity h2::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-left: 20px;
+        }
+
+        .commodity-box {
+            margin: -120px 50px;
+            border-radius: 0% 0% 2% 2%/0% 0% 4% 4%;
+            margin-bottom: 20px;
+            position: relative;
+            clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .commodity_img img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .commodity-selector {
+            width: 25px;
+            height: 250px;
+            position: absolute;
+            transform: translate(-100%, 50%);
+            right: 1%;
+            bottom: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .commodity-selector span {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 25px;
+            opacity: .6;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .6;
+            box-shadow: 3px 3px 5px #000000;
+            cursor: pointer;
+        }
+
+        .backimg {
+            position: fixed;
+            bottom: 0;
+            z-index: -1;
+            opacity: .3;
+        }
+
+        .box {
+            width: 100%;
+            height: 3000px;
+            background-color: yellowgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="./img/All/logo.png" alt="logo">
+        </div>
+        <nav>
+            <a class="item" href="#">首頁</a>
+            <a class="item" href="Layout.html">園區導覽</a>
+            <a class="item" href="Platform.html">交流平台</a>
+            <a class="item" href="#">旅遊指南</a>
+        </nav>
+        <div id="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

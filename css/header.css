@@ -1,0 +1,85 @@
+@media screen and (min-width: 480px) {
+    html{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 768px) {
+    html{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    html{
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    html{
+        font-size: 18px;
+    }
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,128,128,.4);
+    position: fixed;
+    z-index: 100;
+    top:0;
+    transition: all 0.5s;
+}
+
+nav {
+    display: flex;
+    justify-content:center;
+    margin: 23px 0px;  
+}
+
+#logo {
+    width: 14%;
+    margin: 10px auto -100px auto; 
+}
+
+#logo img {
+    width: 100%;
+}
+
+.item {
+    color: #ffffff;
+    font-family: "華康中圓體";
+    font-size: 1rem;
+    margin: 0px 50px;
+    padding: 10px 0px;
+    position: relative;
+    transition: all .2s;
+}
+
+.item:nth-of-type(1){
+    margin-left: 120px;
+}
+
+.item:nth-of-type(2){
+    margin-right: 250px;
+}
+
+.item:hover::after{
+    content:"";
+    width: 100%;
+    height: 3px;
+    background-color: #00c234;
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 0;
+    left: 50%;
+}
+
+.item:hover{
+    padding: 14px 0px 6px 0px;
+}
+
