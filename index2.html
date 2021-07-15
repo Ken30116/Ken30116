@@ -20,7 +20,7 @@
     <style>
         .slideshow {
             width: 100%;
-            clip-path: polygon(100% 0, 100% 80%, 50% 98%, 0 80%, 0 0);
+            clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
             position: relative;
             overflow: hidden;
         }
@@ -97,22 +97,36 @@
         .about {
             display: block;
             color: #ffffff;
-            font-family: "華康墨字體";
+            font-family: "華康中圓體";
             font-size: 0.8rem;
-            text-align: center; 
-            padding: 0.2rem 0 0.9rem 0;
+            text-align: center;
+            padding: 0.2rem 0 0.7rem 0;
+            margin-top: -1rem;
             background-color: rgba(0, 128, 128, 0.9);
             position: relative;
+            transition:  padding 0.3s;
         }
 
         .about::after {
             content: "⌵";
             position: absolute;
-            animation:about .8s  infinite;
+            animation: about .8s infinite;
+        }
+
+        .about:hover::before {
+            content: "";
+            width: 1.6rem;
+            height: 0.2rem;
+
+            background-color: #00c234;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 68%;
+            left: 50%;
         }
 
         .about:hover {
-            background-color: #00c234;
+            padding: 0.4rem 0 0.5rem 0;
         }
 
 
@@ -906,13 +920,42 @@
             <div class="btn btn_right" id="right"></div>
             <a href="#introduction" class="about">簡介</a>
         </div>
+
+
+        <script type="text/javascript" src="./javascript/slideshow.js"></script>
+
+        <div id="introduction">
+            <div class="main">
+                <div class="main-box">
+                    <h1>寧韻美麗島<span>文創園區</span></h1>
+                    <div class="text-box">
+                        <div class="text-box-left">
+                            <p>寧韻美麗島文創園區是全臺第一座音樂性質的景點，於2021年開幕，占地約2公頃，座落於都市中心地帶。其中園區中心區域懸空於道路交匯處，彷彿都市空中花園，不僅只是休憩觀賞空間外，還能利用"聽"體驗環境，並感受五大主題區音樂趣味。全區皆以採用低耗能、永續循環概念，創造出舒適環境下，展現自己音樂style。
+                            </p>
+                            <p>當地美麗島近年來遊客數逾一百萬觀光人次，已經成為國際上知名的觀光勝地。由於交通流量增加，噪音問題嚴重，所以本團隊在地經營維護、音景生活進駐，以教育性質及文創商品帶動經濟發展，並兼具自然與生態保護議題，達到人與環境共存。因此我們非常感謝支持與喜愛每一位遊客。對於音樂支持，以及合作互惠，讓全世界看到這裡的故事及風景。
+                            </p>
+                        </div>
+
+                        <div class="text-box-right">
+                            <p>本團隊將音樂的創作精神及理念持續推廣，讓來到寧韻美麗島的人們感受到療癒人心、生動童趣、與環境充滿音樂娛樂與幸福的正能量，讓來玩的遊客們都能盡情的聆聽，帶著美好的回憶回家，這就是寧韻美麗島能隨時保持色彩繽紛的小秘密。寧韻美麗島並不會止步於現狀，也會不斷持續挑戰和創新。在未來將致力於4D環景的發展及推廣，更能體驗環境音樂魅力。期望成為全世界獨一無二的文創音樂產業、創造充滿異想世界的新樂園。
+                            </p>
+                            <div class="button"> <a href="Layout.html">園區導覽 ﹥</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_img">
+                <img src="./img/home/city.png" alt="city">
+                <div class="text">
+                    <h3>聲音地景(Soundscape)</h3>
+                    <p>聲音加上景觀（風景）的融合，稱「聲音地景」​或「聲音風景」，其簡稱為「音景」。主要描繪環境中聲音，包含負面音、正面音，負面音例如汽機車爆音、施工敲打、喧嘩聲等；正面音例如溪流聲、音樂、鳥鳴等。當認識一個城市，往往就以視覺性的主觀代表既定都市文化特色。錄製環境聲音，用耳朵感受城市風貌，認識更不一樣的城市。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
     </article>
-
-    <script type="text/javascript" src="./javascript/slideshow.js"></script>
-
-    <div class="box">
-
-    </div>
 </body>
 
 </html>
