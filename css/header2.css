@@ -1,0 +1,82 @@
+header {
+    width: 100%;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0,128,128,.4);
+    position: fixed;
+    top:0;
+    z-index: 100;
+    transition: all 1.5s; 
+}
+
+#logo {
+    width: 15%;
+    max-width:250px;
+    min-width:80px;
+    transition: all 1s; 
+}
+
+#logo img {
+    width: 100%;
+}
+
+nav {
+    width: 30%;
+    min-width:130px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 1rem 0;
+    background-color: rgba(0,128,128,.9);
+    position: absolute;
+    transform: translateY(105%);
+    bottom:0;
+    left: -100%;
+    transition: all 1s;
+}
+
+.item {
+    width: 100%;
+    color: #ffffff;
+    font-family: "華康中圓體";
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 0;
+    padding: 1rem;
+    opacity: .8;  
+}
+
+.item:nth-of-type(2){
+    transition: margin-right 1s;
+}
+
+#menu{
+    width: 1.5rem;
+    height: 1.5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 1rem;
+    background-color: #008080;
+    cursor: pointer;
+}
+
+.menu-line{
+    width: 70%;
+    height: 0.15rem;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 10% 10% 10% 10%/50% 50% 50% 50%;
+}
+
+.menu-close{
+    font-size: x-large;
+    color: rgba(255, 255, 255, 0.8);
+    display: none;
+}
+
+.item:hover{
+    background-color: #00c234;
+}
