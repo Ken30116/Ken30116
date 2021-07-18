@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 300px;
+            height: 34px;
+            background-color: aqua;
+            /* line-height: 34px;
+            margin: 20px auto; */
+        }
+
+        .bg {
+            position: absolute;
+            height: 100%;
+            background-color: green;
+            z-index: 1;
+        }
+
+        .btn {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 34px;
+            z-index: 2;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var box = document.querySelector(".box")
+            var btn = document.querySelector(".btn");
+            var bg = document.querySelector(".bg");
+            var flag = false;
+            btn.onmousedown = function (event) {
+                event = event || window.event;
+                var ol = event.clientX - btn.offsetLeft;
+
+
+
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    var left = event.clientX - ol;
+
+                    if (left >= 0 && left <= (box.offsetWidth - btn.offsetWidth)) {
+                        btn.style.left = left + "px";
+
+                    }
+                }
+
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+                return flase;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="btn"></div>
+        <div class="bg"></div>
+    </div>
+</body>
+
+</html>
