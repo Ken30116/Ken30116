@@ -7,6 +7,8 @@ window.onscroll = function () {
     let menu=document.getElementById("menu");
     let mq = window.matchMedia("(min-width: 768px)");
     let slideshow2 = document.getElementsByClassName("slideshow");
+    let historyshow= document.getElementsByClassName("history");
+    let msg=document.getElementsByClassName("history-msg");
 
 
 
@@ -26,6 +28,14 @@ window.onscroll = function () {
             nav[0].style.margin = "0.7rem 0";
             item[1].style.marginRight = "11em";
             slideshow2[0].style.clipPath="polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0)";
+        }
+        if (t <= 750 || t>=1800) {
+            historyshow[0].style.clipPath="polygon(100% 10%, 100% 10%, 100% 90%, 100% 90%)";
+            msg[0].style.display="none";
+        }
+        else {
+            historyshow[0].style.clipPath="polygon(0 0, 100% 10%, 100% 90%, 0% 100%)";
+            msg[0].style.display="block";
         }
     }
 else{

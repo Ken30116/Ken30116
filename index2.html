@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="./css/font-family.css">
     <link rel="stylesheet" type="text/css" href="./css/header2.css">
     <link rel="stylesheet" type="text/css" href="./css/footer2.css">
-    <!-- <script type="text/javascript" src="./javascript/ShowHistory.js"></script>
-    <script type="text/javascript" src="./javascript/showLarge.js"></script> -->
+    <script type="text/javascript" src="./javascript/ShowHistory.js"></script>
+    <!-- <script type="text/javascript" src="./javascript/showLarge.js"></script> -->
     <script type="text/javascript" src="./javascript/header-nav.js"></script>
     <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
@@ -197,12 +197,15 @@
             opacity: 1;
         }
 
+        article {
+            position: relative;
+        }
+
         #introduction {
             max-width: 1180px;
             margin: 0 auto;
             padding: 1rem 0.2rem;
             box-sizing: border-box;
-            position: relative;
         }
 
         .main {
@@ -239,9 +242,10 @@
         .text-box p {
             color: #000000;
             font-family: "華康中圓體";
-            font-size: 0.3rem;
+            font-size: 0.6rem;
             text-align: justify;
-            line-height: 0.9rem;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
             text-indent: 1.2rem;
             letter-spacing: 0.05rem;
             margin: 0px 0.3rem 0.3rem 0.3rem;
@@ -262,13 +266,20 @@
         .small-text {
             width: 90%;
             padding: 0.6rem;
+            margin: 2rem auto 0;
             box-sizing: border-box;
             background-color: #dfeeee;
+            position: relative;
+
+        }
+
+        /* .small-text {
+            margin:0
             position: absolute;
             transform: translateY(100%);
             bottom: 0;
             right: -8%;
-        }
+        } */
 
         .small-text h3 {
             color: #000000;
@@ -282,9 +293,10 @@
         .small-text p {
             color: #000000;
             font-family: "華康中圓體";
-            font-size: 0.3rem;
+            font-size: 0.6rem;
             text-align: justify;
-            line-height: 0.9rem;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
             text-indent: 1.2rem;
             letter-spacing: 0.05rem;
             opacity: .6;
@@ -306,7 +318,7 @@
         .main_img {
             display: none;
             position: absolute;
-            top: -15%;
+            top: 30%;
             left: 0;
         }
 
@@ -314,6 +326,616 @@
             width: 100%;
             opacity: .7;
         }
+
+        .background {
+            width: 0%;
+            height: 0%;
+        }
+
+        .background img {
+            width: 0%;
+            height: 0%;
+        }
+
+        .scroll-bar {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .scroll-bar-box {
+            width: 90%;
+            margin: -10% auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .history_box {
+            width: 100%;
+            display: flex;
+            box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            border-radius: 50% 50% 50% 50%/25% 25% 25% 25%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history_box img {
+            width: 100%;
+            position: relative;
+        }
+
+        .history-text-box {
+            width: 90%;
+            padding: 0.6rem;
+            background-image: url(./img/home/background.jpg);
+            box-shadow: inset 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            border-radius: 0.3rem;
+            position: relative;
+        }
+
+        .history-text-box h3 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            text-align: center;
+            padding: 0.2rem;
+            background-color: #dfeeee;
+            box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            opacity: .9;
+            border-radius: 0.3rem;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 0%;
+            left: 50%;
+        }
+
+        #year {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            opacity: .6;
+        }
+
+        #history-text {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            text-align: justify;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
+            margin-top: 0.2rem;
+            opacity: .6;
+        }
+
+        .boxx {
+            width: 150px;
+            height: 40px;
+            display: flex;
+            background: rgba(214, 228, 228, 0.8);
+            border-radius: 21% 21% 21% 21% /79% 79% 79% 79%;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 0;
+            left: 50%;
+        }
+
+        .box1 {
+            width: 125px;
+            height: 25px;
+            margin: auto;
+            position: relative;
+        }
+
+        .op {
+            width: 25px;
+            height: 25px;
+            background: conic-gradient(#309139 45deg, transparent 45deg, transparent 115deg, #309139 115deg);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .history-msg {
+            width: 20px;
+            height: 20px;
+            margin-top: 15px;
+            margin-left: 38.5%;
+            border: 2px solid rgba(0, 128, 128, 0.2);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .history-msg span {
+            width: 0.3rem;
+            height: 0.3rem;
+            background-color: rgba(0, 128, 128, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            animation: msg-sshow 2s 3;
+        }
+
+        #clickshow {
+            width: 1rem;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: -25%;
+            animation: clickimg 6s;
+        }
+
+        .history-msg-left {
+            width: 0.3rem;
+            height: 0.2rem;
+            background-color: rgba(29, 97, 97, 0.2);
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 100%;
+            animation: msg-rl 2s 3;
+        }
+
+        .history-msg-left::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.3rem solid transparent;
+            border-right: 0.6rem solid rgba(0, 128, 128, 0.2);
+            border-bottom: 0.3rem solid transparent;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 100%;
+            animation: msg-lco 2s 3;
+        }
+
+        .history-msg-right {
+            width: 0.3rem;
+            height: 0.2rem;
+            background-color: rgba(0, 128, 128, 0.2);
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 100%;
+            animation: msg-rl 2s 3;
+        }
+
+        .history-msg-right::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.3rem solid transparent;
+            border-left: 0.6rem solid rgba(0, 128, 128, 0.2);
+            border-bottom: 0.3rem solid transparent;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 100%;
+            animation: msg-rco 2s 3;
+        }
+
+        @keyframes msg-sshow {
+            0% {
+                width: 0.3rem;
+                height: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+                left: 50%;
+            }
+
+            10% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            25% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 150%;
+            }
+
+            50% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            75% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: -50%;
+            }
+
+            90% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            100% {
+                width: 0.3rem;
+                height: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+                left: 50%;
+            }
+        }
+
+        @keyframes msg-rl {
+            from {
+                width: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                width: 1rem;
+                background-color: #00c234;
+            }
+        }
+
+        @keyframes msg-lco {
+            from {
+                border-right: 0.6rem solid rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                border-right: 0.6rem solid #00c234;
+            }
+
+        }
+
+        @keyframes msg-rco {
+            from {
+                border-left: 0.6rem solid rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                border-left: 0.6rem solid #00c234;
+            }
+
+        }
+
+        @keyframes clickimg {
+            0% {
+                opacity: 0;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            99% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* .history {
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+            transition: all 1.5s;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            opacity: .5;
+            position: absolute;
+        }
+
+
+        .background img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .scroll-bar {
+            max-width: 1180px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .scroll-bar-box {
+            width: 90%;
+            margin: 0 auto;
+            padding: 6.6rem 0;
+        }
+
+
+        .history_box {
+            width: 80%;
+            display: flex;
+            box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            border-radius: 40% 40% 40% 40%/25% 25% 25% 25%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history_box img {
+            width: 100%;
+            position: relative;
+        }
+
+        .history-text-box {
+            width: 25%;
+            padding: 0.6rem;
+            background-image: url(./img/home/background.jpg);
+            box-shadow: inset 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            border-radius: 0.3rem;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            right: -7%;
+        }
+
+        .history-text-box h3 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            text-align: center;
+            padding: 0.2rem;
+            background-color: #dfeeee;
+            box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+            opacity: .9;
+            border-radius: 0.3rem;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 0%;
+            left: 50%;
+        }
+
+        #year {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            opacity: .6;
+        }
+
+        #history-text {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            text-align: justify;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
+            margin-top: 0.2rem;
+            opacity: .6;
+        }
+
+        .boxx {
+            width: 250px;
+            height: 50px;
+            display: flex;
+            background: rgba(214, 228, 228, 0.8);
+            border-radius: 16.7% 16.7% 16.7% 16.7% /83.3% 83.3% 83.3% 83.3%;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 0;
+            left: 50%;
+        }
+
+        .box1 {
+            width: 235px;
+            height: 35px;
+            margin: auto;
+            position: relative;
+        }
+
+        .op {
+            width: 35px;
+            height: 35px;
+            background: conic-gradient(#309139 45deg, transparent 45deg, transparent 115deg, #309139 115deg);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .history-msg {
+            width: 20px;
+            height: 20px;
+            margin-top: 15px;
+            margin-left: 38.5%;
+            border: 2px solid rgba(0, 128, 128, 0.2);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .history-msg span {
+            width: 0.3rem;
+            height: 0.3rem;
+            background-color: rgba(0, 128, 128, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            animation: msg-sshow 2s 3;
+        }
+
+        #clickshow {
+            width: 1rem;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: -25%;
+            animation: clickimg 6s;
+        }
+
+        .history-msg-left {
+            width: 0.3rem;
+            height: 0.2rem;
+            background-color: rgba(29, 97, 97, 0.2);
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 100%;
+            animation: msg-rl 2s 3;
+        }
+
+        .history-msg-left::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.3rem solid transparent;
+            border-right: 0.6rem solid rgba(0, 128, 128, 0.2);
+            border-bottom: 0.3rem solid transparent;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 100%;
+            animation: msg-lco 2s 3;
+        }
+
+        .history-msg-right {
+            width: 0.3rem;
+            height: 0.2rem;
+            background-color: rgba(0, 128, 128, 0.2);
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 100%;
+            animation: msg-rl 2s 3;
+        }
+
+        .history-msg-right::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.3rem solid transparent;
+            border-left: 0.6rem solid rgba(0, 128, 128, 0.2);
+            border-bottom: 0.3rem solid transparent;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 100%;
+            animation: msg-rco 2s 3;
+        }
+
+        @keyframes msg-sshow {
+            0% {
+                width: 0.3rem;
+                height: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+                left: 50%;
+            }
+
+            10% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            25% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 150%;
+            }
+
+            50% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            75% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: -50%;
+            }
+
+            90% {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: #00c234;
+                left: 50%;
+            }
+
+            100% {
+                width: 0.3rem;
+                height: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+                left: 50%;
+            }
+        }
+
+        @keyframes msg-rl {
+            from {
+                width: 0.3rem;
+                background-color: rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                width: 1rem;
+                background-color: #00c234;
+            }
+        }
+
+        @keyframes msg-lco {
+            from {
+                border-right: 0.6rem solid rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                border-right: 0.6rem solid #00c234;
+            }
+
+        }
+
+        @keyframes msg-rco {
+            from {
+                border-left: 0.6rem solid rgba(0, 128, 128, 0.5);
+            }
+
+            to {
+                border-left: 0.6rem solid #00c234;
+            }
+
+        }
+
+        @keyframes clickimg {
+            0% {
+                opacity: 0;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            99% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        } */
 
         @media screen and (min-width: 414px) {
             html {
@@ -494,6 +1116,14 @@
                 display: block;
             }
 
+            .small-text {
+                margin: 0 ;
+                position: absolute;
+                transform: translateY(100%);
+                bottom: 0;
+                right: -8%;
+            }
+
         }
 
         @media screen and (min-width: 1024px) {
@@ -517,252 +1147,6 @@
         }
 
 
-
-
-
-
-        /* #introduction {
-            width: 100%;
-            padding: 1.6rem;
-            box-sizing: border-box;     
-            position: relative;
-        }
-
-        .main {
-            max-width: 1280px;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .main-box {
-            padding: 0.6rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 2;
-        }
-
-        .main-box h1 {
-            color: #000000;
-            font-family: "華康墨字體";
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            opacity: .9;
-        }
-
-        .main-box span {
-            font-size: 1rem;
-        }
-
-        .text-box {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-
-        .text-box p {
-            color: #000000;
-            font-family: "華康中圓體";
-            font-size: 0.6rem;
-            text-align: justify;
-            line-height: 1rem;
-            text-indent: 1.2rem;
-            margin: 0px 0.3rem 0.3rem 0.3rem;
-            opacity: .6;
-        }
-
-        .text-box-left {
-            width: 50%;
-        }
-
-        .text-box-right {
-            width: 50%;
-            align-self: flex-start;
-            padding-bottom: 4% ;
-            position: relative;
-        }
-
-        .small-text {
-            width: 90%;
-            padding: 0.6rem;
-            box-sizing: border-box;
-            background-color: #dfeeee;
-            position: absolute;
-            transform: translateY(100%);
-            bottom: 0;
-            right: -10%;
-        }
-
-        .small-text h3 {
-            color: #000000;
-            font-family: "華康墨字體";
-            font-size: 1rem;
-            text-align: center;
-            margin-bottom: 0.3rem;
-            opacity: .9;
-        }
-
-        .small-text p {
-            color: #000000;
-            font-family: "華康中圓體";
-            font-size:0.6rem;
-            text-align: justify;
-            line-height: 1rem;
-            opacity: .6;
-        }
-
-        .small-img{
-            width: 20%;
-            position: absolute;
-            transform: translateY(-80%);
-            top:0;
-            right:0;
-        }
-
-        .small-img img{
-            width: 100%;
-        }
-
-
-        .main_img {
-            position: absolute;
-            top: -15%;
-            left: 0;
-        }
-
-        .main_img img {
-            width: 100%;
-            opacity: .7;
-        } */
-
-
-
-        .history {
-            position: relative;
-            clip-path: polygon(0 0, 100% 25%, 100% 65%, 0% 100%);
-            background-color: rgba(255, 255, 255, 0.5);
-            overflow: hidden;
-        }
-
-        .background {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            opacity: .5;
-        }
-
-
-        .background img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .scroll-bar {
-            width: 1280px;
-            height: 1000px;
-            margin: 0 auto;
-            display: flex;
-            position: relative;
-        }
-
-        .scroll-bar-box {
-            margin: 0px 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-
-        .history_box {
-            width: 80%;
-            display: flex;
-            overflow: overlay;
-            border-radius: 40% 40% 40% 40%/25% 25% 25% 25%;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .history_box img {
-            width: 100%;
-        }
-
-        .history-text-box {
-            width: 300px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 10px;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            right: -7%;
-            top: 50%;
-            padding: 20px;
-            box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .history-text-box h2 {
-            color: #ffffff;
-            font-family: "華康墨字體";
-            font-size: 40px;
-            text-align: center;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            background-color: #008080;
-            padding: 5px;
-            border-radius: 10px;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        #year {
-            color: #000000;
-            font-family: "華康墨字體";
-            font-size: 30px;
-            text-align: center;
-            opacity: .9;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        #history-text {
-            color: #000000;
-            font-family: "華康中圓體";
-            font-size: 16px;
-            text-align: justify;
-            line-height: 24px;
-            letter-spacing: 1px;
-            opacity: .6;
-            margin-top: 5px;
-        }
-
-        .history_box::-webkit-scrollbar {
-            height: 50px;
-        }
-
-        .history_box::-webkit-scrollbar-track {
-            border-radius: 200px;
-            background: linear-gradient(to right, rgba(0, 128, 128, 0.8), rgba(255, 255, 255, 0.8));
-            margin: 350px;
-        }
-
-
-
-        .history_box::-webkit-scrollbar-thumb {
-            background: conic-gradient(#05bd35 0, #16ab36 90deg, #00c234 260deg, transparent 260deg, transparent 330deg, #00c234 330deg, #05bd35 360deg);
-            border-radius: 50px;
-            box-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .history-msg {
-            color: #008080;
-            font-family: "華康墨字體";
-            font-size: 30px;
-            opacity: .7;
-            padding-left: 17%;
-        }
-
-        .history-msg::after {
-            content: "➚";
-            font-size: 60px;
-        }
 
         #new {
             max-width: 300px;
@@ -958,7 +1342,6 @@
             position: fixed;
             bottom: 0;
             z-index: -1;
-            opacity: .3;
         }
 
         .box {
@@ -1048,7 +1431,39 @@
             </div>
         </div>
 
+        <div class="history">
+            <div class="background">
+                <img src="./img/home/history-background.jpg" alt="history-background">
+            </div>
+            <div class="scroll-bar">
+                <div class="scroll-bar-box">
+                    <div class="history_box">
+                        <img src="./img/home/history(1).jpg" alt="history(1)">
+                        <img src="./img/home/history(2).jpg" alt="history(2)">
+                        <img src="./img/home/history(3).jpg" alt="history(3)">
+                        <img src="./img/home/history(4).jpg" alt="history(4)">
+                        <img src="./img/home/history(5).jpg" alt="history(5)">
+                        <div class="boxx">
+                            <div class="box1">
+                                <div class="op"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-msg">
+                        <div class="history-msg-left"></div><span><img id="clickshow" src="./img/home/mouse-click.png"
+                                alt="mouse-click"></span>
+                        <div class="history-msg-right"></div>
+                    </div>
+                    <div class="history-text-box">
+                        <h3>時光隧道(history)</h3>
+                        <h4 id="year"></h4>
+                        <p id="history-text"></p>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+        </div>
     </article>
 
     <div class="backimg">
