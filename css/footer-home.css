@@ -1,57 +1,61 @@
 footer {
-    width: 1280px;
-    height: 250px;
-    margin: 0px auto;
+    background-color: #008080;
 }
 
 .footer-box {
-    height: 100%;
-    margin: 0px 50px;
-    background-color: #008080;
-    border-radius: 2% 2% 0% 0% /10% 10% 0% 0%;
-    display: flex;
-    justify-content: space-between;
+    max-width:1180px;
+    margin: 0px auto;
 }
 
-
-.connection {
-    width: 35%;
+.footer-content{
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-    align-content: space-evenly;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.connection {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .connection h2 {
     color: #ffffff;
     font-family: "華康墨字體";
-    font-size: 40px;
+    font-size: 1.2rem;
+    margin:0 auto 0.3rem;
+    opacity:.9;
 }
 
 .connection span {
-    font-size: 30px;
+    font-size: 1rem;
 }
 
 .connection p {
     color: #ffffff;
-    font-family: "華康方圓體";
-    font-size: 12px;
-    line-height: 20px;
-    letter-spacing: 1px;
-    opacity: .8;
+    font-family: "華康中圓體";
+    font-size: 0.5rem;
+    line-height: 1rem;
+    letter-spacing: 0.03rem;
+    opacity: .6;
 }
 
 .icon-box {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0px 10%;
+    margin: 0.4rem 0;
+    opacity: .6;
 }
 
 .icon {
-    width: 10%;
+    width: 1.5rem;
+    margin: 0 0.5rem;
 }
 
 .icon img {
@@ -61,17 +65,17 @@ footer {
 .copyright {
     color: #ffffff;
     font-family: "華康墨字體";
-    font-size: 12px;
+    font-size: 0.6rem;
+    opacity: .6;
 }
 
 .google-map {
-    width: 50%;
-    padding: 20px;
+    width: 100%;
     box-sizing: border-box;
+    margin-bottom: 0.8rem;
 }
 
 iframe {
     width: 100%;
     height: 100%;
-    border-radius: 5% 5% 5% 5% /15% 15% 15% 15%;
 }

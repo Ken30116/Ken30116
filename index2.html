@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/font-family.css">
     <link rel="stylesheet" type="text/css" href="./css/header2.css">
-    <link rel="stylesheet" type="text/css" href="./css/footer2.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-home.css">
     <script type="text/javascript" src="./javascript/ShowHistory.js"></script>
     <script type="text/javascript" src="./javascript/showLarge.js"></script>
     <script type="text/javascript" src="./javascript/header-nav.js"></script>
@@ -625,6 +625,7 @@
 
         #new {
             max-width: 1180px;
+            height: 13.5rem;
             margin: 0 auto;
         }
 
@@ -812,34 +813,24 @@
             }
         }
 
-        /* #new {
+        #commodity {
             max-width: 1180px;
             margin: 0 auto;
-            margin-top: -4rem;
         }
 
-        .new-box {
-            width: 90%;
+        #commodity h2 {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .new-box h2 {
-            display: flex;
+            justify-content: center;
             align-items: center;
             color: #008080;
             font-family: "華康墨字體";
             font-size: 1.4rem;
-            margin: 0.6rem 0;
-            opacity: .9;
-
+            margin: 10% 0 1rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .new-box h2::before {
+        #commodity h2::before {
             content: "";
             width: 1.6rem;
             height: 0.1rem;
@@ -847,7 +838,7 @@
             background-color: #008080;
         }
 
-        .new-box h2::after {
+        #commodity h2::after {
             content: "";
             width: 1.6rem;
             height: 0.1rem;
@@ -855,154 +846,43 @@
             background-color: #008080;
         }
 
-        .new_img-click {
-            width: 60%;
-            border-radius: 2.6rem;
-            box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.7);
+        .commodity-box {
+            clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+            width: 90%;
+            margin: -10% auto;
+            border-radius: 0% 0% 2% 2%/0% 0% 4% 4%;
+            overflow: hidden;
         }
 
-        #large_img {
+        .commodity_img img {
             width: 100%;
-            height: 100%;
-            border-radius: 2.6rem;
-            position: relative;
-            z-index: -1;
             vertical-align: top;
         }
 
+        .commodity-selector {
+            width: 8rem;
+            height: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 11% auto 5%;
+        }
 
-        .small_img {
-            width: 20%;
-            opacity: .5;
-            position: absolute;
-            transform: perspective(400px) rotateY(50deg);
-            bottom: -10%;
-            clip-path: circle(30% at 25% 50%);
+        .commodity-selector span {
+            width: 0.9rem;
+            height: 0.9rem;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 0.8rem;
+            opacity: .6;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: .6;
+            box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            transition: all 0.25s;
-        }
-
-        .small_img:hover {
-            width: 25%;
-            opacity: 1;
-            transform: perspective(400px) rotateY(0deg);
-            bottom: -13%;
-            z-index: 2;
         }
 
 
-        .small_img:nth-of-type(1) {
-            left: -40%;
-            animation: smallimgshow1 1s 2s forwards;
-        }
-
-        .small_img:nth-of-type(2) {
-            left: -32%;
-            animation: smallimgshow2 1s 1.5s forwards;
-        }
-
-        .small_img:nth-of-type(3) {
-            left: -24%;
-            animation: smallimgshow3 1s 1s forwards;
-        }
-
-        .small_img:nth-of-type(4) {
-            left: -16%;
-            animation: smallimgshow4 1s 0.5s forwards;
-        }
-
-        .small_img:nth-of-type(5) {
-            left: -8%;
-            animation: smallimgshow5 1s forwards;
-        }
-
-        .new-msg {
-            width: 1rem;
-            height: 0.2rem;
-            margin-left: -30%;
-            margin-top: 1rem;
-            background-color: rgba(0, 128, 128, 0.2);
-            position: relative;
-            animation: newmsgshow 1s 3s 6 alternate;
-        }
-
-        .new-msg::after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-top: 0.3rem solid transparent;
-            border-left: 0.6rem solid rgba(0, 128, 128, 0.2);
-            border-bottom: 0.3rem solid transparent;
-            position: absolute;
-            transform: translateY(-50%);
-            top: 50%;
-            left: 100%;
-            animation: msg-rco 1s 3s 6 alternate;
-        }
-
-        @keyframes newmsgshow {
-            from {
-                width: 1rem;
-                margin-left: -30%;
-                background-color: rgba(0, 128, 128, 0.2);
-            }
-
-            to {
-                width: 0.3rem;
-                margin-left: -25%;
-                background-color: #00c234;
-            }
-        }
-
-        @keyframes smallimgshow1 {
-            from {
-                left: -40%;
-            }
-
-            to {
-                left: 40%;
-            }
-        }
-
-        @keyframes smallimgshow2 {
-            from {
-                left: -32%;
-            }
-
-            to {
-                left: 48%;
-            }
-        }
-
-        @keyframes smallimgshow3 {
-            from {
-                left: -24%;
-            }
-
-            to {
-                left: 56%;
-            }
-        }
-
-        @keyframes smallimgshow4 {
-            from {
-                left: -16%;
-            }
-
-            to {
-                left: 64%;
-            }
-        }
-
-        @keyframes smallimgshow5 {
-            from {
-                left: -8%;
-            }
-
-            to {
-                left: 72%;
-            }
-        } */
 
         @media screen and (min-width: 414px) {
             html {
@@ -1010,8 +890,27 @@
             }
 
             .history {
-                height: 20.5rem;
+                height: 20rem;
             }
+
+            #new {
+                height: 18rem;
+            }
+        }
+
+        @media screen and (min-width: 640px) {
+            html {
+                font-size: 22px;
+            }
+
+            .history {
+                height: 21rem;
+            }
+
+            #new {
+                height: 20rem;
+            }
+
         }
 
         @media screen and (min-width: 768px) {
@@ -1264,6 +1163,7 @@
 
             #new {
                 margin-top: -4rem;
+                height: 15rem;
             }
 
             .new_img-click {
@@ -1289,18 +1189,18 @@
             }
 
             @keyframes newmsgshow {
-            from {
-                width: 1rem;
-                margin-left: -30%;
-                background-color: rgba(0, 128, 128, 0.2);
-            }
+                from {
+                    width: 1rem;
+                    margin-left: -30%;
+                    background-color: rgba(0, 128, 128, 0.2);
+                }
 
-            to {
-                width: 0.3rem;
-                margin-left: -25%;
-                background-color: #00c234;
+                to {
+                    width: 0.3rem;
+                    margin-left: -25%;
+                    background-color: #00c234;
+                }
             }
-        }
 
             @keyframes smallimgshow1 {
                 from {
@@ -1352,6 +1252,39 @@
                 }
             }
 
+            .footer-content {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .connection {
+                order: 0;
+                width: 40%;
+                justify-content: center;
+            }
+
+            .connection h2 {
+                margin: 0 0 0.2rem;
+            }
+
+            .connection p {
+                line-height: 0.8rem;
+                text-align: center;
+            }
+
+            .icon-box {
+                margin: 0.3rem 0;
+            }
+
+            .google-map {
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+            iframe {
+                border-radius: 5% 5% 5% 5% /15% 15% 15% 15%;
+            }
+
         }
 
         @media screen and (min-width: 1024px) {
@@ -1374,98 +1307,10 @@
 
         }
 
-
-
-
-
-
-
-        #commodity {
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        #commodity h2 {
-            margin: 30px 0px;
-            color: #008080;
-            font-family: "華康墨字體";
-            font-size: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20%;
-            position: relative;
-            z-index: 1;
-        }
-
-        #commodity h2::before {
-            content: "";
-            width: 50px;
-            height: 3px;
-            background-color: #008080;
-            margin-right: 20px;
-        }
-
-        #commodity h2::after {
-            content: "";
-            width: 50px;
-            height: 3px;
-            background-color: #008080;
-            margin-left: 20px;
-        }
-
-        .commodity-box {
-            margin: -120px 50px;
-            border-radius: 0% 0% 2% 2%/0% 0% 4% 4%;
-            margin-bottom: 20px;
-            position: relative;
-            clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
-            overflow: hidden;
-        }
-
-        .commodity_img img {
-            width: 100%;
-            vertical-align: top;
-        }
-
-        .commodity-selector {
-            width: 25px;
-            height: 250px;
-            position: absolute;
-            transform: translate(-100%, 50%);
-            right: 1%;
-            bottom: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .commodity-selector span {
-            color: #008080;
-            font-family: "華康墨字體";
-            font-size: 25px;
-            opacity: .6;
-            text-align: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            opacity: .6;
-            box-shadow: 3px 3px 5px #000000;
-            cursor: pointer;
-        }
-
         .backimg {
             position: fixed;
             bottom: 0;
             z-index: -1;
-        }
-
-        .box {
-            width: 100%;
-            height: 3000px;
-            background-color: yellowgreen;
         }
     </style>
 
@@ -1596,11 +1441,54 @@
                 <div class="new-msg"></div>
             </div>
         </div>
+        <div id="commodity">
+            <h2>文創商品</h2>
+            <div class="commodity-box">
+                <div class="commodity_img">
+                    <img src="./img/home/commodity/commodity0.jpg" alt="commodity0">
+                </div>
+            </div>
+            <div class="commodity-selector">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./javascript/commodity.js"></script>
+
     </article>
-    <div class="box"></div>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-content">
+                <div class="connection">
+                    <h2>寧韻美麗島<span>文創園區</span></h2>
+                    <p>營業時間: 08:00~22:00<br>
+                        園區地址: 999香吉市美麗區花田一路6號<br>
+                        聯絡電話: 00-123456789<br>
+                        電子信箱: NingYun@mail.com
+                    </p>
+                    <div class="icon-box">
+                        <div class="icon"><a href="#"><img src="./img/All/fb.png" alt="fb"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/ig.png" alt="ig"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/line.png" alt="line"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/twitter.png" alt="twitter"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/youtube.png" alt="youtube"></a></div>
+                    </div>
+                    <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+                </div>
+                <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.750699106649!2d121.22461926641243!3d24.957342175137317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1625838568839!5m2!1szh-TW!2stw"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <div class="backimg">
-        <img src="./img/home/background.jpg" alt="">
+        <img src="./img/home/background.jpg" alt="background">
     </div>
 
 </body>
