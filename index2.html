@@ -213,6 +213,33 @@
             margin: 0 auto;
         }
 
+        .main h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            margin: 0.6rem 0;
+            opacity: .9;
+        }
+
+        .main h2::before {
+            content: "";
+            width: 1.6rem;
+            height: 0.1rem;
+            margin-right: 0.6rem;
+            background-color: #008080;
+        }
+
+        .main h2::after {
+            content: "";
+            width: 1.6rem;
+            height: 0.1rem;
+            margin-left: 0.6rem;
+            background-color: #008080;
+        }
+
         .main-box {
             padding: 0.6rem;
             background-color: rgba(255, 255, 255, 0.9);
@@ -882,6 +909,12 @@
             cursor: pointer;
         }
 
+        .backimg {
+            position: fixed;
+            bottom: 0;
+            z-index: -1;
+        }
+
 
 
         @media screen and (min-width: 414px) {
@@ -1306,12 +1339,6 @@
             }
 
         }
-
-        .backimg {
-            position: fixed;
-            bottom: 0;
-            z-index: -1;
-        }
     </style>
 
 </head>
@@ -1364,6 +1391,7 @@
 
         <div id="introduction">
             <div class="main">
+                <h2>園區簡介</h2>
                 <div class="main-box">
                     <h1>寧韻美麗島<span>文創園區</span></h1>
                     <div class="text-box">

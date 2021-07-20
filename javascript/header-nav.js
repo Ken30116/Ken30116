@@ -18,7 +18,7 @@ window.onscroll = function () {
     let smallimg=document.getElementsByClassName("small_img");
     let newmsg=document.getElementsByClassName("new-msg");
 
-    if (newimgxy.top>0 && newimgxy.bottom<winheight) {
+    if (newimgxy.bottom>0 && newimgxy.bottom<winheight) {
         for (let i = 0; i < smallimg.length; i++) {
             smallimg[i].style.display="block";
         }
@@ -30,7 +30,7 @@ window.onscroll = function () {
         }
         newmsg[0].style.display="none";
     }
-    
+
     if (mq.matches) {
         clickshow.src="./img/home/mouse-click.png"
         if (t >= 300) {
@@ -49,7 +49,7 @@ window.onscroll = function () {
             item[1].style.marginRight = "11em";
             slideshow2[0].style.clipPath="polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0)";
         }
-        if (historyxy.top>0 && historyxy.bottom<winheight) {
+        if (historyxy.bottom>0 && historyxy.bottom<winheight) {
             historyshow[0].style.clipPath="polygon(0 0, 100% 10%, 100% 90%, 0% 100%)";
             msg[0].style.display="block";
         }
