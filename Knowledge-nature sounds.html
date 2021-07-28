@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寧韻美麗島/知識庫(1)</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./css/header-phone.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-phone.css">
+    <script type="text/javascript" src="./javascript/header-nav.js"></script>
+    <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+    <style>
+        .main {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-content {
+            max-width: 1180px;
+            width: 100%;
+            margin: 0 auto;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 4.5rem;
+            left: 50%;
+        }
+
+        .title-box {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .title-box::before {
+            content: "";
+            width: 0.2rem;
+            height: 3rem;
+            background-color: #008080;
+            position: absolute;
+            top: -0.5rem;
+            left: 0;
+        }
+
+        .title-box::after {
+            content: "";
+            width: 3rem;
+            height: 0.2rem;
+            background-color: #008080;
+            position: absolute;
+            top: 0;
+            left: -0.5rem;
+        }
+
+        .title-box h1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 0 auto;
+            opacity: .9;
+        }
+
+        .title-box h1::after {
+            content: "";
+            width: 2rem;
+            height: 0.1rem;
+            background-color: #ffffff;
+            margin-left: 1rem;
+            opacity: .2;
+        }
+
+        .title-box h1::before {
+            content: "";
+            width: 2rem;
+            height: 0.1rem;
+            background-color: #ffffff;
+            margin-right: 1rem;
+            opacity: .2;
+        }
+
+        .title-box h3 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            text-align: center;
+            margin: 0 auto;
+            opacity: .9;
+        }
+
+        .breadcrumb {
+            width: 100%;
+            display: flex;
+            margin-top: 0.5rem;
+        }
+
+        .breadcrumb-item {
+            color: #ffffff;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            opacity: .6;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: " / ";
+        }
+
+        .main:nth-child(even) .main-box {
+            flex-direction: row-reverse;
+        }
+
+        .main_img {
+            width: 100%;
+            display: flex;
+            position: relative;
+            z-index: -1;
+        }
+
+        .main_img img {
+            width: 600%;
+        }
+
+        .main_imgbottom {
+            width: 100%;
+            display: flex;
+        }
+
+        .main_imgbottom img {
+            width: 100%;
+            margin-top: -12.3%;
+            position: relative;
+            z-index: 2;
+            vertical-align: top;
+        }
+
+        .main-box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-top: -200%;
+        }
+
+        .main-text {
+            width: 80vw;
+            padding: 0.6rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 0.5rem solid #008080;
+            border-radius: 1.6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-text h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            opacity: .9;
+        }
+
+        .main-text p {
+            color: #ffffff;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
+            opacity: .6;
+        }
+
+        .main-text span {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            opacity: .1;
+            position: absolute;
+            top: 10%;
+            right: 5%;
+        }
+
+        .main_imgwater {
+            width: 8rem;
+            height: 8rem;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 0.6rem solid #008080;
+            border-radius: 8.75rem 0 8.75rem 8.75rem;
+            position: relative;
+            transform: rotate(-45deg);
+        }
+
+        .main:nth-of-type(1) .main-box .main_imgwater {
+            margin-left: auto;
+        }
+
+        .main:nth-of-type(2) .main-box {
+            margin-top: -35rem;
+        }
+
+        .main:nth-of-type(2) .main-box .main_imgwater {
+            margin-right: auto;
+        }
+
+        .main:nth-of-type(2) .main_imgbottom {
+            position: absolute;
+            bottom: 0;
+            width: 150%;
+            margin-left: -5%;
+        }
+
+        .main_imgwater img:last-child {
+            width: 100%;
+            margin-top: -20%;
+        }
+
+        .main_imgwater img:first-child {
+            width: 150%;
+            position: absolute;
+            transform: rotate(35deg);
+            top: -20%;
+            left: -30%;
+            z-index: 2;
+        }
+
+        .topic {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-img {
+            display: flex;
+        }
+
+        .topic-img img {
+            width: 200%;
+            margin-left: -74%;
+        }
+
+        .topic-text {
+            width: 80vw;
+            margin-top: -23rem;
+            padding: 0.6rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 0.5rem solid #008080;
+            border-radius: 1.6rem;
+            position: relative;
+        }
+
+        .topic-text h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            opacity: .9;
+        }
+
+        .topic-text p {
+            color: #ffffff;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
+            opacity: .6;
+        }
+
+        .topic-text span {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 2rem;
+            opacity: .1;
+            position: absolute;
+            top: 10%;
+            right: 5%;
+        }
+
+        @media screen and (min-width: 414px) {
+            html {
+                font-size: 22px;
+            }
+
+            .title-box h1::after {
+                width: 3rem;
+            }
+
+            .title-box h1::before {
+                width: 3rem;
+            }
+
+            .main_img img {
+                width: 380%;
+            }
+
+            .main-text {
+                width: 90vw;
+            }
+
+            .main-box {
+                margin-top: -120%;
+            }
+
+            .main-text span {
+                font-size: 2rem;
+            }
+
+            .main_imgwater {
+                width: 12rem;
+                height: 12rem;
+                border: 0.8rem solid #008080;
+            }
+
+            .main:nth-of-type(2) .main-box {
+            margin-top: -33.3rem;
+        }
+
+        .main:nth-of-type(2) .main-box .main-text {
+            margin-bottom: 6rem;
+        }
+
+            .topic {
+            margin-top: 0%;
+        }
+
+        .topic-img img {
+            width: 100%;
+            margin-left: -25%;
+        }
+           
+        .topic-text {
+            width: 90vw;
+            margin-top: -15rem;
+        }
+
+        }
+
+        @media screen and (min-width: 640px) {
+            .title-box h1::after {
+                width: 5rem;
+            }
+
+            .title-box h1::before {
+                width: 5rem;
+            }
+
+            .main_img img {
+                width: 280%;
+            }
+
+            .main-box {
+                margin-top: -27.3rem;
+            }
+
+            .main-text {
+                width: 23rem;
+                margin-bottom: 3rem;
+                z-index: 0;
+            }
+
+            .main:nth-of-type(2) .main-box {
+                margin-top: -31.3rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 8rem;
+            }
+
+            .main:nth-of-type(2) .main_imgbottom {
+                position: static;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .main_imgwater img:first-child {
+                top: -50%;
+            }
+
+            .topic-text {
+                width: 23rem;
+                margin-top: -20rem;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
+    <style>
+        @media screen and (min-width: 768px) {
+            .title-box::before {
+                height: 4rem;
+                top: -1rem;
+            }
+
+            .title-box::after {
+                width: 4rem;
+                left: -1rem;
+            }
+
+            .main_img img {
+                width: 160%;
+            }
+
+            .main-box {
+                flex-wrap: nowrap;
+                margin-top: -16rem;
+            }
+
+            .main-text {
+                width: 20rem;
+                margin-bottom: 0;
+            }
+
+            .main_imgwater {
+                width: 14rem;
+                height: 14rem;
+                border: 1rem solid #008080;
+            }
+
+            .main:nth-of-type(1) .main-box .main_imgwater {
+                margin-left: 0;
+            }
+
+            .main:nth-of-type(2) .main-box {
+                margin-top: -16rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 0rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main_imgwater {
+                margin-right: 0;
+            }
+
+            .topic-img img {
+                width: 50%;
+                margin-left: 0;
+            }
+
+            .topic-text {
+                margin-top: -13rem;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            html {
+                font-size: 24px;
+            }
+
+            .title-content {
+                top: 5rem;
+            }
+
+            .main_img img {
+                width: 140%;
+            }
+
+            .topic-text {
+                margin-top: -15rem;
+            }
+
+        }
+
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 27px;
+            }
+
+            .title-content {
+                top: 7rem;
+            }
+
+            .topic-text {
+                margin-top: -17.6rem;
+            }
+
+        }
+
+        @media screen and (min-width: 1536px) {
+            html {
+                font-size: 30px;
+            }
+
+            .main_img img {
+                width: 120%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="./img/All/logo.png" alt="logo">
+        </div>
+        <nav>
+            <a class="item" href="index2.html">首頁</a>
+            <a class="item" href="Layout.html">園區導覽</a>
+            <a class="item" href="Platform.html">交流平台</a>
+            <a class="item" href="#">旅遊指南</a>
+        </nav>
+        <div id="menu">
+            <div class="menu-close">✖</div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <article>
+        <div class="knowledge">
+            <div class="main" id="topic1">
+                <div class="title-content">
+                    <div class="title-box">
+                        <h1>知識庫(1)</h1>
+                        <h3>自然篇</h3>
+                        <div class="breadcrumb">
+                            <a class="breadcrumb-item" href="index2.html">首頁</a>
+                            <a class="breadcrumb-item" href="Layout.html">園區導覽</a>
+                            <a class="breadcrumb-item" href="#">知識庫 (1)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_img">
+                    <img src="./img/nature-sound-knowledge/lake.jpg" alt="lake">
+                </div>
+                <div class="main-box">
+                    <div class="main-text">
+                        <h2>自然聲音</h2>
+                        <p>自然聲音包括動物（從蟋蟀到哺乳動物）發出的聲音，也包括自然現象發出的聲音，如水聲、風聲。水聲有雨滴落在地面或水面產生的聲音、瀑布的聲音、流水的聲音、海浪拍打岩石的聲音等等。風聲有風颳落葉的聲音、呼嘯聲等。在大自然，通常能聽到水聲和風聲摻雜在一起。這些聲音對史前音樂的發展大有幫助，對當今具有重要的文化參考價值。
+                        </p>
+                        <span>Nature Sounds</span>
+                    </div>
+                    <div class="main_imgwater">
+                        <img src="./img/nature-sound-knowledge/birds.png" alt="birds">
+                        <img src="./img/nature-sound-knowledge/music.png" alt="music">
+                    </div>
+                </div>
+                <div class="main_imgbottom">
+                    <img src="./img/nature-sound-knowledge/gress.png" alt="gress">
+                </div>
+            </div>
+            <div class="main" id="topic2">
+                <div class="main_img">
+                    <img src="./img/nature-sound-knowledge/Windy.jpg" alt="Windy">
+                </div>
+                <div class="main_imgbottom">
+                    <img src="./img/nature-sound-knowledge/water.png" alt="water">
+                </div>
+                <div class="main-box">
+                    <div class="main-text">
+                        <h2>鄉村雨聲</h2>
+                        <p>趴倒窗台上，捲起小紙窗簾聽蟬鳴，這樣聽得更真切，無隔閡。院裡栽了大大小小的許多樹，引來鳥叫、蝶舞、蟬蜂鳴。知了聽著雞叫聲就驟然醒來，扯起喉嚨，放聲歌唱，叫個不停。「吱、吱、吱」，有時還拉著長韻叫著，接著就聽著三五個知了一齊在小院裡叫，分布在不同的角落，而就是不知在哪棵樹上叫。細辯是叫得美妙動聽的「烏悠」聲，這種知了叫起來婉轉、抑揚頓挫。「烏悠、烏悠、烏悠、完，烏悠完，烏悠、烏悠完，烏悠……」
+                        </p>
+                        <span>Rural Sounds</span>
+                    </div>
+                    <div class="main_imgwater">
+                        <img src="./img/nature-sound-knowledge/dandelion.png" alt="dandelion">
+                        <img src="./img/nature-sound-knowledge/music.png" alt="music">
+                    </div>
+                </div>
+            </div>
+            <div class="topic" id="topic3">
+                <div class="topic-img">
+                    <img src="./img/nature-sound-knowledge/waterfall.jpg" alt="waterfall">
+                    <img src="./img/nature-sound-knowledge/wave.jpg" alt="wave">
+                </div>
+                <div class="topic-text">
+                    <h2>水之聆聽</h2>
+                    <p>水是生命之源，它以不變呈萬態，自古以來，「水」就是中外藝術家們創作的靈感源泉。「泉眼無聲惜細流」，有「飛流直下三千尺」，也有「一千頃，都鏡淨，倒碧峰。忽然浪起，掀舞一葉白頭翁」等等。音樂中有「高山流水」、「江河水」，甚至「寒鴉戲水」……水是大道，是智慧。白居易有句詩：「動者樂流水，靜者樂止水。利物不如流，鑒形不如止。」其實西方的古典音樂家們都有不少關於「水」的音樂作品，今天我們來聽3首非常動聽的「水」之曲。
+                    </p>
+                    <span>Water Listening</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-content">
+                <div class="connection">
+                    <h2>寧韻美麗島<span>文創園區</span></h2>
+                    <p>營業時間: 08:00~22:00<br>
+                        園區地址: 999香吉市美麗區花田一路6號<br>
+                        聯絡電話: 00-123456789<br>
+                        電子信箱: NingYun@mail.com
+                    </p>
+                    <div class="icon-box">
+                        <div class="icon"><a href="#"><img src="./img/All/fb.png" alt="fb"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/ig.png" alt="ig"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/line.png" alt="line"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/twitter.png" alt="twitter"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/youtube.png" alt="youtube"></a></div>
+                    </div>
+                    <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+                </div>
+                <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.750699106649!2d121.22461926641243!3d24.957342175137317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1625838568839!5m2!1szh-TW!2stw"></iframe>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>

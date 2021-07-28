@@ -1,0 +1,35 @@
+@media screen and (min-width: 768px) {
+    .footer-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .connection {
+        order: 0;
+        width: 40%;
+        justify-content: center;
+    }
+
+    .connection h2 {
+        margin: 0 0 0.2rem;
+    }
+
+    .connection p {
+        line-height: 0.8rem;
+        text-align: center;
+    }
+
+    .icon-box {
+        margin: 0.3rem 0;
+    }
+
+    .google-map {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    iframe {
+        border-radius: 5% 5% 5% 5% /15% 15% 15% 15%;
+    }
+
+}

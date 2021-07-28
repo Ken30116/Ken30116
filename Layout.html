@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寧韻美麗島/園區導覽</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./css/header-phone.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-phone.css">
+    <script type="text/javascript" src="./javascript/header-nav.js"></script>
+    <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <script type="text/javascript" src="./javascript/layout-map.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+    <style>
+        .title {
+            background-image: url(./img/layout/shock-music.png);
+            margin-top: 1rem;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .title h1 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            opacity: .9;
+        }
+
+        .title h2 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            text-align: center;
+            opacity: .9;
+        }
+
+        .layout {
+            max-width: 1180px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .layout-content {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb {
+            width: 100%;
+            display: flex;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .breadcrumb-item {
+            color: #ffffff;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            opacity: .6;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: " / ";
+        }
+
+        .layout-box {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
+        }
+
+        .main-box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0.6rem;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+
+        .main h2 {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            opacity: .9;
+            border-bottom: 0.1rem solid rgba(0, 128, 128, 0.7);
+            margin-top: 0.4rem;
+        }
+
+        .btn-box {
+            position: relative;
+            width: 100%;
+            height: 4rem;
+        }
+
+        .btn {
+            border: 0.1rem solid rgba(0, 128, 128, 0.5);
+            border-radius: 0.2rem;
+            width: 1.5rem;
+            text-align: right;
+            cursor: pointer;
+
+        }
+
+        .btn span {
+            color: #008080;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            text-align: center;
+            display: inline-block;
+            padding: 0.3rem;
+        }
+
+        .btn:hover {
+            border: 0.1rem solid #00c234;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn:hover span {
+            color: #00c234;
+        }
+
+        #btn_gold {
+            position: absolute;
+            left: 2%;
+            top: 20%;
+        }
+
+        #btn_wood {
+            position: absolute;
+            left: 23%;
+            top: 20%;
+        }
+
+        #btn_water {
+            position: absolute;
+            left: 44%;
+            top: 20%;
+        }
+
+        #btn_fire {
+            position: absolute;
+            left: 65%;
+            top: 20%;
+        }
+
+        #btn_terra {
+            position: absolute;
+            left: 85%;
+            top: 20%;
+        }
+
+        .btn-img {
+            width: 60%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: -0.1rem;
+            top: 50%;
+        }
+
+        .btn-img img {
+            width: 100%;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 23rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            box-sizing: border-box;
+        }
+
+        .map-box img {
+            width: 270px;
+            vertical-align: top;
+            margin: auto;
+        }
+
+        map {
+            position: absolute;
+            transform: translateX(-50%);
+            top: 15%;
+            left: 50%;
+        }
+
+        #control-map {
+            position: absolute;
+            transform: translateX(-50%);
+            top: 15%;
+            left: 50%;
+            z-index: 100;
+        }
+
+        .all-theme {
+            position: absolute;
+            transform: translateX(-50%);
+            top: 15%;
+            left: 50%;
+        }
+
+        .map-box .map {
+            display: none;
+        }
+
+        #image_gold:hover~#map_gold {
+            display: block;
+        }
+
+        #image_gold:hover~#text_gold {
+            display: block;
+        }
+
+        #image_wood:hover~#map_wood {
+            display: block;
+        }
+
+        #image_wood:hover~#text_wood {
+            display: block;
+        }
+
+        #image_water:hover~#map_water {
+            display: block;
+        }
+
+        #image_water:hover~#text_water {
+            display: block;
+        }
+
+        #image_fire:hover~#map_fire {
+            display: block;
+        }
+
+        #image_fire:hover~#text_fire {
+            display: block;
+        }
+
+        #image_terra:hover~#map_terra {
+            display: block;
+        }
+
+        #image_terra:hover~#text_terra {
+            display: block;
+        }
+
+        .text {
+            font-family: "華康中圓體";
+            font-size: 0.8rem;
+            opacity: .9;
+            display: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text::after {
+            content: "";
+            height: 70px;
+            width: 2px;
+            background-color: #000000;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 130%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        .text::before {
+            content: "";
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: #000000;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 550%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        #text_gold {
+            color: #ffc909;
+            position: absolute;
+            top: -32%;
+            right: 14%;
+        }
+
+        #text_wood {
+            color: #46a12b;
+            position: absolute;
+            top: -30%;
+            right: 15%;
+        }
+
+        #text_water {
+            color: #00b7e4;
+            position: absolute;
+            top: -35%;
+            right: 38%;
+        }
+
+        #text_fire {
+            color: #ea0000;
+            position: absolute;
+            top: -10%;
+            right: 23%;
+        }
+
+        #text_terra {
+            color: #d64d00;
+            position: absolute;
+            top: -12%;
+            right: 42%;
+        }
+
+        .compass {
+            width: 5rem;
+            position: absolute;
+            bottom: 45%;
+            left: 10%;
+            opacity: 0.5;
+        }
+
+        .compass img {
+            width: 100%;
+        }
+
+        .knowledge {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 5%;
+            left: 50%;
+        }
+
+        .knowledge h3 {
+            display: inline;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            opacity: .9;
+            border-bottom: 0.1rem solid rgba(0, 128, 128, 0.7);
+            margin: 0 auto 1rem;
+        }
+
+        .knowledge-text {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .knowledge-text-box {
+            width: 30%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0.2rem;
+            box-sizing: border-box;
+            border: 0.1rem solid rgba(0, 128, 128, 0.1);
+        }
+
+        .knowledge-text-box a {
+            color: #008080;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            padding: 0.3rem;
+            border: 0.1rem solid #008080;
+            border-radius: 0.1rem;
+            opacity: .6;
+        }
+
+        .knowledge-text-box a:hover {
+            color: #00c234;
+            border: 0.1rem solid #00c234;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .knowledge-text-box p {
+            width: 100%;
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1rem;
+            opacity: .6;
+
+        }
+
+        .knowledge-mascot {
+            position: absolute;
+            top: 0%;
+            left: 75%;
+        }
+
+        .knowledge-mascot img {
+            width: 2rem;
+        }
+
+
+        .backimg {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .backimg img {
+            width: 241400%;
+            opacity: .9;
+            vertical-align: top;
+        }
+
+
+        @media screen and (min-width: 414px) {
+            html {
+                font-size: 22px;
+            }
+
+            .layout-content {
+                width: 90%;
+            }
+
+            .breadcrumb {
+                margin-left: 0;
+            }
+
+            #btn_gold {
+                left: 9%;
+            }
+
+            #btn_wood {
+                left: 28%;
+            }
+
+            #btn_water {
+                left: 47%;
+            }
+
+            #btn_fire {
+                left: 66%;
+            }
+
+            #btn_terra {
+                left: 85%;
+            }
+
+            .map-box img {
+                width: 370px;
+            }
+
+            .text::after {
+                height: 100px;
+            }
+
+            .text::before {
+                top: 650%;
+            }
+
+            #text_gold {
+                top: -28%;
+                right: 16%;
+            }
+
+            #text_wood {
+                top: -25%;
+                right: 20%;
+            }
+
+            #text_water {
+                top: -30%;
+            }
+
+            .compass {
+                bottom: 40%;
+            }
+
+            .compass img {
+                width: 100%;
+            }
+
+            .knowledge-mascot {
+                left: 68%;
+            }
+
+            .knowledge-mascot img {
+                width: 2rem;
+            }
+
+        }
+
+        @media screen and (min-width: 640px) {
+            .btn {
+                width: 15%;
+                box-shadow: 0px 0.3rem 0.05rem rgba(0, 122, 128, 0.5);
+                transition: top 0.2s, box-shadow 0.3s;
+            }
+
+            .btn span {
+                padding: 0.5rem 0.6rem;
+            }
+
+            .btn:hover {
+                border: 0.1rem solid rgba(0, 128, 128, 0.5);
+                background: transparent;
+            }
+
+            #btn_gold {
+                left: 4%;
+            }
+
+            #btn_wood {
+                left: 23%;
+            }
+
+            #btn_water {
+                left: 42%;
+            }
+
+            #btn_fire {
+                left: 61%;
+            }
+
+            #btn_terra {
+                left: 80%;
+            }
+
+            .btn-img {
+                width: 25%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 0.2rem;
+                top: 50%;
+            }
+
+            .btn-img img {
+                width: 100%;
+            }
+
+            #btn_gold:hover {
+                top: 29%;
+                box-shadow: 0 0 0.3rem #ffc909, inset 0 0 0.3rem #ffc909;
+                border: none;
+            }
+
+            #btn_wood:hover {
+                top: 29%;
+                box-shadow: 0 0 0.3rem #46a12b, inset 0 0 0.3rem #46a12b;
+                border: none;
+            }
+
+            #btn_water:hover {
+                top: 29%;
+                box-shadow: 0 0 0.3rem #00b7e4, inset 0 0 0.3rem #00b7e4;
+                border: none;
+            }
+
+            #btn_fire:hover {
+                top: 29%;
+                box-shadow: 0 0 .3rem #ea0000, inset 0 0 .3rem #ea0000;
+                border: none;
+            }
+
+            #btn_terra:hover {
+                top: 29%;
+                box-shadow: 0 0 0.3rem #d64d00, inset 0 0 .3rem #d64d00;
+                border: none;
+            }
+
+            map {
+                top: 20%;
+            }
+
+            #control-map {
+                top: 20%;
+            }
+
+            .all-theme {
+                top: 20%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
+    <style>
+        @media screen and (min-width: 768px) {
+            .btn-img {
+                left: 0.8rem;
+            }
+
+            .map-box {
+                height: 25rem;
+            }
+
+            .map-box img {
+                width: 656px;
+            }
+
+            .map-box {
+                height: 35rem;
+            }
+
+            map {
+                top: 22%;
+            }
+
+            #control-map {
+                top: 22%;
+            }
+
+            .all-theme {
+                top: 22%;
+            }
+
+            .text::after {
+                height: 150px;
+            }
+
+            .text::before {
+                content: "";
+                top: 1000%;
+            }
+
+            #text_gold {
+                top: -25%;
+                right: 25%;
+            }
+
+            #text_wood {
+                top: -18%;
+                right: 30%;
+            }
+
+            #text_water {
+                top: -25%;
+                right: 45%;
+            }
+
+            #text_fire {
+                top: 0;
+                right: 30%;
+            }
+
+            #text_terra {
+                top: -5%;
+                right: 50%;
+            }
+
+            .compass {
+                width: 7rem;
+                bottom: 30%;
+            }
+
+            .compass img {
+                width: 100%;
+            }
+
+            .knowledge-mascot {
+                position: absolute;
+                top: -20%;
+                left: 60%;
+            }
+
+            .knowledge-mascot img {
+                width: 3rem;
+            }
+
+        }
+
+        @media screen and (min-width: 1024px) {
+            html {
+                font-size: 24px;
+            }
+
+            .text::before {
+                content: "";
+                top: 900%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 27px;
+            }
+
+            .layout-box {
+                flex-wrap: nowrap;
+            }
+
+            .main-box {
+                width: 30%;
+                height: 700px;
+                background: linear-gradient(to right, #ffffff 0%, #e7e7e7 55%, #c3c3c2 80%, #9a9a9a 93%, #6e6c6d 99%, #444243 100%);
+            }
+
+            .btn-box {
+                height: 18rem;
+            }
+
+            .btn {
+                width: 50%;
+            }
+
+            #btn_gold {
+                transform: translateX(-50%);
+                left: 50%;
+                top: 5%;
+            }
+
+            #btn_wood {
+                transform: translateX(-50%);
+                left: 50%;
+                top: 21%;
+            }
+
+            #btn_water {
+                transform: translateX(-50%);
+                left: 50%;
+                top: 37%;
+            }
+
+            #btn_fire {
+                transform: translateX(-50%);
+                left: 50%;
+                top: 53%;
+            }
+
+            #btn_terra {
+                transform: translateX(-50%);
+                left: 50%;
+                top: 69%;
+            }
+
+            #btn_gold:hover {
+                top: 7%;
+            }
+
+            #btn_wood:hover {
+                top: 23%;
+            }
+
+            #btn_water:hover {
+                top: 39%;
+            }
+
+            #btn_fire:hover {
+                top: 55%;
+            }
+
+            #btn_terra:hover {
+                top: 71%;
+            }
+
+            .map-box {
+                width: 70%;
+                height: auto;
+                background: linear-gradient(to left, #ffffff 0%, #e7e7e7 55%, #c3c3c2 80%, #9a9a9a 93%, #6e6c6d 99%, #444243 100%);
+            }
+
+            .map-box img {
+                right: 5%;
+            }
+
+            .text::before {
+                content: "";
+                top: 840%;
+            }
+
+            #text_wood {
+                right: 27%;
+            }
+        }
+
+        @media screen and (min-width: 1536px) {
+            html {
+                font-size: 30px;
+            }
+
+            .text::before {
+                content: "";
+                top: 740%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="./img/All/logo.png" alt="logo">
+        </div>
+        <nav>
+            <a class="item" href="index2.html">首頁</a>
+            <a class="item" href="Layout.html">園區導覽</a>
+            <a class="item" href="Platform.html">交流平台</a>
+            <a class="item" href="#">旅遊指南</a>
+        </nav>
+        <div id="menu">
+            <div class="menu-close">✖</div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <article>
+        <div class="title">
+            <h1>園區導覽</h1>
+            <h2>Park Layout</h2>
+        </div>
+        <div class="layout">
+            <div class="layout-content">
+                <div class="breadcrumb">
+                    <a class="breadcrumb-item" href="index.html">首頁</a>
+                    <a class="breadcrumb-item" href="#">園區導覽</a>
+                </div>
+                <div class="layout-box">
+                    <div class="main-box">
+                        <div class="main">
+                            <h2>五大主題</h2>
+                        </div>
+                        <div class="btn-box">
+                            <div class="btn" id="btn_gold">
+                                <a href="Theme-gold.html">
+                                    <div class="btn-img"><img src="./img/layout/music-gold.png" alt="music-gold"></div>
+                                    <span>金精靈區</span>
+                                </a>
+                            </div>
+                            <div class="btn" id="btn_wood">
+                                <a href="Theme-wood.html">
+                                    <div class="btn-img"><img src="./img/layout/music-wood.png" alt="music-wood"></div>
+                                    <span>木精靈區</span>
+                                </a>
+                            </div>
+                            <div class="btn" id="btn_water">
+                                <a href="Theme-water.html">
+                                    <div class="btn-img"><img src="./img/layout/music-water.png" alt="music-water">
+                                    </div>
+                                    <span>水精靈區</span>
+                                </a>
+                            </div>
+                            <div class="btn" id="btn_fire">
+                                <a href="Theme-fire.html">
+                                    <div class="btn-img"><img src="./img/layout/music-fire.png" alt="music-fire"></div>
+                                    <span>火精靈區</span>
+                                </a>
+                            </div>
+                            <div class="btn" id="btn_terra">
+                                <a href="Theme-terra.html">
+                                    <div class="btn-img"><img src="./img/layout/music-terra.png" alt="music-terra">
+                                    </div>
+                                    <span>土精靈區</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="map-box">
+                        <img id="control-map" src="./img/layout/control-map.png" alt="control-map" usemap="#image-map">
+                        <img class="all-theme" src="./img/layout/all-theme.png" alt="all-theme">
+                        <map name="image-map">
+                            <area id="image_wood" href="Theme-wood.html"
+                                coords="345,135,360,139,377,137,393,133,402,121,397,109,384,103,367,101,351,103,340,108,330,117,331,126,337,131"
+                                shape="poly">
+                            <area id="image_fire" href="Theme-fire.html"
+                                coords="367,120,601,154,616,190,610,208,619,222,615,231,635,283,621,306,626,321,647,330,633,351,226,271"
+                                shape="poly">
+                            <area id="image_terra" href="Theme-terra.html"
+                                coords="233,270,364,125,347,120,155,123,133,130,117,152,94,109,78,105,55,116,47,129,73,170,53,172,29,199,29,209,32,217,19,226"
+                                shape="poly">
+                            <area id="image_water" href="Theme-water.html"
+                                coords="415,53,372,117,347,126,156,124,163,106,193,88,201,60,198,45,206,40,230,41,287,41,343,39"
+                                shape="poly">
+                            <area id="image_gold" href="Theme-gold.html"
+                                coords="370,117,414,55,441,55,445,25,452,23,455,11,465,11,466,21,479,24,477,57,485,57,484,75,492,74,493,65,511,67,513,53,541,57,540,70,543,79,552,91,562,91,561,104,565,108,569,101,577,101,581,109,603,157,391,125"
+                                shape="poly">
+                            <img class="map" id="map_wood" src="./img/layout/wood-theme.png" alt="wood-theme">
+                            <img class="map" id="map_fire" src="./img/layout/fire-theme.png" alt="fire-theme">
+                            <img class="map" id="map_gold" src="./img/layout/gold-theme.png" alt="gold-theme">
+                            <img class="map" id="map_water" src="./img/layout/water-theme.png" alt="water-theme">
+                            <img class="map" id="map_terra" src="./img/layout/terra-theme.png" alt="terra-theme">
+                            <span class="text" id="text_terra">石子聲/鋪面設施</span>
+                            <span class="text" id="text_wood">青蛙、竹子聲/能源設施</span>
+                            <span class="text" id="text_gold">鳥聲/音樂設施</span>
+                            <span class="text" id="text_water">水聲/休憩設施</span>
+                            <span class="text" id="text_fire">人群聲/筑景館</span>
+                        </map>
+                        <div class="compass">
+                            <img src="./img/layout/compass.png" alt="compass">
+                        </div>
+                        <div class="knowledge">
+                            <h3>學習天地</h3>
+                            <div class="knowledge-text">
+                                <div class="knowledge-text-box">
+                                    <a href="Knowledge-nature sounds.html">知識庫(1)</a>
+                                    <p>自然篇</p>
+                                    <p>自然聲音/ 鄉村雨聲/ 水之聆聽</p>
+                                </div>
+                                <div class="knowledge-text-box">
+                                    <a href="Knowledge-urban music.html">知識庫(2)</a>
+                                    <p>都市篇</p>
+                                    <p>都市噪音/ 都市音樂/ 乾淨能源</p>
+                                </div>
+                                <div class="knowledge-text-box">
+                                    <a href="Knowledge-heat island.html">知識庫(3)</a>
+                                    <p>番外篇</p>
+                                    <p>都市熱島/ 植栽/ 水體/ 鋪面</p>
+                                </div>
+                            </div>
+                            <div class="knowledge-mascot">
+                                <img src="./img/layout/mascot(4).png" alt="/mascot(4)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="backimg">
+            <img src="./img/layout/background.jpg" alt="background">
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-box">
+            <div class="footer-content">
+                <div class="connection">
+                    <h2>寧韻美麗島<span>文創園區</span></h2>
+                    <p>營業時間: 08:00~22:00<br>
+                        園區地址: 999香吉市美麗區花田一路6號<br>
+                        聯絡電話: 00-123456789<br>
+                        電子信箱: NingYun@mail.com
+                    </p>
+                    <div class="icon-box">
+                        <div class="icon"><a href="#"><img src="./img/All/fb.png" alt="fb"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/ig.png" alt="ig"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/line.png" alt="line"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/twitter.png" alt="twitter"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/youtube.png" alt="youtube"></a></div>
+                    </div>
+                    <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+                </div>
+                <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.750699106649!2d121.22461926641243!3d24.957342175137317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1625838568839!5m2!1szh-TW!2stw"></iframe>
+                </div>
+            </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
