@@ -46,7 +46,6 @@
             font-family: "華康墨字體";
             font-size: 1.4rem;
             text-align: center;
-            opacity: .9;
         }
 
         .title-box h3 {
@@ -54,7 +53,6 @@
             font-family: "華康墨字體";
             font-size: 1rem;
             text-align: center;
-            opacity: .9;
             padding: 0 4rem;
         }
 
@@ -100,10 +98,9 @@
         }
 
         .breadcrumb-item {
-            color: #ffffff;
+            color: #ffffffc2;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
-            opacity: .6;
+            font-size: 0.5rem;
         }
 
         .breadcrumb-item+.breadcrumb-item::before {
@@ -136,9 +133,7 @@
             font-family: "華康中圓體";
             font-size: 0.8rem;
             padding: 0 0.2rem;
-            opacity: .6;
             border-radius: 10%;
-            text-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.5);
         }
 
         .pagination li a:hover {
@@ -219,22 +214,20 @@
         }
 
         .text h2 {
-            color: #000000;
+            color: #000000e1;
             font-family: "華康墨字體";
             font-size: 1rem;
             text-align: justify;
             margin-bottom: 0.3rem;
-            opacity: .9;
         }
 
         .text p {
-            color: #000000;
+            color: #000000a1;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
-            line-height: 1rem;
+            font-size: 0.7rem;
+            line-height: 1.2rem;
             letter-spacing: 0.05rem;
             text-align: justify;
-            opacity: .6;
         }
 
         .mark {
@@ -256,11 +249,10 @@
         }
 
         .people span {
-            color: #000000;
+            color: #000000a1;
             font-family: "華康中圓體";
             font-size: 0.6rem;
             margin-left: 0.3rem;
-            opacity: .6;
         }
 
         .great {
@@ -273,11 +265,10 @@
         }
 
         .great span {
-            color: #000000;
+            color: #000000a1;
             font-family: "華康中圓體";
             font-size: 0.6rem;
             margin-left: 0.3rem;
-            opacity: .6;
         }
 
         .platform-bottom {
@@ -297,8 +288,15 @@
             html {
                 font-size: 22px;
             }
+
+            .mark {
+                justify-content: flex-end;
+            }
+
+            .people {
+                margin-right: 1rem;
+            }
         }
-        
     </style>
     <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
     <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
@@ -319,6 +317,11 @@
 
             .title-box h1::before {
                 width: 4rem;
+            }
+
+            .text p {
+                font-size: 0.6rem;
+                line-height: 1rem;
             }
 
             .platform-top {
@@ -373,63 +376,63 @@
             }
 
             .content-col {
-            height: 17rem;
-        }
+                height: 17rem;
+            }
 
-        .content-col-box {
-            height: 100%;
-        }
+            .content-col-box {
+                height: 100%;
+            }
 
-        .container:nth-child(even) .content-box {
-            clip-path: polygon(0% 0%, 80% 0%, 65% 100%, 0% 100%);
-        }
+            .container:nth-child(even) .content-box {
+                clip-path: polygon(0% 0%, 80% 0%, 65% 100%, 0% 100%);
+            }
 
-        .content {
-            width: 23.3rem;
-            height:9.3rem;
-            flex-wrap: nowrap;
-            margin: 0;
-            padding: 0.6rem 0px 0.6rem 1rem;
-            box-sizing:content-box;
-            position: absolute;
-            bottom: 19%;
-            right: 0;
-        }
+            .content {
+                width: 23.3rem;
+                height: 9.3rem;
+                flex-wrap: nowrap;
+                margin: 0;
+                padding: 0.6rem 0px 0.6rem 1rem;
+                box-sizing: content-box;
+                position: absolute;
+                bottom: 19%;
+                right: 0;
+            }
 
-        .container:nth-child(even) .content-box .content .img-box {
-            order: 2;
-        }
+            .container:nth-child(even) .content-box .content .img-box {
+                order: 2;
+            }
 
-        .container:nth-child(even) .content-box .content {
-            padding: 0.6rem 1rem 0.6rem 0rem;
-            left: 0;
-        }
+            .container:nth-child(even) .content-box .content {
+                padding: 0.6rem 1rem 0.6rem 0rem;
+                left: 0;
+            }
 
-        .img-box {
-            width: 60%;
-        }
+            .img-box {
+                width: 60%;
+            }
 
-        .img-box img {
-            width: auto;
-            height: 100%;
-        }
+            .img-box img {
+                width: auto;
+                height: 100%;
+            }
 
-        
 
-        .text-box {
-            width: 40%;
-        }
 
-        .platform-bottom {
-            max-width: 1180px;
-            width: 100%;
-            background-color: transparent;
-            position: absolute;
-            transform: translateX(-50%);
-            bottom: 0;
-            left: 50%;
-            z-index: 2;
-        }
+            .text-box {
+                width: 40%;
+            }
+
+            .platform-bottom {
+                max-width: 1180px;
+                width: 100%;
+                background-color: transparent;
+                position: absolute;
+                transform: translateX(-50%);
+                bottom: 0;
+                left: 50%;
+                z-index: 2;
+            }
 
         }
 

@@ -34,47 +34,24 @@
             width: 90%;
             margin: 0 auto;
             padding: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
-
-        .title-box::before {
-            content: "";
-            width: 0.2rem;
-            height: 3rem;
-            background-color: #008080;
-            position: absolute;
-            top: -0.5rem;
-            left: 0;
-        }
-
-        .title-box::after {
-            content: "";
-            width: 3rem;
-            height: 0.2rem;
-            background-color: #008080;
-            position: absolute;
-            top: 0;
-            left: -0.5rem;
         }
 
         .title-box h1 {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            color: #ffffff;
+            color: #000000e1;
             font-family: "華康墨字體";
             font-size: 1.4rem;
             text-align: center;
             margin: 0 auto;
-            opacity: .9;
         }
 
         .title-box h1::after {
             content: "";
             width: 2rem;
             height: 0.1rem;
-            background-color: #ffffff;
+            background-color: #000000e1;
             margin-left: 1rem;
             opacity: .2;
         }
@@ -83,18 +60,17 @@
             content: "";
             width: 2rem;
             height: 0.1rem;
-            background-color: #ffffff;
+            background-color: #000000e1;
             margin-right: 1rem;
             opacity: .2;
         }
 
         .title-box h3 {
-            color: #ffffff;
+            color: #000000e1;
             font-family: "華康墨字體";
             font-size: 1rem;
             text-align: center;
-            margin: 0 auto;
-            opacity: .9;
+            margin: 0 auto 1rem;
         }
 
         .breadcrumb {
@@ -104,7 +80,7 @@
         }
 
         .breadcrumb-item {
-            color: #ffffff;
+            color: #0000007a;
             font-family: "華康中圓體";
             font-size: 0.6rem;
             opacity: .6;
@@ -121,6 +97,7 @@
         .main_img {
             width: 100%;
             display: flex;
+            margin-left: -200%;
             position: relative;
             z-index: -1;
         }
@@ -167,16 +144,15 @@
             font-size: 1.4rem;
             text-align: center;
             margin-bottom: 0.6rem;
-            opacity: .9;
         }
 
         .main-text p {
-            color: #ffffff;
+            color: #ffffffc2;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
-            line-height: 1rem;
+            font-size: 0.7rem;
+            text-align: justify;
+            line-height: 1.2rem;
             letter-spacing: 0.05rem;
-            opacity: .6;
         }
 
         .main-text span {
@@ -185,7 +161,7 @@
             font-size: 1.4rem;
             opacity: .1;
             position: absolute;
-            top: 10%;
+            top: 8%;
             right: 5%;
         }
 
@@ -246,13 +222,13 @@
         }
 
         .topic-img img {
-            width: 200%;
-            margin-left: -74%;
+            width: 250%;
+            margin-left: -99%;
         }
 
         .topic-text {
             width: 80vw;
-            margin-top: -23rem;
+            margin-top: -29rem;
             padding: 0.6rem;
             background-color: rgba(0, 0, 0, 0.7);
             border-top: 0.5rem solid #008080;
@@ -266,25 +242,24 @@
             font-size: 1.4rem;
             text-align: center;
             margin-bottom: 0.6rem;
-            opacity: .9;
         }
 
         .topic-text p {
-            color: #ffffff;
+            color: #ffffffc2;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
-            line-height: 1rem;
+            font-size: 0.7rem;
+            text-align: justify;
+            line-height: 1.2rem;
             letter-spacing: 0.05rem;
-            opacity: .6;
         }
 
         .topic-text span {
             color: #ffffff;
             font-family: "華康墨字體";
-            font-size: 2rem;
+            font-size: 1.4rem;
             opacity: .1;
             position: absolute;
-            top: 10%;
+            top: 8%;
             right: 5%;
         }
 
@@ -302,7 +277,7 @@
             }
 
             .main_img img {
-                width: 380%;
+                width: 450%;
             }
 
             .main-text {
@@ -310,11 +285,7 @@
             }
 
             .main-box {
-                margin-top: -120%;
-            }
-
-            .main-text span {
-                font-size: 2rem;
+                margin-top: -150%;
             }
 
             .main_imgwater {
@@ -324,26 +295,26 @@
             }
 
             .main:nth-of-type(2) .main-box {
-            margin-top: -33.3rem;
-        }
+                margin-top: -35.3rem;
+            }
 
-        .main:nth-of-type(2) .main-box .main-text {
-            margin-bottom: 6rem;
-        }
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 6rem;
+            }
 
             .topic {
-            margin-top: 0%;
-        }
+                margin-top: 0%;
+            }
 
-        .topic-img img {
-            width: 100%;
-            margin-left: -25%;
-        }
-           
-        .topic-text {
-            width: 90vw;
-            margin-top: -15rem;
-        }
+            .topic-img img {
+                width: 130%;
+                margin-left: -39%;
+            }
+
+            .topic-text {
+                width: 90vw;
+                margin-top: -20rem;
+            }
 
         }
 
@@ -354,6 +325,10 @@
 
             .title-box h1::before {
                 width: 5rem;
+            }
+
+            .main_img {
+                margin-left: -65%;
             }
 
             .main_img img {
@@ -371,7 +346,7 @@
             }
 
             .main:nth-of-type(2) .main-box {
-                margin-top: -31.3rem;
+                margin-top: -33.6rem;
             }
 
             .main:nth-of-type(2) .main-box .main-text {
@@ -409,8 +384,16 @@
                 left: -1rem;
             }
 
+            .main_img {
+                margin-left: -15%;
+            }
+
             .main_img img {
-                width: 160%;
+                width: 180%;
+            }
+
+            .main-text p {
+                font-size: 0.6rem;
             }
 
             .main-box {
@@ -453,6 +436,10 @@
             .topic-text {
                 margin-top: -13rem;
             }
+
+            .topic-text p {
+                font-size: 0.6rem;
+            }
         }
 
         @media screen and (min-width: 1024px) {
@@ -462,10 +449,6 @@
 
             .title-content {
                 top: 5rem;
-            }
-
-            .main_img img {
-                width: 140%;
             }
 
             .topic-text {
@@ -487,6 +470,10 @@
                 margin-top: -17.6rem;
             }
 
+            .main_img img {
+                width: 200%;
+            }
+
         }
 
         @media screen and (min-width: 1536px) {
@@ -494,9 +481,28 @@
                 font-size: 30px;
             }
 
-            .main_img img {
-                width: 120%;
+            .main_img {
+                margin-left: 0;
             }
+
+            .main_img img {
+                width: 140%;
+            }
+
+            .main-text {
+                width: 20rem;
+                margin-bottom: 10%;
+            }
+
+            .main:nth-of-type(2) .main_imgbottom {
+            width: 70%;
+            margin-left: 10%;
+        }
+
+
+
+
+
         }
     </style>
 </head>
@@ -579,7 +585,7 @@
                 </div>
                 <div class="topic-text">
                     <h2>水之聆聽</h2>
-                    <p>水是生命之源，它以不變呈萬態，自古以來，「水」就是中外藝術家們創作的靈感源泉。「泉眼無聲惜細流」，有「飛流直下三千尺」，也有「一千頃，都鏡淨，倒碧峰。忽然浪起，掀舞一葉白頭翁」等等。音樂中有「高山流水」、「江河水」，甚至「寒鴉戲水」……水是大道，是智慧。白居易有句詩：「動者樂流水，靜者樂止水。利物不如流，鑒形不如止。」其實西方的古典音樂家們都有不少關於「水」的音樂作品，今天我們來聽3首非常動聽的「水」之曲。
+                    <p>水是生命之源，它以不變呈萬態，自古以來，「水」就是中外藝術家們創作的靈感源泉。「泉眼無聲惜細流」，有「飛流直下三千尺」，也有「一千頃，都鏡淨，倒碧峰。忽然浪起，掀舞一葉白頭翁」等等。音樂中有「高山流水」、「江河水」，甚至「寒鴉戲水」……水是大道，是智慧。白居易有句詩：「動者樂流水，靜者樂止水。利物不如流，鑒形不如止。」其實西方的古典音樂家們都有不少關於「水」的音樂作品，今天我們來聽2首非常動聽的「水」之曲。
                     </p>
                     <span>Water Listening</span>
                 </div>

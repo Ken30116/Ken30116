@@ -1,14 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>寧韻美麗島/首頁</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-home.css">
+    <script type="text/javascript" src="./javascript/ShowHistory.js"></script>
+    <script type="text/javascript" src="./javascript/showLarge.js"></script>
+    <script type="text/javascript" src="./javascript/header-nav.js"></script>
+
+    <style>
+        
+        .slideshow {
+            position: relative;
+            clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+            overflow: hidden;
+        }
+
+
+
+        .slideshow_img img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .slideshow_img img:nth-of-type(2) {
+            position: absolute;
+            left: 100%
+        }
+
+        .slideshow_img img:nth-of-type(3) {
+            position: absolute;
+            left: 200%
+        }
+
+        .slideshow_img img:nth-of-type(4) {
+            position: absolute;
+            left: 300%
+        }
+
+        .slideshow_img img:nth-of-type(5) {
+            position: absolute;
+            left: 400%
+        }
+
+        .slideshow-selector {
+            width: 220px;
+            height: 25px;
+            position: absolute;
+            transform: translate(-50%, -100%);
+            left: 50%;
+            bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slideshow-selector span {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .5;
+            box-shadow: 3px 3px 5px #000000;
+            cursor: pointer;
+        }
+
+        .slideshow-selector span:hover {
+            box-shadow: 0px 0px 5px #00c234;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .5;
+            position: absolute;
+            box-shadow: 5px 5px 5px #000000;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        .btn_left {
+            left: 50px;
+            cursor: pointer;
+        }
+
+        .btn_right {
+            right: 50px;
+            cursor: pointer;
+        }
+
+        .btn::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-bottom: 3px solid #008080;
+            position: absolute;
+            top: 22%;
+        }
+
+        .btn_left::after {
+            border-left: 3px solid #008080;
+            transform: rotate(45deg);
+            right: 10%;
+        }
+
+        .btn_right::after {
+            border-right: 3px solid #008080;
+            transform: rotate(-45deg);
+            left: 10%;
+        }
+
+        .btn:hover {
+            background-color: #00c234;
+            box-shadow: 0px 0px 5px #00c234;
+            opacity: 1;
+        }
+
+        .btn_left:hover::after {
+            border-bottom: 3px solid #ffffff;
+            border-left: 3px solid #ffffff;
+            opacity: 1;
+        }
+
+        .btn_right:hover::after {
+            border-bottom: 3px solid #ffffff;
+            border-right: 3px solid #ffffff;
+            opacity: 1;
+        }
+
+        .about {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 24px;
+            text-align: center;
+            position: relative;
+            padding: 10px 0px 15px 0px;
+            background-color: rgba(0, 128, 128, 0.5);
+            display: block;
+        }
+
+        .about:hover {
+            background-color: #00c234;
+        }
+
+
+
+        #introduction {
+            position: relative;
+        }
+
+        .main {
+            width: 1280px;
+            height: 750px;
+            margin: 0 auto;
+        }
+
+        .main-box {
+            margin: 20px 50px 20px 50px;
+            padding-bottom: 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+
+        .main-box h1 {
+            margin-top: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            text-align: center;
+            opacity: .9;
+        }
+
+        .main-box span {
+            font-size: 30px;
+        }
+
+        .text-box {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .text-box p {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            opacity: .6;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-indent: 35px;
+            padding: 0px 20px 10px 20px;
+        }
+
+        .text-box-left {
+            width: 50%;
+        }
+
+        .text-box-right {
+            width: 50%;
+            margin-left: -25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .text-box .button a {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgba(0, 128, 128, 0.7);
+            border-radius: 10px;
+        }
+
+        .text-box .button a:hover {
+            background-color: #00c234;
+        }
+
+        .main_img {
+            position: absolute;
+            bottom: -45%;
+            left: 0;
+        }
+
+        .main_img img {
+            width: 100%;
+            opacity: .7;
+        }
+
+        .text {
+            width: 500px;
+            position: absolute;
+            bottom: 35%;
+            right: 0;
+            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.8)
+        }
+
+        .text h3 {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            text-align: center;
+            opacity: .9;
+            padding: 20px 0px 10px 0px;
+        }
+
+        .text p {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            opacity: .6;
+            line-height: 24px;
+            letter-spacing: 1px;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .history {
+            position: relative;
+            clip-path: polygon(0 0, 100% 25%, 100% 65%, 0% 100%);
+            background-color: rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: .5;
+        }
+
+
+        .background img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .scroll-bar {
+            width: 1280px;
+            height: 1000px;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+
+        .scroll-bar-box {
+            margin: 0px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .history_box {
+            width: 80%;
+            display: flex;
+            overflow: overlay;
+            border-radius: 40% 40% 40% 40%/25% 25% 25% 25%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .history_box img {
+            width: 100%;
+        }
+
+        .history-text-box {
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            right: -7%;
+            top: 50%;
+            padding: 20px;
+            box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .history-text-box h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            background-color: #008080;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #year {
+            color: #000000;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            text-align: center;
+            opacity: .9;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #history-text {
+            color: #000000;
+            font-family: "華康中圓體";
+            font-size: 16px;
+            text-align: justify;
+            line-height: 24px;
+            letter-spacing: 1px;
+            opacity: .6;
+            margin-top: 5px;
+        }
+
+        .history_box::-webkit-scrollbar {
+            height: 50px;
+        }
+
+        .history_box::-webkit-scrollbar-track {
+            border-radius: 200px;
+            background: linear-gradient(to right, rgba(0, 128, 128, 0.8), rgba(255, 255, 255, 0.8));
+            margin: 350px;
+        }
+
+
+
+        .history_box::-webkit-scrollbar-thumb {
+            background: conic-gradient(#05bd35 0, #16ab36 90deg, #00c234 260deg, transparent 260deg, transparent 330deg, #00c234 330deg, #05bd35 360deg);
+            border-radius: 50px;
+            box-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .history-msg {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            opacity: .7;
+            padding-left: 17%;
+        }
+
+        .history-msg::after {
+            content: "➚";
+            font-size: 60px;
+        }
+
+        #new {
+            width: 1280px;
+            height: 350px;
+            margin: 0 auto;
+            margin-top: -200px;
+        }
+
+        .new-box {
+            margin: 0px 50px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .new-box h2 {
+            margin: 20px 0px;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            opacity: .9;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .new-box h2::before {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-right: 20px;
+        }
+
+        .new-box h2::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-left: 20px;
+        }
+
+        .new_img-click {
+            width: 60%;
+            height: 60%;
+            border-radius: 80px;
+            box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        #large_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 80px;
+            position: relative;
+            z-index: -1;
+            vertical-align: top;
+        }
+
+
+        .small_img {
+            width: 20%;
+            transform: perspective(400px) rotateY(50deg);
+            position: absolute;
+            bottom: -17%;
+            clip-path: circle(30% at 25% 50%);
+            cursor: pointer;
+            opacity: .5;
+            transition: all 0.25s;
+        }
+
+        .small_img:hover {
+            width: 25%;
+            transform: perspective(400px) rotateY(0deg);
+            opacity: 1;
+            bottom: -20%;
+            z-index: 2;
+        }
+
+
+        .small_img:nth-of-type(1) {
+            left: 40%;
+        }
+
+        .small_img:nth-of-type(2) {
+            left: 48%;
+        }
+
+        .small_img:nth-of-type(3) {
+            left: 56%;
+        }
+
+        .small_img:nth-of-type(4) {
+            left: 64%;
+        }
+
+        .small_img:nth-of-type(5) {
+            left: 72%;
+        }
+
+        .new-msg {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 30px;
+            opacity: .7;
+            position: absolute;
+            bottom: -25%;
+            left: 27%
+        }
+
+        .new-msg::after {
+            content: "➚";
+            font-size: 60px;
+        }
+
+        #commodity {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        #commodity h2 {
+            margin: 30px 0px;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20%;
+            position: relative;
+            z-index: 1;
+        }
+
+        #commodity h2::before {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-right: 20px;
+        }
+
+        #commodity h2::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #008080;
+            margin-left: 20px;
+        }
+
+        .commodity-box {
+            margin: -120px 50px;
+            border-radius: 0% 0% 2% 2%/0% 0% 4% 4%;
+            margin-bottom: 20px;
+            position: relative;
+            clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .commodity_img img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .commodity-selector {
+            width: 25px;
+            height: 250px;
+            position: absolute;
+            transform: translate(-100%, 50%);
+            right: 1%;
+            bottom: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .commodity-selector span {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 25px;
+            opacity: .6;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: .6;
+            box-shadow: 3px 3px 5px #000000;
+            cursor: pointer;
+        }
+
+        .backimg {
+            position: fixed;
+            bottom: 0;
+            z-index: -1;
+            opacity: .3;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>我是</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed architecto accusamus doloribus distinctio, fuga molestiae ex excepturi corporis nostrum eveniet, blanditiis deleniti, alias ipsam rerum nemo sequi repellat dolores odio!</p>
-    <span>apple</span>
+    <header>
+        <div id="logo">
+            <img src="./img/All/logo.png" alt="logo">
+        </div>
+        <nav>
+            <a class="item" href="#">首頁</a>
+            <a class="item" href="Layout.html">園區導覽</a>
+            <a class="item" href="Platform.html">音樂交流平台</a>
+            <a class="item" href="#">旅遊指南</a>
+        </nav>
+    </header>
+   
+
+
+    <article>
+        <div class="slideshow">
+            <div class="slideshow_img">
+                <img src="img/home/slideshow/slideshow0.jpg" alt="">
+                <img src="img/home/slideshow/slideshow1.jpg" alt="">
+                <img src="img/home/slideshow/slideshow2.jpg" alt="">
+                <img src="img/home/slideshow/slideshow3.jpg" alt="">
+                <img src="img/home/slideshow/slideshow4.jpg" alt="">
+            </div>
+            <div class="slideshow-selector">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="btn btn_left" id="left"></div>
+            <div class="btn btn_right" id="right"></div>
+            <a href="#introduction" class="about">About Us</a>
+        </div>
+
+        <script type="text/javascript" src="./javascript/slideshow.js"></script>
+
+        <div id="introduction">
+            <div class="main">
+                <div class="main-box">
+                    <h1>寧韻美麗島<span>文創園區</span></h1>
+                    <div class="text-box">
+                        <div class="text-box-left">
+                            <p>寧韻美麗島文創園區是全臺第一座音樂性質的景點，於2021年開幕，占地約2公頃，座落於都市中心地帶。其中園區中心區域懸空於道路交匯處，彷彿都市空中花園，不僅只是休憩觀賞空間外，還能利用"聽"體驗環境，並感受五大主題區音樂趣味。全區皆以採用低耗能、永續循環概念，創造出舒適環境下，展現自己音樂style。
+                            </p>
+                            <p>當地美麗島近年來遊客數逾一百萬觀光人次，已經成為國際上知名的觀光勝地。由於交通流量增加，噪音問題嚴重，所以本團隊在地經營維護、音景生活進駐，以教育性質及文創商品帶動經濟發展，並兼具自然與生態保護議題，達到人與環境共存。因此我們非常感謝支持與喜愛每一位遊客。對於音樂支持，以及合作互惠，讓全世界看到這裡的故事及風景。
+                            </p>
+                        </div>
+
+                        <div class="text-box-right">
+                            <p>本團隊將音樂的創作精神及理念持續推廣，讓來到寧韻美麗島的人們感受到療癒人心、生動童趣、與環境充滿音樂娛樂與幸福的正能量，讓來玩的遊客們都能盡情的聆聽，帶著美好的回憶回家，這就是寧韻美麗島能隨時保持色彩繽紛的小秘密。寧韻美麗島並不會止步於現狀，也會不斷持續挑戰和創新。在未來將致力於4D環景的發展及推廣，更能體驗環境音樂魅力。期望成為全世界獨一無二的文創音樂產業、創造充滿異想世界的新樂園。
+                            </p>
+                            <div class="button"> <a href="Layout.html">園區導覽 ﹥</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_img">
+                <img src="./img/home/city.png" alt="city">
+                <div class="text">
+                    <h3>聲音地景(Soundscape)</h3>
+                    <p>聲音加上景觀（風景）的融合，稱「聲音地景」​或「聲音風景」，其簡稱為「音景」。主要描繪環境中聲音，包含負面音、正面音，負面音例如汽機車爆音、施工敲打、喧嘩聲等；正面音例如溪流聲、音樂、鳥鳴等。當認識一個城市，往往就以視覺性的主觀代表既定都市文化特色。錄製環境聲音，用耳朵感受城市風貌，認識更不一樣的城市。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="background">
+                <img src="./img/home/history-background.jpg" alt="history-background">
+            </div>
+            <div class="scroll-bar">
+                <div class="scroll-bar-box">
+                    <div class="history_box">
+                        <img src="./img/home/history(1).jpg" alt="history(1)">
+                        <img src="./img/home/history(2).jpg" alt="history(2)">
+                        <img src="./img/home/history(3).jpg" alt="history(3)">
+                        <img src="./img/home/history(4).jpg" alt="history(4)">
+                        <img src="./img/home/history(5).jpg" alt="history(5)">
+                    </div>
+                    <div class="history-text-box">
+                        <h2>時光隧道</h2>
+                        <h3 id="year"></h3>
+                        <p id="history-text"></p>
+                    </div>
+                    <div class="history-msg">左右滑動</div>
+                </div>
+            </div>
+        </div>
+        <div id="new">
+            <div class="new-box">
+                <h2>園區大小事</h2>
+                <div class="new_img-click">
+                    <img id="large_img" src="img/home/new/new0.jpg">
+                </div>
+                <img class="small_img" src="img/home/new/new0.jpg" alt="new0">
+                <img class="small_img" src="img/home/new/new1.jpg" alt="new1">
+                <img class="small_img" src="img/home/new/new2.jpg" alt="new2">
+                <img class="small_img" src="img/home/new/new3.jpg" alt="new3">
+                <img class="small_img" src="img/home/new/new4.jpg" alt="new4">
+                <div class="new-msg">點選觀看</div>
+            </div>
+        </div>
+
+        <div id="commodity">
+            <h2>文創商品</h2>
+            <div class="commodity-box">
+                <div class="commodity_img">
+                    <img src="./img/home/commodity/commodity0.jpg" alt="commodity0">
+                </div>
+                <div class="commodity-selector">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./javascript/commodity.js"></script>
+
+    </article>
+
+    <footer>
+        <div class="footer-box">
+            <div class="connection">
+                <h2>寧韻美麗島<span>文創園區</span></h2>
+                <p>營業時間: 08:00~22:00<br>
+                    園區地址: 999香吉市美麗區花田一路666號<br>
+                    聯絡電話: 00-123456789<br>
+                    電子信箱: NingYun@mail.com
+                </p>
+                <div class="icon-box">
+                    <div class="icon"><a href="#"><img src="./img/All/fb.png" alt="fb"></a></div>
+                    <div class="icon"><a href="#"><img src="./img/All/ig.png" alt="ig"></a></div>
+                    <div class="icon"><a href="#"><img src="./img/All/line.png" alt="line"></a></div>
+                    <div class="icon"><a href="#"><img src="./img/All/twitter.png" alt="twitter"></a></div>
+                    <div class="icon"><a href="#"><img src="./img/All/youtube.png" alt="youtube"></a></div>
+                </div>
+                <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+            </div>
+            <div class="google-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.750699106649!2d121.22461926641243!3d24.957342175137317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1625838568839!5m2!1szh-TW!2stw"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <div class="backimg">
+        <img src="./img/home/background.jpg" alt="">
+    </div>
+
+
+
+
+
 </body>
+
 </html>

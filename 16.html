@@ -12,29 +12,36 @@
             padding: 0;
         }
 
+        .boxx {
+            display: flex;
+            margin: 0 auto;
+            width: 320px;
+            height: 50px;
+            border-radius: 12.5% 12.5% 12.5% 12.5% /87.5% 87.5% 87.5% 87.5%;
+            background-color: #278989;
+            
+        }
+
         .box {
+            margin: auto;
             position: relative;
             width: 300px;
-            height: 34px;
-            background-color: aqua;
+            height: 35px;
+
+
             /* line-height: 34px;
             margin: 20px auto; */
         }
 
-        .bg {
-            position: absolute;
-            height: 100%;
-            background-color: green;
-            z-index: 1;
-        }
 
         .btn {
             position: absolute;
             top: 0;
-            width: 40px;
-            height: 34px;
-            z-index: 2;
-            background-color: red;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: conic-gradient( #00c234 260deg,transparent 260deg,transparent 330deg, #00c234 330deg);
+            z-index: 5;
             cursor: pointer;
         }
     </style>
@@ -65,7 +72,7 @@
                 document.onmouseup = function () {
                     document.onmousemove = null;
                     document.onmouseup = null;
-
+                    // btn.style.animation="none";
                 }
                 return flase;
             }
@@ -75,9 +82,10 @@
 </head>
 
 <body>
-    <div class="box">
-        <div class="btn"></div>
-        <div class="bg"></div>
+    <div class="boxx">
+        <div class="box">
+            <div class="btn"></div>
+        </div>
     </div>
 </body>
 

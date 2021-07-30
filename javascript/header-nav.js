@@ -1,4 +1,4 @@
-window.onscroll = function () {
+window.onscroll= function () {
     let t = document.documentElement.scrollTop || document.body.scrollTop;
     let logo = document.getElementById("logo");
     let header = document.getElementsByTagName("header");
@@ -41,4 +41,5 @@ window.onscroll = function () {
         }
     }
 }
+
 

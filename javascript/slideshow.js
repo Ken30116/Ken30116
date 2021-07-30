@@ -7,7 +7,7 @@ let slidetext = document.querySelector('.slideshow-text');
 let slidetitle = document.getElementById("slideshow-title")
 let slidecon = document.getElementById("slideshow-con")
 let slideimg = document.querySelector('.slideshow_img');
-let mq = window.matchMedia("(min-width: 768px)");
+let mq2 = window.matchMedia("(min-width: 768px)");
 let index = 0;
 let timer;
 span[0].style.backgroundColor = "#008080";
@@ -33,12 +33,12 @@ function show() {
         if (i == index) {
             span[index].style.backgroundColor = "#008080";
             img[index].style.width = "100%";
-            if (mq.matches) {
+            if (mq2.matches) {
                 img[index].style.transform = "scale(1)";
             }
         } else {
             span[i].style.backgroundColor = "#ffffff";
-            if (mq.matches) {
+            if (mq2.matches) {
                 img[i].style.transform = "scale(1.2)";
             }
         }
@@ -53,7 +53,7 @@ function show() {
         slidetitle.innerText = "園區主題區";
         slidecon.innerText = "-感受環境•美麗島•音景vol.1";
         slidetext.style.animation = "slidetext1 3s";
-        if (mq.matches) { } else {
+        if (mq2.matches) { } else {
             slideimg.style.animation = "slideimg1 5s forwards";
         }
     } else {
@@ -61,7 +61,7 @@ function show() {
             slidetitle.innerText = "推廣音樂教育";
             slidecon.innerText = "-體驗聲音•寧韻•音景vol.2";
             slidetext.style.animation = "slidetext2 3s";
-            if (mq.matches) { } else {
+            if (mq2.matches) { } else {
                 slideimg.style.animation = "slideimg2 5s forwards";
             }
         } else {
@@ -69,7 +69,7 @@ function show() {
                 slidetitle.innerText = "美麗島一日遊"
                 slidecon.innerText = "-享受假期•生活圈•音景vol.3"
                 slidetext.style.animation = "slidetext3 3s";
-                if (mq.matches) { } else {
+                if (mq2.matches) { } else {
                     slideimg.style.animation = "slideimg3 5s forwards";
                 }
             } else {
@@ -77,7 +77,7 @@ function show() {
                     slidetitle.innerText = "萬物之聲"
                     slidecon.innerText = "-音樂平台•交流•音景vol.4"
                     slidetext.style.animation = "slidetext2 3s";
-                    if (mq.matches) { } else {
+                    if (mq2.matches) { } else {
                         slideimg.style.animation = "slideimg2 5s forwards";
                     }
                 } else {
@@ -85,7 +85,7 @@ function show() {
                         slidetitle.innerText = "構築藝術音樂因子"
                         slidecon.innerText = "-教育領域•多元性質•音景vol.5"
                         slidetext.style.animation = "slidetext3 3s";
-                        if (mq.matches) { } else {
+                        if (mq2.matches) { } else {
                             slideimg.style.animation = "slideimg3 5s forwards";
                         }
                     }

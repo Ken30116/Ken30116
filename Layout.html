@@ -18,8 +18,8 @@
     <style>
         .title {
             background-image: url(./img/layout/shock-music.png);
-            margin-top: 1rem;
-            padding: 3rem;
+            margin-top: 0.5rem;
+            padding: 5.5rem 0 1.5rem;
             position: relative;
         }
 
@@ -28,7 +28,7 @@
             font-family: "華康墨字體";
             font-size: 1.4rem;
             text-align: center;
-            opacity: .9;
+            margin-top: -1.5rem;
         }
 
         .title h2 {
@@ -60,10 +60,9 @@
         }
 
         .breadcrumb-item {
-            color: #ffffff;
+            color: #ffffff8a;
             font-family: "華康中圓體";
             font-size: 0.6rem;
-            opacity: .6;
         }
 
         .breadcrumb-item+.breadcrumb-item::before {
@@ -76,7 +75,6 @@
             border-radius: 10px;
             display: flex;
             flex-wrap: wrap;
-            box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
         }
 
         .main-box {
@@ -94,9 +92,8 @@
             color: #008080;
             font-family: "華康墨字體";
             font-size: 1.4rem;
-            opacity: .9;
             border-bottom: 0.1rem solid rgba(0, 128, 128, 0.7);
-            margin-top: 0.4rem;
+            margin-top: 1.5rem;
         }
 
         .btn-box {
@@ -108,24 +105,24 @@
         .btn {
             border: 0.1rem solid rgba(0, 128, 128, 0.5);
             border-radius: 0.2rem;
-            width: 1.5rem;
             text-align: right;
+            margin-top: 0.5rem;
             cursor: pointer;
-
         }
 
         .btn span {
+            display: inline-block;
             color: #008080;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
+            font-size: 0.7rem;
             text-align: center;
-            display: inline-block;
-            padding: 0.3rem;
+            writing-mode: vertical-lr;
+            padding: 1.4rem 0.6rem 0.4rem;
         }
 
         .btn:hover {
             border: 0.1rem solid #00c234;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.4);
         }
 
         .btn:hover span {
@@ -166,8 +163,8 @@
             width: 60%;
             position: absolute;
             transform: translate(-50%, -50%);
-            left: -0.1rem;
-            top: 50%;
+            left: 50%;
+            top: 10%;
         }
 
         .btn-img img {
@@ -176,7 +173,7 @@
 
         .map-box {
             width: 100%;
-            height: 23rem;
+            height: 38rem;
             position: relative;
             background: rgba(255, 255, 255, 0.7);
             box-sizing: border-box;
@@ -256,8 +253,7 @@
 
         .text {
             font-family: "華康中圓體";
-            font-size: 0.8rem;
-            opacity: .9;
+            font-size: 0.7rem;
             display: none;
             position: relative;
             z-index: 2;
@@ -283,7 +279,7 @@
             background-color: #000000;
             transform: translateX(-50%);
             position: absolute;
-            top: 550%;
+            top: 560%;
             left: 50%;
             z-index: 2;
         }
@@ -298,8 +294,8 @@
         #text_wood {
             color: #46a12b;
             position: absolute;
-            top: -30%;
-            right: 15%;
+            top: -26%;
+            right: 17%;
         }
 
         #text_water {
@@ -326,7 +322,7 @@
         .compass {
             width: 5rem;
             position: absolute;
-            bottom: 45%;
+            bottom: 61%;
             left: 10%;
             opacity: 0.5;
         }
@@ -350,22 +346,23 @@
             color: #008080;
             font-family: "華康墨字體";
             font-size: 1.4rem;
-            opacity: .9;
             border-bottom: 0.1rem solid rgba(0, 128, 128, 0.7);
             margin: 0 auto 1rem;
         }
 
         .knowledge-text {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-evenly;
         }
 
         .knowledge-text-box {
-            width: 30%;
+            width: 80%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 0.2rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
             box-sizing: border-box;
             border: 0.1rem solid rgba(0, 128, 128, 0.1);
         }
@@ -373,11 +370,11 @@
         .knowledge-text-box a {
             color: #008080;
             font-family: "華康中圓體";
-            font-size: 0.6rem;
-            padding: 0.3rem;
+            text-align: center;
+            font-size: 0.7rem;
+            padding: 0.4rem 1rem;
             border: 0.1rem solid #008080;
             border-radius: 0.1rem;
-            opacity: .6;
         }
 
         .knowledge-text-box a:hover {
@@ -388,13 +385,12 @@
 
         .knowledge-text-box p {
             width: 100%;
-            color: #000000;
+            color: #000000a1;
             font-family: "華康中圓體";
             font-size: 0.6rem;
             text-align: center;
-            line-height: 1rem;
-            opacity: .6;
-
+            line-height: 0.4rem;
+            margin-top: 0.5rem;
         }
 
         .knowledge-mascot {
@@ -459,12 +455,16 @@
                 width: 370px;
             }
 
+            .map-box {
+                height: 39rem;
+            }
+
             .text::after {
                 height: 100px;
             }
 
             .text::before {
-                top: 650%;
+                top: 760%;
             }
 
             #text_gold {
@@ -474,15 +474,15 @@
 
             #text_wood {
                 top: -25%;
-                right: 20%;
+                right: 22%;
             }
 
             #text_water {
-                top: -30%;
+                top: -35%;
             }
 
             .compass {
-                bottom: 40%;
+                bottom: 58%;
             }
 
             .compass img {
@@ -500,6 +500,10 @@
         }
 
         @media screen and (min-width: 640px) {
+            .breadcrumb-item {
+                font-size: 0.5rem;
+            }
+
             .btn {
                 width: 15%;
                 box-shadow: 0px 0.3rem 0.05rem rgba(0, 122, 128, 0.5);
@@ -507,6 +511,8 @@
             }
 
             .btn span {
+                font-size: 0.6rem;
+                writing-mode: horizontal-tb;
                 padding: 0.5rem 0.6rem;
             }
 
@@ -548,62 +554,33 @@
             }
 
             #btn_gold:hover {
-                top: 29%;
+                top: 34%;
                 box-shadow: 0 0 0.3rem #ffc909, inset 0 0 0.3rem #ffc909;
                 border: none;
             }
 
             #btn_wood:hover {
-                top: 29%;
+                top: 34%;
                 box-shadow: 0 0 0.3rem #46a12b, inset 0 0 0.3rem #46a12b;
                 border: none;
             }
 
             #btn_water:hover {
-                top: 29%;
+                top: 34%;
                 box-shadow: 0 0 0.3rem #00b7e4, inset 0 0 0.3rem #00b7e4;
                 border: none;
             }
 
             #btn_fire:hover {
-                top: 29%;
+                top: 34%;
                 box-shadow: 0 0 .3rem #ea0000, inset 0 0 .3rem #ea0000;
                 border: none;
             }
 
             #btn_terra:hover {
-                top: 29%;
+                top: 34%;
                 box-shadow: 0 0 0.3rem #d64d00, inset 0 0 .3rem #d64d00;
                 border: none;
-            }
-
-            map {
-                top: 20%;
-            }
-
-            #control-map {
-                top: 20%;
-            }
-
-            .all-theme {
-                top: 20%;
-            }
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
-    <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
-    <style>
-        @media screen and (min-width: 768px) {
-            .btn-img {
-                left: 0.8rem;
-            }
-
-            .map-box {
-                height: 25rem;
-            }
-
-            .map-box img {
-                width: 656px;
             }
 
             .map-box {
@@ -611,15 +588,85 @@
             }
 
             map {
-                top: 22%;
+                top: 9%;
             }
 
             #control-map {
-                top: 22%;
+                top: 9%;
             }
 
             .all-theme {
-                top: 22%;
+                top: 9%;
+            }
+
+            .compass {
+                bottom: 63%;
+            }
+
+            .compass img {
+                width: 100%;
+            }
+
+            .knowledge-text-box a {
+                font-size: 0.6rem;
+                margin-bottom: 0.5rem;
+                padding: 0.4rem 0.6rem;
+                border: 0.1rem solid rgba(0, 128, 128, 0.5);
+                border-radius: 0.2rem;
+                box-shadow: 0px 0.3rem 0.05rem rgba(0, 122, 128, 0.5);
+                position: relative;
+                transition: top 0.2s, box-shadow 0.3s;
+            }
+
+            .knowledge-text-box a:hover {
+                box-shadow: 0 0 0.3rem #008080, inset 0 0 0.3rem #008080;
+                border: none;
+                background-color: transparent;
+                top: 0.35rem;
+                margin-top: 0.2rem;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
+    <style>
+        @media screen and (min-width: 768px) {
+
+            .title {
+                margin-top: 3rem;
+            }
+
+            .title h1 {
+                margin-top: -1.8rem;
+            }
+
+            .btn-img {
+                left: 0.8rem;
+            }
+
+            .map-box {
+                height: 38rem;
+            }
+
+            .map-box img {
+                width: 656px;
+            }
+
+            map {
+                top: 14%;
+            }
+
+            #control-map {
+                top: 14%;
+            }
+
+            .all-theme {
+                top: 14%;
+            }
+
+            .text {
+                font-size: 1rem;
             }
 
             .text::after {
@@ -628,7 +675,7 @@
 
             .text::before {
                 content: "";
-                top: 1000%;
+                top: 800%;
             }
 
             #text_gold {
@@ -638,7 +685,7 @@
 
             #text_wood {
                 top: -18%;
-                right: 30%;
+                right: 27%;
             }
 
             #text_water {
@@ -658,11 +705,20 @@
 
             .compass {
                 width: 7rem;
-                bottom: 30%;
+                bottom: 42%;
             }
 
             .compass img {
                 width: 100%;
+            }
+
+            .knowledge-text-box {
+                width: 30%;
+                margin-top: 0.4rem;
+            }
+
+            .knowledge-text-box a {
+                padding: 0.4rem 0.8rem;
             }
 
             .knowledge-mascot {
@@ -684,7 +740,7 @@
 
             .text::before {
                 content: "";
-                top: 900%;
+                top: 730%;
             }
         }
 
@@ -693,13 +749,19 @@
                 font-size: 27px;
             }
 
+            .title {
+                padding: 4.5rem 0 1.5rem;
+            }
+
             .layout-box {
                 flex-wrap: nowrap;
+                box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
+                margin-bottom: 10rem;
             }
 
             .main-box {
                 width: 30%;
-                height: 700px;
+                height: 630px;
                 background: linear-gradient(to right, #ffffff 0%, #e7e7e7 55%, #c3c3c2 80%, #9a9a9a 93%, #6e6c6d 99%, #444243 100%);
             }
 
@@ -714,51 +776,51 @@
             #btn_gold {
                 transform: translateX(-50%);
                 left: 50%;
-                top: 5%;
+                top: 0%;
             }
 
             #btn_wood {
                 transform: translateX(-50%);
                 left: 50%;
-                top: 21%;
+                top: 16%;
             }
 
             #btn_water {
                 transform: translateX(-50%);
                 left: 50%;
-                top: 37%;
+                top: 32%;
             }
 
             #btn_fire {
                 transform: translateX(-50%);
                 left: 50%;
-                top: 53%;
+                top: 48%;
             }
 
             #btn_terra {
                 transform: translateX(-50%);
                 left: 50%;
-                top: 69%;
+                top: 64%;
             }
 
             #btn_gold:hover {
-                top: 7%;
+                top: 2%;
             }
 
             #btn_wood:hover {
-                top: 23%;
+                top: 18%;
             }
 
             #btn_water:hover {
-                top: 39%;
+                top: 34%;
             }
 
             #btn_fire:hover {
-                top: 55%;
+                top: 50%;
             }
 
             #btn_terra:hover {
-                top: 71%;
+                top: 66%;
             }
 
             .map-box {
@@ -771,13 +833,67 @@
                 right: 5%;
             }
 
+            map {
+                top: 20%;
+            }
+
+            #control-map {
+                top: 20%;
+            }
+
+            .all-theme {
+                top: 20%;
+            }
+
             .text::before {
                 content: "";
-                top: 840%;
+                top: 680%;
+            }
+
+            #text_gold {
+                right: 20%;
             }
 
             #text_wood {
-                right: 27%;
+                top: -20%;
+                right: 23%;
+            }
+
+            #text_water {
+                right: 40%;
+            }
+
+            #text_fire {
+                right: 25%;
+            }
+
+            #text_terra {
+                right: 45%;
+            }
+
+            .compass {
+                bottom: 18%;
+            }
+
+            .compass img {
+                width: 100%;
+            }
+
+            .knowledge {
+                background-color: #c3d6d5;
+                bottom: -30%;
+                left: 55%;
+                box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
+                padding: 1rem 0;
+            }
+
+            .knowledge-text-box {
+                border: none;
+                padding: 0;
+            }
+
+            .knowledge-text-box p {
+                font-size: 0.5rem;
             }
         }
 
@@ -786,10 +902,20 @@
                 font-size: 30px;
             }
 
+            .title {
+                margin-top: 5rem;
+                padding: 3.8rem 0 1.5rem;
+            }
+
             .text::before {
                 content: "";
-                top: 740%;
+                top: 610%;
             }
+
+            #text_wood {
+                right: 20%;
+            }
+
         }
     </style>
 </head>
