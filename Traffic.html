@@ -118,7 +118,7 @@
 
         .choose-text {
             width: 30vw;
-            height:30vw;
+            height: 30vw;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -213,8 +213,9 @@
         #first {
             max-width: 1180px;
             width: 100%;
+            display: none;
             margin: 0 auto 2rem;
-            padding:8rem 0
+            padding: 8rem 0
         }
 
         .first-content-high {
@@ -358,7 +359,7 @@
             margin: 0 auto;
             opacity: .2;
             position: absolute;
-            top: 18%;
+            top: 6%;
             right: 12%;
             cursor: pointer;
             animation: btn_infinite2 1.5s infinite;
@@ -389,19 +390,19 @@
             0% {
                 opacity: 1;
                 border-top: 1rem solid #00c234;
-                top: 18%;
+                top: 6%;
             }
 
             50% {
                 opacity: 1;
                 border-top: 0.7rem solid #00c234;
-                top: 22%;
+                top: 10%;
             }
 
             100% {
                 opacity: 1;
                 border-top: 1rem solid #00c234;
-                top: 18%;
+                top: 6%;
             }
         }
 
@@ -536,7 +537,7 @@
         .time-page {
             width: 6%;
             position: absolute;
-            bottom: 26.5%;
+            bottom: 30%;
             left: 75%;
             z-index: 0;
             transition: 1s;
@@ -742,6 +743,7 @@
         #second {
             max-width: 1180px;
             width: 100%;
+            display: none;
             margin: 0 auto 2rem;
             padding: 8rem 0;
         }
@@ -766,6 +768,7 @@
 
         .second-top {
             height: 2rem;
+            margin-bottom: 3rem;
         }
 
         .second-top-btn {
@@ -1217,8 +1220,9 @@
         #thirt {
             max-width: 1180px;
             width: 100%;
+            display: none;
             margin: 0 auto 2rem;
-            padding-top: 2.5rem;
+            padding: 8rem 0;
         }
 
         .thirt-content-high {
@@ -1241,6 +1245,7 @@
 
         .thirt-top {
             height: 2rem;
+            margin-bottom: 1rem;
         }
 
         .thirt-top-btn {
@@ -1342,9 +1347,10 @@
 
         .thirt-title {
             display: flex;
+            flex-direction: column;
             padding: 1rem;
-            margin: 2rem 0 1rem;
             position: relative;
+            align-items: center;
             justify-content: space-between;
         }
 
@@ -1352,6 +1358,7 @@
             color: rgba(0, 125, 125, .3);
             font-family: "華康墨字體";
             font-size: 1rem;
+            margin-bottom: 2rem;
         }
 
         @keyframes text {
@@ -1367,21 +1374,23 @@
         .min {
             color: rgba(0, 125, 125, .3);
             font-family: "華康墨字體";
-            font-size: 0.8rem;
+            font-size: 0.5rem;
             position: absolute;
-            top: 0;
         }
 
         #min1 {
-            left: 18%;
+            left: 32%;
+            top: 18%;
         }
 
         #min2 {
-            left: 45%;
+            left: 32%;
+            top: 40%;
         }
 
         #min3 {
-            left: 72%;
+            left: 32%;
+            top: 62%;
         }
 
         @keyframes min {
@@ -1395,7 +1404,7 @@
         }
 
         #min1-train {
-            left: 18%;
+            left: 16%;
         }
 
         #min2-train {
@@ -1412,54 +1421,57 @@
             font-size: 0.8rem;
             position: absolute;
             transform: translateY(-50%);
-            top: 50%
+            transform: rotate(90deg);
         }
 
         #path1 {
-            left: 11%;
+            top: 16%;
+            left: 47%;
         }
 
         #path2 {
-            left: 39%;
+            top: 37%;
+            left: 47%;
         }
 
         #path3 {
-            left: 66%;
+            top: 57%;
+            left: 47%;
         }
 
         @keyframes path1 {
             form {
                 color: #00c234;
-                left: 11%;
+                top: 17%;
             }
 
             to {
                 color: #00c234;
-                left: 27%;
+                top: 23%;
             }
         }
 
         @keyframes path2 {
             form {
                 color: #00c234;
-                left: 39%;
+                top: 37%;
             }
 
             to {
                 color: #00c234;
-                left: 53%;
+                top: 43%;
             }
         }
 
         @keyframes path3 {
             form {
                 color: #00c234;
-                left: 66%;
+                top: 57%;
             }
 
             to {
                 color: #00c234;
-                left: 82%;
+                top: 63%;
             }
         }
 
@@ -1512,7 +1524,7 @@
         }
 
         .thirt-box {
-            width: 60%;
+            width: 100%;
             margin: 0 auto;
             position: relative;
         }
@@ -1761,40 +1773,40 @@
         .top {
             position: fixed;
             display: none;
-            transform: scaleY(2),translateY(-50%);
+            transform: scaleY(2), translateY(-50%);
             bottom: 50%;
             right: 2%;
-           
+
         }
 
         @keyframes top {
-            from{
+            from {
                 border-bottom: 1rem solid #00c234;
-              top:0.5rem;
+                top: 0.5rem;
             }
 
-            to{
+            to {
                 border-bottom: 1rem solid #00c234;
                 top: 0;
             }
         }
 
         @keyframes top_before {
-            from{
+            from {
                 background-color: #00c234;
             }
 
-            to{
+            to {
                 background-color: #00c234;
             }
         }
 
         @keyframes top_span {
-            from{
+            from {
                 color: #00c234;
             }
 
-            to{
+            to {
                 color: #00c234;
             }
         }
@@ -1821,7 +1833,7 @@
             top: 1rem;
         }
 
-        .top:hover .top-btn{
+        .top:hover .top-btn {
             border-bottom: 1rem solid #00c234;
             opacity: 1;
         }
@@ -1838,7 +1850,7 @@
             bottom: 120%;
         }
 
-        .top:hover span{
+        .top:hover span {
             color: #00c234;
         }
 
@@ -3679,11 +3691,12 @@
             }
 
             .title-box h1::after {
-            margin-left: 3rem;
-        }
-        .title-box h1::before {
-            margin-right: 3rem;
-        }
+                margin-left: 3rem;
+            }
+
+            .title-box h1::before {
+                margin-right: 3rem;
+            }
         }
 
         @media screen and (min-width: 640px) {
@@ -3697,39 +3710,168 @@
     <style>
         @media screen and (min-width: 768px) {
             .choose-box {
-            height: 8rem;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            margin-bottom: 0;
-        }
-        .choose-text {
-            width: 12vw;
-            height: 12vw;
-            margin: 0;
-        }
+                height: 8rem;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                margin-bottom: 0;
+            }
 
-        .choose-text span {
-            font-size: 0.8rem;
-        }
+            .choose-text {
+                width: 12vw;
+                height: 12vw;
+                margin: 0;
+            }
 
-        #first {
-            padding: 2.5rem 0 0;
-        }
+            .choose-text span {
+                font-size: 0.8rem;
+            }
 
-        .first-top {
-            margin-bottom: 0;
-        }
+            #first {
+                padding: 2.5rem 0 0;
+            }
 
-        .first-bakimg-btn {
-            right: 15.5%;
-        }
+            .first-top {
+                margin-bottom: 0;
+            }
 
-        #second {
-            max-width: 1180px;
-            width: 100%;
-            margin: 0 auto 2rem;
-            padding-top: 2.5rem;
-        }
+            .first-bakimg-btn {
+                top: 18%;
+                right: 15.5%;
+            }
+
+            @keyframes btn_infinite2 {
+                0% {
+                    opacity: 1;
+                    border-top: 1rem solid #00c234;
+                    top: 18%;
+                }
+
+                50% {
+                    opacity: 1;
+                    border-top: 0.7rem solid #00c234;
+                    top: 22%;
+                }
+
+                100% {
+                    opacity: 1;
+                    border-top: 1rem solid #00c234;
+                    top: 18%;
+                }
+            }
+
+            .time-page {
+                bottom: 26.5%;
+            }
+
+            #second {
+                max-width: 1180px;
+                width: 100%;
+                margin: 0 auto 2rem;
+                padding-top: 2.5rem;
+            }
+
+            .second-top {
+                margin-bottom: 0;
+            }
+
+            #thirt {
+                padding: 2.5rem 0 0;
+            }
+
+            .thirt-top {
+                margin-bottom: 0;
+            }
+
+            .thirt-title {
+                flex-direction: row;
+                align-items: stretch;
+                margin: 2rem 0 1rem;
+            }
+
+            .text {
+                margin-bottom: 0rem;
+            }
+
+            .min {
+                font-size: 0.8rem;
+            }
+
+            #min1 {
+                top: 0;
+                left: 18%;
+            }
+
+            #min2 {
+                top: 0;
+                left: 45%;
+            }
+
+            #min3 {
+                top: 0;
+                left: 72%;
+            }
+
+            .thirt-box {
+                width: 60%;
+            }
+
+            .path {
+                transform: rotate(0deg);
+            }
+
+            #path1 {
+                top: 50%;
+                left: 11%;
+            }
+
+            #path2 {
+                top: 50%;
+                left: 39%;
+            }
+
+            #path3 {
+                top: 50%;
+                left: 66%;
+            }
+
+            @keyframes path1 {
+                form {
+                    color: #00c234;
+                    left: 11%;
+                }
+
+                to {
+                    color: #00c234;
+                    left: 27%;
+                }
+            }
+
+            @keyframes path2 {
+                form {
+                    color: #00c234;
+                    left: 39%;
+                }
+
+                to {
+                    color: #00c234;
+                    left: 53%;
+                }
+            }
+
+            @keyframes path3 {
+                form {
+                    color: #00c234;
+                    left: 66%;
+                }
+
+                to {
+                    color: #00c234;
+                    left: 82%;
+                }
+            }
+
+
+
         }
 
         @media screen and (min-width: 1024px) {
@@ -3749,8 +3891,6 @@
                 font-size: 30px;
             }
         }
-
-        
     </style>
 </head>
 

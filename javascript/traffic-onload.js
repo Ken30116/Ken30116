@@ -1,5 +1,8 @@
 window.onload = function () {
     let mq = window.matchMedia("(min-width: 768px)");
+    let first = document.getElementById("first");
+    let second = document.getElementById("second");
+    let thirt = document.getElementById("thirt");
     let high = document.getElementById("high");
     let train = document.getElementById("train");
     let car = document.getElementById("car");
@@ -130,6 +133,9 @@ window.onload = function () {
     }
 
     high.onclick = function () {
+        first.style.display = "block";
+        second.style.display = "block";
+        thirt.style.display = "block";
         first_high[0].style.display = "block";
         second_high[0].style.display = "block";
         thirt_high[0].style.display = "block";
@@ -142,6 +148,9 @@ window.onload = function () {
     }
 
     train.onclick = function () {
+        first.style.display = "block";
+        second.style.display = "block";
+        thirt.style.display = "block";
         first_high[0].style.display = "none";
         second_high[0].style.display = "none";
         thirt_high[0].style.display = "none";
@@ -154,6 +163,9 @@ window.onload = function () {
     }
 
     car.onclick = function () {
+        first.style.display = "block";
+        second.style.display = "block";
+        thirt.style.display = "block";
         first_high[0].style.display = "none";
         second_high[0].style.display = "none";
         thirt_high[0].style.display = "none";
@@ -200,6 +212,9 @@ window.onload = function () {
         first_car[0].style.display = "none";
         second_car[0].style.display = "none";
         thirt_car[0].style.display = "none";
+        first.style.display = "none";
+        second.style.display = "none";
+        thirt.style.display = "none";
     }
 
     first_top_t[0].onclick = function () {
@@ -469,12 +484,9 @@ window.onload = function () {
         first_car[0].style.display = "none";
         second_car[0].style.display = "none";
         thirt_car[0].style.display = "none";
+        first.style.display = "none";
+        second.style.display = "none";
+        thirt.style.display = "none";
     }
 
-    if (mq.matches) {
-
-    }
-    else {
-
-    }
 }
