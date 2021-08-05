@@ -69,7 +69,7 @@ window.onload = function () {
     let mascot3_1 = document.getElementsByClassName("mascot3-1");
     let mascot3_1_t = document.getElementsByClassName("mascot3-1-train");
     let thirt_logo = document.getElementsByClassName("thirt-logo");
-    let thirt_exit= document.getElementsByClassName("thirt-exit");
+    let thirt_exit = document.getElementsByClassName("thirt-exit");
     let thirt_top = document.getElementsByClassName("thirt-top-btn");
     let thirt_top_t = document.getElementsByClassName("thirt-top-btn-train");
     let thirt_top_c = document.getElementsByClassName("thirt-top-btn-car");
@@ -77,9 +77,45 @@ window.onload = function () {
     let carimg_3_s2 = document.getElementsByClassName("carimg-3-s2");
     let carimg_3_b = document.getElementsByClassName("carimg-3-b");
     let thirt_logo_car = document.getElementsByClassName("thirt-logo-car");
-    let TOP=document.getElementsByClassName("top");
-    let top_btn=document.getElementsByClassName("top-btn");
-    let top_span=document.querySelector(".top span");
+    let TOP = document.getElementsByClassName("top");
+    let top_btn = document.getElementsByClassName("top-btn");
+    let top_span = document.querySelector(".top span");
+
+    if (mq.matches) {
+        first_bakimg[0].onclick = function () {
+            time_page[0].style.width = "40%";
+            time_page[0].style.bottom = "-45%";
+            time_page[0].style.left = "60%";
+            time_page[0].style.zIndex = "100";
+            time_btn.style.fontSize = "1rem";
+        }
+
+        first_bakimg2[0].onclick = function () {
+            time_page[0].style.width = "40%";
+            time_page[0].style.bottom = "-45%";
+            time_page[0].style.left = "60%";
+            time_page[0].style.zIndex = "100";
+            time_btn.style.fontSize = "1rem";
+        }
+    }
+    else {
+        first_bakimg[0].onclick = function () {
+            time_page[0].style.width = "100%";
+            time_page[0].style.bottom = "-150%";
+            time_page[0].style.left = "0%";
+            time_page[0].style.zIndex = "100";
+            time_btn.style.fontSize = "1rem";
+        }
+
+        first_bakimg2[0].onclick = function () {
+            time_page[0].style.width = "100%";
+            time_page[0].style.bottom = "-150%";
+            time_page[0].style.left = "0%";
+            time_page[0].style.zIndex = "100";
+            time_btn.style.fontSize = "1rem";
+        }      
+
+    }
 
     for (var i = 0; i < 3; i++) {
         choose[i].onclick = function () {
@@ -216,22 +252,6 @@ window.onload = function () {
         thirt_car[0].style.display = "none";
     }
 
-    first_bakimg[0].onclick = function () {
-        time_page[0].style.width = "40%";
-        time_page[0].style.bottom = "-45%";
-        time_page[0].style.left = "60%";
-        time_page[0].style.zIndex = "100";
-        time_btn.style.fontSize = "1rem";
-    }
-
-    first_bakimg2[0].onclick = function () {
-        time_page[0].style.width = "40%";
-        time_page[0].style.bottom = "-45%";
-        time_page[0].style.left = "60%";
-        time_page[0].style.zIndex = "100";
-        time_btn.style.fontSize = "1rem";
-    }
-
     time_btn.onclick = function () {
         time_page[0].style.width = "6%";
         time_page[0].style.bottom = "26.5%";
@@ -288,8 +308,8 @@ window.onload = function () {
     }
 
     first_bottom_c[0].onclick = function () {
-        carimg_2_s1[0].style.animation ="car-right2 3s 1s forwards, car_shock 0.2s infinite";
-        carimg_2_f[0].style.animation ="car-bottom1 1s 4s forwards, car_shock 0.2s infinite";
+        carimg_2_s1[0].style.animation = "car-right2 3s 1s forwards, car_shock 0.2s infinite";
+        carimg_2_f[0].style.animation = "car-bottom1 1s 4s forwards, car_shock 0.2s infinite";
         second_bottom_c[0].style.display = "block";
         carimg_1_s1[0].style.animation = "none";
         first_bottom_c[0].style.display = "none";
@@ -321,8 +341,8 @@ window.onload = function () {
     }
 
     second_top_c[0].onclick = function () {
-        carimg_2_s1[0].style.animation ="none";
-        carimg_2_f[0].style.animation ="none";
+        carimg_2_s1[0].style.animation = "none";
+        carimg_2_f[0].style.animation = "none";
         second_bottom_c[0].style.display = "none";
         carimg_1_s1[0].style.animation = "car-right1 3s 1s forwards,car_shock  0.2s infinite";
         first_bottom_c[0].style.display = "block";
@@ -341,8 +361,8 @@ window.onload = function () {
         path3.style.animation = "path3 3s 7s steps(5, start)";
         mascot3_1[0].style.animation = "mascot_path 9s 1s linear forwards";
         thirt_logo[0].style.animation = "thirt_logo 1s 9s forwards cubic-bezier(.86,-0.05,1,1.53)";
-        top_btn[0].style.animation="top 1s 10.5s infinite";
-        top_span.style.animation="top_span 1s 10.5s infinite";
+        top_btn[0].style.animation = "top 1s 10.5s infinite";
+        top_span.style.animation = "top_span 1s 10.5s infinite";
         $('head').append("<style>.top-btn::before{ animation:top_before 1s 10.5s infinite }</style>");
     }
 
@@ -359,26 +379,26 @@ window.onload = function () {
         path3_t.style.animation = "path3-train 3s 7s steps(5, start)";
         mascot3_1_t[0].style.animation = "mascot_path2  9s 1s linear forwards";
         thirt_exit[0].style.animation = "thirt_exit 1s 9s infinite";
-        second_bottom_t[0].style.display="none";
+        second_bottom_t[0].style.display = "none";
         mrt[0].style.animation = "none";
         mrtdoor_left[0].style.animation = "none";
         mrtdoor_right[0].style.animation = "none";
         mascot2_4_t[0].style.animation = "none";
-        top_btn[0].style.animation="top 1s 10.5s infinite";
-        top_span.style.animation="top_span 1s 10.5s infinite";
+        top_btn[0].style.animation = "top 1s 10.5s infinite";
+        top_span.style.animation = "top_span 1s 10.5s infinite";
         $('head').append("<style>.top-btn::before{ animation:top_before 1s 10.5s infinite }</style>");
     }
 
     second_bottom_c[0].onclick = function () {
-        carimg_3_f[0].style.animation="car-bottom2 1s 1s forwards,car_shock 0.2s infinite";
-        carimg_3_s2[0].style.animation="car-left1 2s 2s forwards, car_shock 0.2s infinite";
-        carimg_3_b[0].style.animation="car-top1 1s 4s forwards,car_shock 0.2s infinite";
-        thirt_logo_car[0].style.animation="thirt_logo  1s 4.5s forwards";
-        carimg_2_s1[0].style.animation ="none";
-        carimg_2_f[0].style.animation ="none";
+        carimg_3_f[0].style.animation = "car-bottom2 1s 1s forwards,car_shock 0.2s infinite";
+        carimg_3_s2[0].style.animation = "car-left1 2s 2s forwards, car_shock 0.2s infinite";
+        carimg_3_b[0].style.animation = "car-top1 1s 4s forwards,car_shock 0.2s infinite";
+        thirt_logo_car[0].style.animation = "thirt_logo  1s 4.5s forwards";
+        carimg_2_s1[0].style.animation = "none";
+        carimg_2_f[0].style.animation = "none";
         second_bottom_c[0].style.display = "none";
-        top_btn[0].style.animation="top 1s 5s infinite";
-        top_span.style.animation="top_span 1s 5s infinite";
+        top_btn[0].style.animation = "top 1s 5s infinite";
+        top_span.style.animation = "top_span 1s 5s infinite";
         $('head').append("<style>.top-btn::before{ animation:top_before 1s 5s infinite }</style>");
     }
 
@@ -395,8 +415,8 @@ window.onload = function () {
         path3.style.animation = "none";
         mascot3_1[0].style.animation = "none";
         thirt_logo[0].style.animation = "none";
-        top_btn[0].style.animation="none";
-        top_span.style.animation="none";
+        top_btn[0].style.animation = "none";
+        top_span.style.animation = "none";
         $('head').append("<style>.top-btn::before{ animation:none }</style>");
     }
 
@@ -413,32 +433,32 @@ window.onload = function () {
         path3_t.style.animation = "none";
         mascot3_1_t[0].style.animation = "none";
         thirt_exit[0].style.animation = "none";
-        second_bottom_t[0].style.display="block";
+        second_bottom_t[0].style.display = "block";
         mrt[0].style.animation = "mrt 3s 4s forwards";
         mrtdoor_left[0].style.animation = "door 4s forwards";
         mrtdoor_right[0].style.animation = "door 4s forwards";
         mascot2_4_t[0].style.animation = "mascot_left2 3s 1s forwards";
-        top_btn[0].style.animation="none";
-        top_span.style.animation="none";
+        top_btn[0].style.animation = "none";
+        top_span.style.animation = "none";
         $('head').append("<style>.top-btn::before{ animation:none }</style>");
     }
 
     thirt_top_c[0].onclick = function () {
-        carimg_3_f[0].style.animation="none";
-        carimg_3_s2[0].style.animation="none";
-        carimg_3_b[0].style.animation="none";
-        thirt_logo_car[0].style.animation="none";
-        carimg_2_s1[0].style.animation ="car-right2 3s 1s forwards, car_shock 0.2s infinite";
-        carimg_2_f[0].style.animation ="car-bottom1 1s 4s forwards, car_shock 0.2s infinite";
+        carimg_3_f[0].style.animation = "none";
+        carimg_3_s2[0].style.animation = "none";
+        carimg_3_b[0].style.animation = "none";
+        thirt_logo_car[0].style.animation = "none";
+        carimg_2_s1[0].style.animation = "car-right2 3s 1s forwards, car_shock 0.2s infinite";
+        carimg_2_f[0].style.animation = "car-bottom1 1s 4s forwards, car_shock 0.2s infinite";
         second_bottom_c[0].style.display = "block";
-        top_btn[0].style.animation="none";
-        top_span.style.animation="none";
+        top_btn[0].style.animation = "none";
+        top_span.style.animation = "none";
         $('head').append("<style>.top-btn::before{ animation:none }</style>");
     }
 
-    TOP[0].onclick =  function () {
-        top_btn[0].style.animation="none";
-        top_span.style.animation="none";
+    TOP[0].onclick = function () {
+        top_btn[0].style.animation = "none";
+        top_span.style.animation = "none";
         $('head').append("<style>.top-btn::before{ animation:none }</style>");
         first_high[0].style.display = "none";
         second_high[0].style.display = "none";
