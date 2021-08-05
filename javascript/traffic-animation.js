@@ -1,19 +1,14 @@
 window.onscroll = function () {
     let t = document.documentElement.scrollTop || document.body.scrollTop;
+    let h=document.documentElement.scrollHeight || document.body.scrollHeight;
     let logo = document.getElementById("logo");
     let header = document.getElementsByTagName("header");
     let item = document.getElementsByClassName("item");
     let nav = document.getElementsByTagName("nav");
     let menu = document.getElementById("menu");
     let mq = window.matchMedia("(min-width: 768px)");
-    let choose = document.getElementsByClassName("choose-text");
     let TOP = document.getElementsByClassName("top");
-
-
-    choose[0].onmousedown = function () {
-        choose[0].style.transform = "scale(1.2)";
-    };
-    
+  
     if (mq.matches) {
         
         if (t >= 300) {
@@ -48,6 +43,11 @@ window.onscroll = function () {
             menu.style.border = "none";
             header[0].style.justifyContent = "space-between";
             header[0].style.backgroundColor = "rgba(0,128,128,.2)";
+        }
+        if (t >= 200) {
+            TOP[0].style.display="block";
+        } else {
+            TOP[0].style.display="none";
         }
     }
 }
