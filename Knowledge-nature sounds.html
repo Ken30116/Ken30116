@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./css/footer-phone.css">
     <script type="text/javascript" src="./javascript/header-nav.js"></script>
     <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <script type="text/javascript" src="./javascript/music-knowledge.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
     <style>
@@ -175,6 +176,16 @@
             transform: rotate(-45deg);
         }
 
+        .main_imgwater_hidden {
+            width: 100%;
+            height: 100%;
+            border-radius: 8.75rem 0 8.75rem 8.75rem;
+            position: relative;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
         .main:nth-of-type(1) .main-box .main_imgwater {
             margin-left: auto;
         }
@@ -194,18 +205,193 @@
             margin-left: -5%;
         }
 
-        .main_imgwater img:last-child {
-            width: 100%;
-            margin-top: -20%;
+        .musicimg1 {
+            width: 500%;
+            margin-left: -380%;
         }
 
-        .main_imgwater img:first-child {
+        .musicimg2 {
+            width: 500%;
+            margin-left: -380%;
+        }
+
+        @keyframes musicshow {
+            from {
+                margin-left: -380%;
+            }
+
+            to {
+                margin-left: 0%;
+            }
+        }
+
+        .main_imgwater_top img {
             width: 150%;
             position: absolute;
             transform: rotate(35deg);
             top: -20%;
             left: -30%;
             z-index: 2;
+        }
+
+        .music-box {
+            text-align: center;
+            position: absolute;
+            transform: rotate(45deg);
+            top: 50%;
+            left: 50%;
+        }
+
+        .music-box p {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .music-box-3 {
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            text-align: center;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 5%;
+            left: 50%;
+        }
+
+        .music-box-3 p {
+            width: 100%;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #play-pause-1 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-1::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-2 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-2::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-3-1 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-3-1::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-3-2 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-3-2::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        .play::after {
+            content: "";
+            width: 1.2rem;
+            height: 1.2rem;
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+            background-color: #ffffff;
+            opacity: .7;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 55%;
+        }
+
+        .pause::after {
+            content: "";
+            width: 0.3rem;
+            height: 1.2rem;
+            border-right: 0.3rem solid #ffffff;
+            border-left: 0.3rem solid #ffffff;
+            background-color: transparent;
+            opacity: .7;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        #play-pause-1:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-2:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-3-1:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-3-2:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        .play:hover::after {
+            width: 1.6rem;
+            height: 1.6rem;
+            opacity: 1;
+        }
+
+        .pause:hover::after {
+            width: 0.4rem;
+            height: 1.6rem;
+            border-right: 0.4rem solid #ffffff;
+            border-left: 0.4rem solid #ffffff;
+            opacity: 1;
         }
 
         .topic {
@@ -219,6 +405,8 @@
 
         .topic-img {
             display: flex;
+            position: relative;
+            overflow: hidden;
         }
 
         .topic-img img {
@@ -434,7 +622,7 @@
             }
 
             .topic-text {
-                margin-top: -13rem;
+                margin-top: -11rem;
             }
 
             .topic-text p {
@@ -452,7 +640,7 @@
             }
 
             .topic-text {
-                margin-top: -15rem;
+                margin-top: -14rem;
             }
 
         }
@@ -464,10 +652,6 @@
 
             .title-content {
                 top: 7rem;
-            }
-
-            .topic-text {
-                margin-top: -17.6rem;
             }
 
             .main_img img {
@@ -495,14 +679,13 @@
             }
 
             .main:nth-of-type(2) .main_imgbottom {
-            width: 70%;
-            margin-left: 10%;
-        }
+                width: 70%;
+                margin-left: 10%;
+            }
 
-
-
-
-
+            .topic-text {
+                margin-top: -18rem;
+            }
         }
     </style>
 </head>
@@ -550,8 +733,19 @@
                         <span>Nature Sounds</span>
                     </div>
                     <div class="main_imgwater">
-                        <img src="./img/nature-sound-knowledge/birds.png" alt="birds">
-                        <img src="./img/nature-sound-knowledge/music.png" alt="music">
+                        <div class="main_imgwater_top">
+                            <img src="./img/nature-sound-knowledge/birds.png" alt="birds">
+                        </div>
+                        <div class="main_imgwater_hidden">
+                            <img class="musicimg1" src="./img/nature-sound-knowledge/music.png" alt="music">
+                        </div>
+                        <div class="music-box">
+                            <p>播放"音樂"</p>
+                            <button class="play" id="play-pause-1"></button>
+                            <audio id="song-1" loop>
+                                <source src="./music/nature-music.mp3" type="audio/mp3">
+                            </audio>
+                        </div>
                     </div>
                 </div>
                 <div class="main_imgbottom">
@@ -573,8 +767,19 @@
                         <span>Rural Sounds</span>
                     </div>
                     <div class="main_imgwater">
-                        <img src="./img/nature-sound-knowledge/dandelion.png" alt="dandelion">
-                        <img src="./img/nature-sound-knowledge/music.png" alt="music">
+                        <div class="main_imgwater_top">
+                            <img src="./img/nature-sound-knowledge/dandelion.png" alt="dandelion">
+                        </div>
+                        <div class="main_imgwater_hidden">
+                            <img class="musicimg2" src="./img/nature-sound-knowledge/music.png" alt="music">
+                        </div>
+                        <div class="music-box">
+                            <p>播放"音樂"</p>
+                            <button class="play" id="play-pause-2"></button>
+                            <audio id="song-2" loop>
+                                <source src="./music/rain_music.mp3" type="audio/mp3">
+                            </audio>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -582,6 +787,17 @@
                 <div class="topic-img">
                     <img src="./img/nature-sound-knowledge/waterfall.jpg" alt="waterfall">
                     <img src="./img/nature-sound-knowledge/wave.jpg" alt="wave">
+                </div>
+                <div class="music-box-3">
+                    <p>播放"音樂"</p>
+                    <button class="play" id="play-pause-3-1"></button>
+                    <audio id="song-3-1" loop>
+                        <source src="./music/mountain_stream.mp3" type="audio/mp3">
+                    </audio>
+                    <button class="play" id="play-pause-3-2"></button>
+                    <audio id="song-3-2" loop>
+                        <source src="./music/beach.mp3" type="audio/mp3">
+                    </audio>
                 </div>
                 <div class="topic-text">
                     <h2>水之聆聽</h2>

@@ -3,8 +3,11 @@ window.onload = function () {
     var op = document.querySelector(".op");
     var hisimg = document.querySelectorAll(".history_box img")
     var mq = window.matchMedia("(min-width: 768px)");
+    var history_msg = document.querySelector(".history-msg");
+
     if (mq.matches) {
         op.onmousedown = function (event) {
+            history_msg.style.display="none";
             op.style.background = "conic-gradient(#00c234 45deg, transparent 45deg, transparent 115deg, #00c234 115deg)";
             event = event || window.event;
             var ol = event.clientX - op.offsetLeft;
@@ -20,6 +23,11 @@ window.onload = function () {
                     var rotate = left * 2.8;
                     op.style.transform = "rotate(" + rotate + "deg)";
                 }
+                if (left < 1) {
+                    history_msg.style.display="block";
+                }else{
+                    history_msg.style.display="none";
+                }
             }
             document.onmouseup = function () {
                 document.onmousemove = null;
@@ -30,6 +38,7 @@ window.onload = function () {
         }
     }else{
         op.ontouchstart = function (event) {
+            history_msg.style.display="none";
             op.style.background = "conic-gradient(#00c234 45deg, transparent 45deg, transparent 115deg, #00c234 115deg)";
             event = event || window.event;
             var ol = event.changedTouches[0].clientX - op.offsetLeft;
@@ -44,6 +53,11 @@ window.onload = function () {
                     }
                     var rotate = left * 2;
                     op.style.transform = "rotate(" + rotate + "deg)";
+                }
+                if (left < 1) {
+                    history_msg.style.display="block";
+                }else{
+                    history_msg.style.display="none";
                 }
             }
             document.ontouchend = function () {

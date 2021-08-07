@@ -10,18 +10,31 @@ window.onscroll = function () {
     let TOP = document.getElementsByClassName("top");
   
     if (mq.matches) {
-        
-        if (t >= 300) {
+        if (t >= 25) {
+            logo.style.width = "6%";
+            logo.style.minWidth = "80px";
+            logo.style.left="28%";
+            logo.style.top="50%";
+            header[0].style.backgroundColor = "rgba(0,128,128,.9)";
+            nav[0].style.margin = "0.3rem 0";
+            item[1].style.marginRight = "0.8em";
+            TOP[0].style.display="block";
+        }else
+        if (t >= 20) {
             logo.style.width = "0%";
             logo.style.minWidth = "0";
+            logo.style.left="50%";
+            logo.style.top="90%";
             header[0].style.backgroundColor = "rgba(0,128,128,.9)";
-            nav[0].style.margin = "0";
+            nav[0].style.margin = "0.3rem 0";
             item[1].style.marginRight = "0.8em";
             TOP[0].style.display="block";
         }
         else {
             logo.style.width = "15%";
             logo.style.minWidth = "80px";
+            logo.style.left="50%";
+            logo.style.top="90%";
             header[0].style.backgroundColor = "rgba(0,128,128,.4)";
             nav[0].style.margin = "0.7rem 0";
             item[1].style.marginRight = "11em";

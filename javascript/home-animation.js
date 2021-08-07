@@ -4,8 +4,6 @@ window.onscroll= function () {
     var mq = window.matchMedia("(min-width: 768px)");
     var slideshow2 = document.getElementsByClassName("slideshow");
     var historyshow= document.getElementsByClassName("history");
-    var msg=document.getElementsByClassName("history-msg");
-    var clickshow=document.getElementById("clickshow");
     var history_box=document.getElementsByClassName("history_box");
     var historyxy=history_box[0].getBoundingClientRect();
     var newimg=document.getElementsByClassName("new_img-click");
@@ -32,40 +30,44 @@ window.onscroll= function () {
     }
 
     if (mq.matches) {
-        clickshow.src="./img/home/mouse-click.png"
+        if (t >= 650) {
+            slideshow2[0].style.clipPath="polygon(50% 0, 50% 80%, 50% 100%, 50% 80%, 50% 0)";
+            logo.style.width = "6%";
+            logo.style.minWidth = "80px";
+            logo.style.left="28%";
+            logo.style.top="50%";
+            header[0].style.backgroundColor = "rgba(0,128,128,.9)";
+            nav[0].style.margin = "0.3rem 0";
+            item[1].style.marginRight = "0.8em";
+        }else
         if (t >= 300) {
             slideshow2[0].style.clipPath="polygon(50% 0, 50% 80%, 50% 100%, 50% 80%, 50% 0)";
             logo.style.width = "0%";
             logo.style.minWidth = "0";
+            logo.style.left="50%";
+            logo.style.top="90%";
             header[0].style.backgroundColor = "rgba(0,128,128,.9)";
-            nav[0].style.margin = "0";
+            nav[0].style.margin = "0.3rem 0";
             item[1].style.marginRight = "0.8em";
         }
         else {
             slideshow2[0].style.clipPath="polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0)";
             logo.style.width = "15%";
             logo.style.minWidth = "80px";
+            logo.style.left="50%";
+            logo.style.top="90%";
             header[0].style.backgroundColor = "rgba(0,128,128,.4)";
             nav[0].style.margin = "0.7rem 0";
             item[1].style.marginRight = "11em";
         }
-        if (historyxy.bottom>0 && historyxy.bottom<winheight) {
+        if (historyxy.bottom>0 && historyxy.top<winheight) {
             historyshow[0].style.clipPath="polygon(0 0, 100% 10%, 100% 90%, 0% 100%)";
-            msg[0].style.display="block";
         }
         else {
             historyshow[0].style.clipPath="polygon(100% 10%, 100% 10%, 100% 90%, 100% 90%)";
-            msg[0].style.display="none";
         }
     }
 else{
-    clickshow.src="./img/home/hand-click.png"
-    if (historyxy.top>0 && historyxy.bottom<winheight) {
-        msg[0].style.display="block";
-    }
-    else {
-        msg[0].style.display="none";
-    }
     if (t >= 100) {
         logo.style.display = "none";
         header[0].style.backgroundColor = "rgba(0,128,128,.9)";
