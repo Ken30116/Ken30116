@@ -21,7 +21,6 @@ function show1() {
         span[i].onmouseout = function () {
             span[i].style.backgroundColor = "#ffffff";
             span[i].style.opacity = "0.5";
-
             show()
         }
     }

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寧韻美麗島/知識庫(3)</title>
+    <link rel="icon" href="./img/All/favicon.ico" >
+    <link rel="shortcut icon" href="./img/All/favicon.ico" >
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./css/header-phone.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-phone.css">
+    <script type="text/javascript" src="./javascript/header-nav.js"></script>
+    <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <script type="text/javascript" src="./javascript/music-knowledge.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+    <style>
+        .main {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-content {
+            max-width: 1180px;
+            width: 100%;
+            margin: 0 auto;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 4.5rem;
+            left: 50%;
+        }
+
+        .title-box {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0.5rem;
+        }
+
+        .title-box h1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color:#ffffffe8;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .title-box h1::after {
+            content: "";
+            width: 2rem;
+            height: 0.1rem;
+            background-color: #ffffffe8;
+            margin-left: 1rem;
+            opacity: .2;
+        }
+
+        .title-box h1::before {
+            content: "";
+            width: 2rem;
+            height: 0.1rem;
+            background-color: #ffffffe8;
+            margin-right: 1rem;
+            opacity: .2;
+        }
+
+        .title-box h3 {
+            color: #ffffffe8;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            text-align: center;
+            margin: 0 auto 1rem;
+        }
+
+        .breadcrumb {
+            width: 100%;
+            display: flex;
+            margin-top: 0.5rem;
+        }
+
+        .breadcrumb-item {
+            color: #ffffffe8;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            opacity: .8;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: " / ";
+        }
+
+        .main:nth-child(even) .main-box {
+            flex-direction: row-reverse;
+        }
+
+        .main_img {
+            width: 100%;
+            display: flex;
+            margin-left: -200%;
+            position: relative;
+            z-index: -1;
+        }
+
+        .main_img img {
+            width: 600%;
+        }
+
+        .main_imgbottom {
+            width: 100%;
+            display: flex;
+        }
+
+        .main_imgbottom img {
+            width: 100%;
+            margin-top: -12.3%;
+            position: relative;
+            z-index: 2;
+            vertical-align: top;
+        }
+
+        .main-box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-top: -200%;
+        }
+
+        .main-text {
+            width: 80vw;
+            padding: 0.6rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 0.5rem solid #008080;
+            border-radius: 1.6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-text h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .main-text p {
+            color: #ffffffc2;
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            text-align: justify;
+            line-height: 1.2rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .main-text span {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            opacity: .1;
+            position: absolute;
+            top: 8%;
+            right: 5%;
+        }
+
+        .main_imgwater {
+            width: 8rem;
+            height: 8rem;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 0.6rem solid #008080;
+            border-radius: 8.75rem 0 8.75rem 8.75rem;
+            position: relative;
+            transform: rotate(-45deg);
+        }
+
+        .main_imgwater_hidden {
+            width: 100%;
+            height: 100%;
+            border-radius: 8.75rem 0 8.75rem 8.75rem;
+            position: relative;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .main:nth-of-type(1) .main-box .main_imgwater {
+            margin-left: auto;
+        }
+
+        .main:nth-of-type(2) .main-box {
+            margin-top: -35rem;
+        }
+
+        .main:nth-of-type(2) .main-box .main_imgwater {
+            margin-right: auto;
+        }
+
+        .main:nth-of-type(2) .main_imgbottom {
+            position: absolute;
+            bottom: 0;
+            width: 150%;
+            margin-left: -5%;
+        }
+
+        .musicimg1 {
+            width: 500%;
+            margin-left: -380%;
+        }
+
+        .musicimg2 {
+            width: 500%;
+            margin-left: -380%;
+        }
+
+        @keyframes musicshow {
+            from {
+                margin-left: -380%;
+            }
+
+            to {
+                margin-left: 0%;
+            }
+        }
+
+        .main_imgwater_top img {
+            width: 150%;
+            position: absolute;
+            transform: rotate(35deg);
+            top: -20%;
+            left: -30%;
+            z-index: 2;
+        }
+
+        .music-box {
+            text-align: center;
+            position: absolute;
+            transform: rotate(45deg);
+            top: 50%;
+            left: 35%;
+        }
+
+        .music-box p {
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 0.8rem;
+            text-shadow: 0.02rem 0.02rem 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .music-box-3 {
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            text-align: center;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 5%;
+            left: 50%;
+        }
+
+        .music-box-3 p {
+            width: 100%;
+            color: #008080;
+            font-family: "華康墨字體";
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-shadow: 0.02rem 0.02rem 0 rgba(255, 255, 255, 0.8);
+        }
+
+        #play-pause-1 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-1::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-2 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-2::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-3-1 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-3-1::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        #play-pause-3-2 {
+            background: none;
+            border: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #play-pause-3-2::before {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.7);
+        }
+
+        .play::after {
+            content: "";
+            width: 1.2rem;
+            height: 1.2rem;
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+            background-color: #ffffff;
+            opacity: .7;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 55%;
+        }
+
+        .pause::after {
+            content: "";
+            width: 0.3rem;
+            height: 1.2rem;
+            border-right: 0.3rem solid #ffffff;
+            border-left: 0.3rem solid #ffffff;
+            background-color: transparent;
+            opacity: .7;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        #play-pause-1:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-2:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-3-1:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        #play-pause-3-2:hover::before {
+            box-shadow: 0.1rem 0.1rem 0.2rem #00c234;
+            opacity: 1;
+        }
+
+        .play:hover::after {
+            width: 1.6rem;
+            height: 1.6rem;
+            opacity: 1;
+        }
+
+        .pause:hover::after {
+            width: 0.4rem;
+            height: 1.6rem;
+            border-right: 0.4rem solid #ffffff;
+            border-left: 0.4rem solid #ffffff;
+            opacity: 1;
+        }
+
+        .topic {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-img {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-img img {
+            width: 250%;
+            margin-left: -99%;
+        }
+
+        .topic-text {
+            width: 80vw;
+            margin-top: -25rem;
+            padding: 0.6rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 0.5rem solid #008080;
+            border-radius: 1.6rem;
+            position: relative;
+        }
+
+        .topic-text h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .topic-text p {
+            color: #ffffffc2;
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            text-align: justify;
+            line-height: 1.2rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .topic-text span {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 1.4rem;
+            opacity: .1;
+            position: absolute;
+            top: 8%;
+            right: 5%;
+        }
+
+        @media screen and (min-width: 414px) {
+            html {
+                font-size: 22px;
+            }
+
+            .title-box h1::after {
+                width: 3rem;
+            }
+
+            .title-box h1::before {
+                width: 3rem;
+            }
+
+            .main_img img {
+                width: 450%;
+            }
+
+            .main-text {
+                width: 90vw;
+            }
+
+            .main-box {
+                margin-top: -150%;
+            }
+
+            .main_imgwater {
+                width: 12rem;
+                height: 12rem;
+                border: 0.8rem solid #008080;
+            }
+
+            .main:nth-of-type(2) .main-box {
+                margin-top: -35.3rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 6rem;
+            }
+
+            .topic {
+                margin-top: 0%;
+            }
+
+            .topic-img img {
+                width: 130%;
+                margin-left: -39%;
+            }
+
+            .topic-text {
+                width: 90vw;
+                margin-top: -16rem;
+            }
+
+        }
+
+        @media screen and (min-width: 640px) {
+            .title-box h1::after {
+                width: 5rem;
+            }
+
+            .title-box h1::before {
+                width: 5rem;
+            }
+
+            .main_img {
+                margin-left: -65%;
+            }
+
+            .main_img img {
+                width: 280%;
+            }
+
+            .main-box {
+                margin-top: -27.3rem;
+            }
+
+            .main-text {
+                width: 23rem;
+                margin-bottom: 3rem;
+                z-index: 0;
+            }
+
+            .main:nth-of-type(2) .main-box {
+                margin-top: -33.6rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 8rem;
+            }
+
+            .main:nth-of-type(2) .main_imgbottom {
+                position: static;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .main_imgwater img:first-child {
+                top: -50%;
+            }
+
+            .topic-text {
+                width: 23rem;
+                margin-top: -20rem;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/header-computer.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer-computer.css">
+    <style>
+        @media screen and (min-width: 768px) {
+            .title-box::before {
+                height: 4rem;
+                top: -1rem;
+            }
+
+            .title-box::after {
+                width: 4rem;
+                left: -1rem;
+            }
+
+            .main_img {
+                margin-left: -15%;
+            }
+
+            .main_img img {
+                width: 180%;
+            }
+
+            .main-text p {
+                font-size: 0.6rem;
+            }
+
+            .main-box {
+                flex-wrap: nowrap;
+                margin-top: -16rem;
+            }
+
+            .main-text {
+                width: 20rem;
+                margin-bottom: 0;
+            }
+
+            .main_imgwater {
+                width: 14rem;
+                height: 14rem;
+                border: 1rem solid #008080;
+            }
+
+            .music-box {
+                top: 50%;
+                left: 50%;
+            }
+
+            .music-box p {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .main:nth-of-type(1) .main-box .main_imgwater {
+                margin-left: 0;
+            }
+
+            .main:nth-of-type(2) .main-box {
+                margin-top: -16rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main-text {
+                margin-bottom: 0rem;
+            }
+
+            .main:nth-of-type(2) .main-box .main_imgwater {
+                margin-right: 0;
+            }
+
+            .topic-img img {
+                width: 50%;
+                margin-left: 0;
+            }
+
+            .topic-text {
+                margin-top: -11rem;
+            }
+
+            .topic-text p {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            html {
+                font-size: 24px;
+            }
+
+            .title-content {
+                top: 5rem;
+            }
+
+            .topic-text {
+                margin-top: -14rem;
+            }
+
+        }
+
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 27px;
+            }
+
+            .title-content {
+                top: 7rem;
+            }
+
+            .main_img img {
+                width: 200%;
+            }
+
+        }
+
+        @media screen and (min-width: 1536px) {
+            html {
+                font-size: 30px;
+            }
+
+            .main_img {
+                margin-left: 0;
+            }
+
+            .main_img img {
+                width: 140%;
+            }
+
+            .main-text {
+                width: 20rem;
+                margin-bottom: 10%;
+            }
+
+            .main:nth-of-type(2) .main_imgbottom {
+                width: 70%;
+                margin-left: 10%;
+            }
+
+            .topic-text {
+                margin-top: -18rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="./img/All/logo.png" alt="logo">
+        </div>
+        <nav>
+            <a class="item" href="index.html">首頁</a>
+            <a class="item" href="Layout.html">園區導覽</a>
+            <a class="item" href="Platform.html">交流平台</a>
+            <a class="item" href="Traffic.html">交通指南</a>
+        </nav>
+        <div id="menu">
+            <div class="menu-close">✖</div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <article>
+        <div class="knowledge">
+            <div class="main" id="topic1">
+                <div class="title-content">
+                    <div class="title-box">
+                        <h1>知識庫(3)</h1>
+                        <h3>番外篇</h3>
+                        <div class="breadcrumb">
+                            <a class="breadcrumb-item" href="index.html">首頁</a>
+                            <a class="breadcrumb-item" href="Layout.html">園區導覽</a>
+                            <a class="breadcrumb-item" href="#">知識庫 (3)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_img">
+                    <img src="./img/heat-island-knowledge/park.jpg" alt="park">
+                </div>
+                <div class="main-box">
+                    <div class="main-text">
+                        <h2>都市熱島-植栽篇</h2>
+                        <p>綠地對環境的降溫效果，主來自植物葉面蒸散及本身遮蔽等機制所產生的效應。蒸散作用是植物經由根系吸收水分，並透過植物葉表面氣孔開閉蒸散水分。植物吸收的水絕大部分喪失於蒸散作用中，因此透過植物蒸散作用可將水分釋放於空氣中，增加空氣濕度，消耗大量熱能以緩和氣溫上升。不僅增加園區舒適度，使提升市民使用率、滿意度。
+                        </p>
+                        <span>Urban Heat Island</span>
+                    </div>
+                    <div class="main_imgwater">
+                        <div class="main_imgwater_top">
+                            <img src="./img/heat-island-knowledge/skateboard.png" alt="skateboard">
+                        </div>
+                        <div class="main_imgwater_hidden">
+                            <img class="musicimg1" src="./img/heat-island-knowledge/water-tree.png" alt="water-tree">
+                        </div>
+                        <div class="music-box">
+                            <p>播放"音樂"</p>
+                            <button class="play" id="play-pause-1"></button>
+                            <audio id="song-1" loop>
+                                <source src="./music/tree.mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_imgbottom">
+                    <img src="./img/heat-island-knowledge/gress.png" alt="gress">
+                </div>
+            </div>
+            <div class="main" id="topic2">
+                <div class="main_img">
+                    <img src="./img/heat-island-knowledge/play.jpg" alt="play">
+                </div>
+                <div class="main_imgbottom">
+                    <img src="./img/heat-island-knowledge/water-play.png" alt="water-play">
+                </div>
+                <div class="main-box">
+                    <div class="main-text">
+                        <h2>都市熱島-水體篇</h2>
+                        <p>水主要降低熱島效應的機制主要來自於表面水分的蒸發作用以潛熱(latent heat)的方式帶走熱能，再加上水體的熱容量(heat capacity)大，導致相同吸熱狀況下水體較其他大部分表面材質而言升溫緩慢等所產生的效果。常見於噴泉方式，水能夠降溫原理來自於潛熱，潛熱(Latent heat)是指物質在物態變化過程中，在沒有溫度變化情況下，吸收或釋放的能量。水體相較於其他都市常見表面材質具有較大的熱容量，因此相較於一般空地及柏油路面，大面積的水體的溫度較另外兩者低15-20℃之多。
+                        </p>
+                        <span>Urban Heat Island</span>
+                    </div>
+                    <div class="main_imgwater">
+                        <div class="main_imgwater_top">
+                            <img src="./img/heat-island-knowledge/wind.png" alt="wind">
+                        </div>
+                        <div class="main_imgwater_hidden">
+                            <img class="musicimg2" src="./img/heat-island-knowledge/water-water.png" alt="water-water">
+                        </div>
+                        <div class="music-box">
+                            <p>播放"音樂"</p>
+                            <button class="play" id="play-pause-2"></button>
+                            <audio id="song-2" loop>
+                                <source src="./music/straw2.mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="topic" id="topic3">
+                <div class="topic-img">
+                    <img src="./img/heat-island-knowledge/rood.jpg" alt="rood">
+                    <img src="./img/heat-island-knowledge/write.jpg" alt="write">
+                </div>
+                <div class="music-box-3">
+                    <p>播放"音樂"</p>
+                    <button class="play" id="play-pause-3-1"></button>
+                    <audio id="song-3-1" loop>
+                        <source src="./music/road.mp3" type="audio/mp3">
+                    </audio>
+                    <button class="play" id="play-pause-3-2"></button>
+                    <audio id="song-3-2" loop>
+                        <source src="./music/road2.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <div class="topic-text">
+                    <h2>都市熱島-鋪面篇</h2>
+                    <p>建築物與鋪面主要之影響係來自都市表面材質之高吸熱力、街道幾何形式之熱吸收增加。建物因結構物形狀不同、表面材質不同，導致建物溫度高於周邊區域。鋪面表面材質比熱、反照率、熱容量的不同，導致地表溫度也有所差異。熱島效應影響較大之區域主要分佈於人為建造之不透水層鋪面上。天然鋪面(如草皮等)、透水鋪面(如植草磚等)的表面溫度比人工材質(如柏油路、連鎖磚等)來得低，且天然材質鋪面具有降溫效果。
+                    </p>
+                    <span>Urban Heat Island</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-content">
+                <div class="connection">
+                    <h2>寧韻美麗島<span>文創園區</span></h2>
+                    <p>營業時間: 08:00~22:00<br>
+                        園區地址: 999香吉市美麗區花田一路6號<br>
+                        聯絡電話: 00-123456789<br>
+                        電子信箱: NingYun@mail.com
+                    </p>
+                    <div class="icon-box">
+                        <div class="icon"><a href="#"><img src="./img/All/fb.png" alt="fb"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/ig.png" alt="ig"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/line.png" alt="line"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/twitter.png" alt="twitter"></a></div>
+                        <div class="icon"><a href="#"><img src="./img/All/youtube.png" alt="youtube"></a></div>
+                    </div>
+                    <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+                </div>
+                <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.750699106649!2d121.22461926641243!3d24.957342175137317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1625838568839!5m2!1szh-TW!2stw"></iframe>
+                </div>
+            </div>
+    </footer>
+</body>
+
+</html>

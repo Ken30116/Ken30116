@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>寧韻美麗島/交流文章1</title>
+    <link rel="icon" href="./img/All/favicon.ico" >
+    <link rel="shortcut icon" href="./img/All/favicon.ico" >
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/font-family.css">
     <link rel="stylesheet" type="text/css" href="./css/header-phone.css">
     <link rel="stylesheet" type="text/css" href="./css/footer-phone.css">
+    <script type="text/javascript" src="./javascript/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="./javascript/header-nav.js"></script>
     <script type="text/javascript" src="./javascript/menu-onclick.js"></script>
+    <script type="text/javascript" src="./javascript/message.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
     <style>
@@ -481,6 +485,78 @@
             cursor: pointer;
         }
 
+        #result{
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .replyuser {
+            width: 90%;
+            display: none;
+            flex-direction: column;
+            color: #000000a1;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            margin: 0.6rem 0.5rem;
+            
+        }
+
+        .replyman {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.3rem;
+            cursor: pointer;
+        }
+
+        .replyman input {
+            width: 5.2rem;
+            margin: 0 0.2rem;
+        }
+
+        .reply-text{
+            width: 100%;
+            margin-bottom: 0.3rem;
+            resize: none;
+        }
+
+        .reply-cancel {
+            cursor: pointer;
+        }
+
+        .reply-send {
+            cursor: pointer;
+        }
+
+        .reply-result{
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .spokesname{
+            color: #000000a1;
+            font-family: "華康中圓體";
+            font-size: 1rem;
+            margin: 0.1rem 0;
+        }
+
+        .spokestext{
+            color: #000000a1;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            margin-bottom: 0.5rem;
+            line-height: 1rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .reply{
+            color: #0000007a;
+            font-family: "華康中圓體";
+            font-size: 0.6rem;
+            cursor: pointer;
+        }
+
+
+
         .recommend {
             max-width: 1180px;
             margin: 1.5rem auto;
@@ -851,10 +927,10 @@
             <img src="./img/All/logo.png" alt="logo">
         </div>
         <nav>
-            <a class="item" href="index2.html">首頁</a>
+            <a class="item" href="index.html">首頁</a>
             <a class="item" href="Layout.html">園區導覽</a>
             <a class="item" href="Platform.html">交流平台</a>
-            <a class="item" href="#">旅遊指南</a>
+            <a class="item" href="Traffic.html">交通指南</a>
         </nav>
         <div id="menu">
             <div class="menu-close">✖</div>
@@ -880,8 +956,8 @@
                 <div class="main-content-box">
                     <div class="main-text-bottom">
                         <div class="breadcrumb">
-                            <a class="breadcrumb-item" href="index2.html">首頁</a>
-                            <a class="breadcrumb-item" href="Platform.html">音樂交流平台</a>
+                            <a class="breadcrumb-item" href="index.html">首頁</a>
+                            <a class="breadcrumb-item" href="Platform.html">交流平台</a>
                             <a class="breadcrumb-item" href="#">聆聽全球大自然聲音</a>
                         </div>
                         <div class="main-text-box">
@@ -904,7 +980,7 @@
                                 </p>
                             </div>
                         </div>
-                        <p>風鈴，一種鈴。其可在風的吹動下，通過各個鈴鐺或其他物體的碰撞來發出聲音。種類有很多，如日本風鈴（日本の風鈴）、八角風鈴等。有人認為其會招魂，不宜擺放，但是在亞洲的一些地區，人們認為風鈴能帶來好運，常用風鈴來預測風水。尤其是在日本，風鈴能發出令人愉快的清脆聲音，因此人們在悶熱潮濕的夏日就會把風鈴掛在窗邊，給人以清涼的感覺。
+                        <p>風鈴，一種鈴。其可在風的吹動下，通過各個鈴鐺或其他物體的碰撞來發出聲音。種類有很多，如日本風鈴（日本の風鈴）、八角風鈴等。有人認為其會招魂，不宜擺放，但是在亞洲的一些地區，人們認為風鈴能帶來好運，常用風鈴來預測風水。尤其是在日本，風鈴能發出令人愉快的清脆聲音，因此人們在悶熱潮濕的夏日就會把風鈴掛在窗邊，給人以清涼的感覺。</p>
                     </div>
                 </div>
             </div>
@@ -981,12 +1057,13 @@
                 </div>
                 <div class="user">
                     <label id="spokesman">發言人
-                        <input type="text" value="匿名" required> (可更改名稱)</label>
+                        <input type="text" id="name" value="匿名" required> (可更改名稱)</label>
                     <textarea id="user-text" placeholder="新增公開留言..."></textarea>
                     <div class="btn">
                         <input id="cancel" type="button" value="取消">
                         <input id="send" type="button" value="送出">
                     </div>
+                    <div id="result"></div>
                 </div>
             </div>
         </div>
@@ -1080,5 +1157,6 @@
     </div>
 
 </body>
+
 
 </html>

@@ -8,28 +8,44 @@ function comshow1() {
         comspan[i].onmouseover = function () {
             comspan[i].style.backgroundColor = "#00c234";
             comspan[i].style.color = "#ffffff";
-            comspan[i].style.opacity = "1";
+            comspan[i].style.opacity = "1"; //亮綠
         };
         comspan[i].onmouseout = function () {
             comspan[i].style.backgroundColor = "#ffffff";
             comspan[i].style.color = "#008080";
-            comspan[i].style.opacity = "0.5";
+            comspan[i].style.opacity = "0.5";//恢復
         }
+
     }
 }
 comshow1();
 
 function comshow() {
-    comimg.src = `img/home/commodity/commodity${index}.jpg`;
+    comimg.src = `img/home/commodity/commodity${index1}.jpg`;
     for (let j = 0; j < comspan.length; j++) {
-        if (j == index) {
-            comspan[index].style.backgroundColor = "#008080";
-            comspan[index].style.color = "#ffffff";
-            comspan[index].style.opacity = "1";
+        if (j == index1) {
+            comspan[index1].style.backgroundColor = "#008080";
+            comspan[index1].style.color = "#ffffff";
+            comspan[index1].style.opacity = "1";
+            comspan[index1].onmouseout = function () {
+                comspan[index1].style.backgroundColor = "#008080";
+                comspan[index1].style.color = "#ffffff";
+                comspan[index1].style.opacity = "1";
+            }
         } else {
             comspan[j].style.backgroundColor = "#ffffff";
             comspan[j].style.color = "#008080";
             comspan[j].style.opacity = "0.5";
+            comspan[j].onmouseover = function () {
+                comspan[j].style.backgroundColor = "#00c234";
+                comspan[j].style.color = "#ffffff";
+                comspan[j].style.opacity = "1"; //亮綠
+            };
+            comspan[j].onmouseout = function () {
+                comspan[j].style.backgroundColor = "#ffffff";
+                comspan[j].style.color = "#008080";
+                comspan[j].style.opacity = "0.5";//恢復
+            }
         }
     }
 }
@@ -37,7 +53,7 @@ function comshow() {
     function ctrlnum() {
         for (let i = 0; i < comspan.length; i++) {
             comspan[i].onclick = function () {
-                index = i;
+                index1 = i;
                 comshow();
             }
         }
