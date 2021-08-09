@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-family.css">
+    <link rel="stylesheet" type="text/css" href="./刪除槽/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer.css">
+    <style>
+        article {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .title {
+            margin: 0px 50px;
+            padding: 20px 0px 50px 0px;
+        }
+
+        .breadcrumb-item {
+            color: #ffffff;
+            font-family: "華康方圓體";
+            font-size: 20px;
+            opacity: .4;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: " / ";
+        }
+
+        .title-box {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .title-box h1::after {
+            content: "";
+            width: 120px;
+            height: 2px;
+            background-color: #ffffff;
+            margin-left: 30px;
+            opacity: .15;
+        }
+
+        .title-box h1::before {
+            content: "";
+            width: 120px;
+            height: 2px;
+            background-color: #ffffff;
+            margin-right: 30px;
+            opacity: .15;
+        }
+
+        .title-box h1 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 60px;
+            text-align: center;
+            opacity: .7;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .title-box h2 {
+            color: #ffffff;
+            font-family: "華康墨字體";
+            font-size: 40px;
+            text-align: center;
+            opacity: .7;
+        }
+
+        .main {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0px 50px 20px 50px;
+        }
+
+        .pagination li {
+            display: inline;
+            margin: 5px;
+        }
+
+        .pagination li a {
+            color: #ffffff;
+            font-family: "華康方圓體";
+            font-size: 30px;
+            opacity: .6;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 10%;
+            text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.9);
+        }
+
+        .pagination li a:hover {
+            background-color: #24ff00;
+            opacity: 1;
+        }
+
+        .now {
+            background-color: #007ac3;
+            padding: 6px 6px;
+            opacity: 1;
+        }
+
+        .container {
+            margin: 0px 50px;
+        }
+
+        .content {
+            display: flex;
+            padding: 20px 0px 20px 20px;
+            background-color:#ffffff;
+            margin-bottom: 50px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5),inset -2px 2px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 2% 100% 2% 100%/100% 4% 100% 4%;
+            transform:skew(-1deg);
+        }
+
+        .img-box {
+            box-shadow: inset 10px 10px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 2% 100% 2% 100%/100% 4% 100% 4%;
+        }
+
+        .img-box img {
+            width: 100%;
+            vertical-align:top;
+            position: relative;
+            z-index: -1;
+            border-radius: 2% 100% 2% 100%/100% 4% 100% 4%;
+        }
+
+        .text-box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 750px;
+            padding: 10px 30px;
+            transform:skew(1deg);
+        }
+
+        .text h2 {
+            color: #000000;
+            font-family: "華康方圓體";
+            font-size: 40px;
+            opacity: .8;
+            line-height: 50px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .text p {
+            color: #000000;
+            font-family: "華康方圓體";
+            font-size: 30px;
+            opacity: .4;
+            line-height: 40px;
+            letter-spacing: 2px;
+            text-align: justify;
+        }
+
+        .mark {
+            display: flex;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            margin-top:10px;
+        }
+
+        .people {
+            display: flex;
+            align-items: center;
+        }
+
+        .people img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .people span {
+            color: #000000;
+            font-family: "華康方圓體";
+            font-size: 30px;
+            opacity: .4;
+            margin-left: 10px;
+        }
+
+        .great {
+            display: flex;
+            align-items: center;
+        }
+
+        .great img {
+            width: 40px;
+        }
+
+        .great span {
+            color: #000000;
+            font-family: "華康方圓體";
+            font-size: 30px;
+            opacity: .4;
+            margin-left: 10px;
+        }
+
+        .term {
+            padding: 50px;
+        }
+
+        .term span {
+            color: #ffffff;
+            font-family: "華康方圓體";
+            font-size: 25px;
+            opacity: .4;
+            line-height: 40px;
+            letter-spacing: 2px;
+        }
+
+        .term li {
+            color: #ffffff;
+            font-family: "華康方圓體";
+            font-size: 25px;
+            opacity: .4;
+            line-height: 40px;
+            letter-spacing: 2px;
+            list-style-type: cjk-ideographic;
+            text-indent: -55px;
+            margin-left: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/All/logo.png" alt="寧韻美麗島logo">
+        </div>
+        <div class="nav">
+            <a href="./Layout.html"><span class="item">園區導覽</span></a>
+            <span class="item">園區大小事▼</span>
+            <span class="item">旅遊指南▼</span>
+            <a href="#"><span class="item">購票資訊</span></a>
+            <a href="#"><span class="item">文創商品</span></a>
+            <a href="#">
+                <div class="member"></div>
+            </a>
+            <div id="mascot_nav">
+                <img src="./img/home/吉祥物(1).png" alt="吉祥物(1)">
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="platform">
+            <div class="title">
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-item" href="#">首頁</a>
+                    <a class="breadcrumb-item" href="#">園區大小事</a>
+                    <a class="breadcrumb-item" href="#">音樂交流平台</a>
+                </nav>
+                <div class="title-box">
+                    <h1>音樂交流平台</h1>
+                    <h2>Music Platform</h2>
+                </div>
+            </div>
+
+            <div class="main">
+                <ul class="pagination">
+                    <li><a href="#">﹤</a></li>
+                    <li><a class="now" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">﹥</a></li>
+                </ul>
+                <div class="container">
+                    <div class="content">
+                        <div class="img-box">
+                            <img src="./img/platform/自然聲音1.jpg" alt="自然聲音1">
+                        </div>
+                        <div class="text-box">
+                            <div class="text">
+                                <h2>聆聽全球大自然聲音</h2>
+                                <p>鳥聲、蟲鳴與鈴聲、雨聲交織出屬於大自然的奏鳴曲。不同的聲音，也透露出不同的情感，大自然呈現出世間最美的音符！</p>
+                            </div>
+                            <div class="mark">
+                                <div class="people">
+                                    <img src="./img/platform/大頭照1.jpg" alt="大頭照1">
+                                    <span>許宜靜</span>
+                                </div>
+                                <div class="great">
+                                    <img src="./img/platform/讚-black.png" alt="讚-black">
+                                    <span>1.5萬</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="img-box">
+                            <img src="./img/platform/描繪1.jpg" alt="描繪1">
+                        </div>
+                        <div class="text-box">
+                            <div class="text">
+                                <h2>聲景錄大地，聆聽描繪環境的音符</h2>
+                                <p>聽是人最早覺醒的感官。聲音能將人從沉睡中喚醒，聆聽、理解。</p>
+                            </div>
+                            <div class="mark">
+                                <div class="people">
+                                    <img src="./img/platform/大頭照2.jpg" alt="大頭照2">
+                                    <span>黃于迪</span>
+                                </div>
+                                <div class="great">
+                                    <img src="./img/platform/讚-black.png" alt="讚-black">
+                                    <span>1.2萬</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="img-box">
+                            <img src="./img/platform/藝術1.jpg" alt="藝術1">
+                        </div>
+                        <div class="text-box">
+                            <div class="text">
+                                <h2>構築藝術音樂因子教育與未來</h2>
+                                <p>近年教育課綱規定有音樂、美術等藝術相關領域課程，促使孩子學習更多元。</p>
+                            </div>
+                            <div class="mark">
+                                <div class="people">
+                                    <img src="./img/platform/大頭照3.jpg" alt="大頭照3">
+                                    <span>張書瑋</span>
+                                </div>
+                                <div class="great">
+                                    <img src="./img/platform/讚-black.png" alt="讚-black">
+                                    <span>1.1萬</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="img-box">
+                            <img src="./img/platform/重機1.jpg" alt="重機1">
+                        </div>
+                        <div class="text-box">
+                            <div class="text">
+                                <h2>固定式高噪音車輛偵測攝影系統</h2>
+                                <p>科技執法區間測速系統引發不少爭議，下一階段就是「噪音偵測」相關系統。</p>
+                            </div>
+                            <div class="mark">
+                                <div class="people">
+                                    <img src="./img/platform/大頭照4.jpg" alt="大頭照4">
+                                    <span>洪伶茵</span>
+                                </div>
+                                <div class="great">
+                                    <img src="./img/platform/讚-black.png" alt="讚-black">
+                                    <span>9000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="img-box">
+                            <img src="./img/platform/飛機1.jpg" alt="飛機1">
+                        </div>
+                        <div class="text-box">
+                            <div class="text">
+                                <h2>降低噪音 造福住戶噪音防制區住戶</h2>
+                                <p>機場夜間噪音擾民，增加噪音防制費提等議題，邀集專業人士召開協調會。</p>
+                            </div>
+                            <div class="mark">
+                                <div class="people">
+                                    <img src="./img/platform/大頭照5.jpg" alt="大頭照5">
+                                    <span>趙慶木</span>
+                                </div>
+                                <div class="great">
+                                    <img src="./img/platform/讚-black.png" alt="讚-black">
+                                    <span>8000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="pagination">
+                    <li><a href="#">﹤</a></li>
+                    <li><a class="now" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">﹥</a></li>
+                </ul>
+                <div class="term">
+                    <span>﹤服務條款 ﹥</span>
+                    <li>歡迎大家觀看音樂交流平台，分享給朋友，請多多按讚，善加利用平台功能。</li>
+                    <li>為了打造友善的環境，請尊重他人言論，禁止發表謾罵、嘲笑、歧視等內容。</li>
+                    <li>發言請勿涉及情色與政治議題，盡量不會干預大家的發言，有發現任何不妥的內容將其刪除，甚至封鎖。</li>
+                    <li>禁止發布與音樂、景觀、環保、能源無關的議題，請勿張貼販售商品、廣告或宣傳等連結，發現立刻刪除，並且封鎖。</li>
+                    <li>取得分享文章等功能，請"加入會員"，如有獲得最佳好評，可享優惠。</li>
+                    <li>有任何建議與要求，請寄NingYun@mail.com。</li>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="connection">
+            <h2>寧韻美麗島<span>文創園區</span></h2>
+            <p>營業時間: 08:00~22:00<br>
+                園區地址: 999香吉市美麗區花田一路666號<br>
+                聯絡電話: 00-123456789<br>
+                電子信箱: NingYun@mail.com
+            </p>
+            <div class="icon">
+                <img src="./img/All/fb.png" alt="fb">
+                <img src="./img/All/ig.png" alt="ig">
+                <img src="./img/All/line.png" alt="line">
+                <img src="./img/All/twitter.png" alt="twitter">
+                <img src="./img/All/youtube.png" alt="youtube">
+            </div>
+            <div class="copyright">Copyright © 2021 NingYun all rights reserved.</div>
+        </div>
+        <div class="google-map">
+            <img src="./img/home/擷取.PNG" alt="">
+            <span>詳細資訊</span>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+
+</html>

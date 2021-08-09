@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>寧韻美麗島/園區導覽</title>
-    <link rel="icon" href="./img/All/favicon.ico" >
-    <link rel="shortcut icon" href="./img/All/favicon.ico" >
+    <link rel="icon" href="./img/All/favicon.ico">
+    <link rel="shortcut icon" href="./img/All/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/font-family.css">
     <link rel="stylesheet" type="text/css" href="./css/header-phone.css">
@@ -213,46 +213,6 @@
             display: none;
         }
 
-        #image_gold:hover~#map_gold {
-            display: block;
-        }
-
-        #image_gold:hover~#text_gold {
-            display: block;
-        }
-
-        #image_wood:hover~#map_wood {
-            display: block;
-        }
-
-        #image_wood:hover~#text_wood {
-            display: block;
-        }
-
-        #image_water:hover~#map_water {
-            display: block;
-        }
-
-        #image_water:hover~#text_water {
-            display: block;
-        }
-
-        #image_fire:hover~#map_fire {
-            display: block;
-        }
-
-        #image_fire:hover~#text_fire {
-            display: block;
-        }
-
-        #image_terra:hover~#map_terra {
-            display: block;
-        }
-
-        #image_terra:hover~#text_terra {
-            display: block;
-        }
-
         .text {
             font-family: "華康中圓體";
             font-size: 0.7rem;
@@ -319,6 +279,86 @@
             position: absolute;
             top: -12%;
             right: 42%;
+        }
+
+        .text2 {
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            padding: 0.1rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text3 {
+            font-family: "華康中圓體";
+            font-size: 0.7rem;
+            padding: 0.1rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text2::after {
+            content: "";
+            height: 60px;
+            width: 0.5px;
+            background-color: #000000;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 100%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        .text2::before {
+            content: "";
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: #000000;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 420%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        #text_gold2 {
+            color: #ffc909;
+            position: absolute;
+            top: 12%;
+            right: 12%;
+        }
+
+        #text_wood2 {
+            color: #46a12b;
+            position: absolute;
+            top: -22%;
+            right: 34%;
+        }
+
+        #text_water2 {
+            color: #00b7e4;
+            position: absolute;
+            top: 0%;
+            right: 46%;
+        }
+
+        #text_fire2 {
+            color: #ea0000;
+            position: absolute;
+            top: 50%;
+            right: 23%;
+        }
+
+        #text_terra2 {
+            color: #d64d00;
+            position: absolute;
+            top: 32%;
+            right: 58%;
         }
 
         .compass {
@@ -481,6 +521,22 @@
 
             #text_water {
                 top: -35%;
+            }
+
+            .text2::after {
+                height: 80px;
+                width: 1px;
+            }
+
+            .text2::before {
+                height: 7px;
+                width: 7px;
+                top: 500%;
+            }
+
+            #text_wood2 {
+                top: -17%;
+                right: 35%;
             }
 
             .compass {
@@ -703,6 +759,18 @@
             #text_terra {
                 top: -5%;
                 right: 50%;
+            }
+
+            #control-map2 {
+                display: none;
+            }
+
+            .text3 {
+                display: none;
+            }
+
+            .text2 {
+                display: none;
             }
 
             .compass {
@@ -1016,12 +1084,19 @@
                             <img class="map" id="map_gold" src="./img/layout/gold-theme.png" alt="gold-theme">
                             <img class="map" id="map_water" src="./img/layout/water-theme.png" alt="water-theme">
                             <img class="map" id="map_terra" src="./img/layout/terra-theme.png" alt="terra-theme">
+                            <img id="control-map2" src="./img/layout/control-map.png" alt="control-map">
                             <span class="text" id="text_terra">石子聲/鋪面設施</span>
                             <span class="text" id="text_wood">青蛙、竹子聲/能源設施</span>
                             <span class="text" id="text_gold">鳥聲/音樂設施</span>
                             <span class="text" id="text_water">水聲/休憩設施</span>
                             <span class="text" id="text_fire">人群聲/筑景館</span>
+                            <a href="./Theme-terra.html"><span class="text3" id="text_terra2">土精靈區</span></a>
+                            <a href="./Theme-wood.html"><span class="text2" id="text_wood2">木精靈區</span></a>
+                            <a href="./Theme-gold.html"><span class="text3" id="text_gold2">金精靈區</span></a>
+                            <a href="./Theme-water.html"><span class="text3" id="text_water2">水精靈區</span></a>
+                            <a href="./Theme-fire.html"><span class="text3" id="text_fire2">火精靈區</span></a>
                         </map>
+
                         <div class="compass">
                             <img src="./img/layout/compass.png" alt="compass">
                         </div>

@@ -374,15 +374,15 @@ window.onload = function () {
         map_water.src="./img/layout/water-theme_phone370.png";
         map_terra.src="./img/layout/terra-theme_phone370.png";
 
-        btn_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        btn_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.top = "34%";
             btn_wood.style.boxShadow = " 0 0 0.3rem #46a12b, inset 0 0 0.3rem #46a12b";
             btn_wood.style.border = "none";
         };
 
-        btn_wood.ontouchend = function () {
+        btn_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.top = "20%";
@@ -390,15 +390,15 @@ window.onload = function () {
             btn_wood.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        image_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        image_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.top = "34%";
             btn_wood.style.boxShadow = " 0 0 0.3rem #46a12b, inset 0 0 0.3rem #46a12b";
             btn_wood.style.border = "none";
         };
 
-        image_wood.ontouchend = function () {
+        image_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.top = "20%";
@@ -406,15 +406,15 @@ window.onload = function () {
             btn_wood.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        btn_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        btn_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.top = "34%";
             btn_fire.style.boxShadow = " 0 0 .3rem #ea0000, inset 0 0 .3rem #ea0000";
             btn_fire.style.border = "none";
         };
 
-        btn_fire.ontouchend = function () {
+        btn_fire.onmouseout= function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.top = "20%";
@@ -422,15 +422,15 @@ window.onload = function () {
             btn_fire.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        image_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        image_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.top = "34%";
             btn_fire.style.boxShadow = " 0 0 .3rem #ea0000, inset 0 0 .3rem #ea0000";
             btn_fire.style.border = "none";
         };
 
-        image_fire.ontouchend = function () {
+        image_fire.onmouseout = function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.top = "20%";
@@ -438,15 +438,15 @@ window.onload = function () {
             btn_fire.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        btn_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        btn_terra.onmouseover = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.top = "34%";
             btn_terra.style.boxShadow = " 0 0 0.3rem #d64d00, inset 0 0 .3rem #d64d00";
             btn_terra.style.border = "none";
         };
 
-        btn_terra.ontouchend = function () {
+        btn_terra.onmouseout= function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.top = "20%";
@@ -454,15 +454,15 @@ window.onload = function () {
             btn_terra.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        image_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        image_terra.onmouseover  = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.top = "34%";
             btn_terra.style.boxShadow = " 0 0 0.3rem #d64d00, inset 0 0 .3rem #d64d00";
             btn_terra.style.border = "none";
         };
 
-        image_terra.ontouchend = function () {
+        image_terra.onmouseout = function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.top = "20%";
@@ -470,15 +470,15 @@ window.onload = function () {
             btn_terra.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        btn_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        btn_water.onmouseover  = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.top = "34%";
             btn_water.style.boxShadow = " 0 0 0.3rem #00b7e4, inset 0 0 0.3rem #00b7e4";
             btn_water.style.border = "none";
         };
 
-        btn_water.ontouchend = function () {
+        btn_water.onmouseout = function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.top = "20%";
@@ -486,15 +486,15 @@ window.onload = function () {
             btn_water.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        image_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        image_water.onmouseover  = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.top = "34%";
             btn_water.style.boxShadow = " 0 0 0.3rem #00b7e4, inset 0 0 0.3rem #00b7e4";
             btn_water.style.border = "none";
         };
 
-        image_water.ontouchend = function () {
+        image_water.onmouseout= function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.top = "20%";
@@ -502,15 +502,15 @@ window.onload = function () {
             btn_water.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        btn_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        btn_gold.onmouseover  = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.top = "34%";
             btn_gold.style.boxShadow = " 0 0 0.3rem #ffc909, inset 0 0 0.3rem #ffc909";
             btn_gold.style.border = "none";
         };
 
-        btn_gold.ontouchend = function () {
+        btn_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.top = "20%";
@@ -518,15 +518,15 @@ window.onload = function () {
             btn_gold.style.border = "0.1rem solid rgba(0, 128, 128, 0.5)";
         };
 
-        image_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        image_gold.onmouseover  = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.top = "34%";
             btn_gold.style.boxShadow = " 0 0 0.3rem #ffc909, inset 0 0 0.3rem #ffc909";
             btn_gold.style.border = "none";
         };
 
-        image_gold.ontouchend = function () {
+        image_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.top = "20%";
@@ -547,140 +547,140 @@ window.onload = function () {
         map_water.src="./img/layout/water-theme_phone370.png";
         map_terra.src="./img/layout/terra-theme_phone370.png";
 
-        btn_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        btn_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.border = "0.1rem solid #00c234";
             btn_wood.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_wood.ontouchend = function () {
+        btn_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_wood.style.background = "transparent";
         };
 
-        image_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        image_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.border = "0.1rem solid #00c234";
             btn_wood.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_wood.ontouchend = function () {
+        image_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_wood.style.background = "transparent";
         };
 
-        btn_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        btn_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.border = "0.1rem solid #00c234";
             btn_fire.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_fire.ontouchend = function () {
+        btn_fire.onmouseout = function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_fire.style.background = "transparent";
         };
 
-        image_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        image_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.border = "0.1rem solid #00c234";
             btn_fire.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_fire.ontouchend = function () {
+        image_fire.onmouseout = function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_fire.style.background = "transparent";
         };
 
-        btn_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        btn_terra.onmouseover = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.border = "0.1rem solid #00c234";
             btn_terra.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_terra.ontouchend = function () {
+        btn_terra.onmouseout = function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_terra.style.background = "transparent";
         };
 
-        image_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        image_terra.onmouseover = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.border = "0.1rem solid #00c234";
             btn_terra.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_terra.ontouchend = function () {
+        image_terra.onmouseout = function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_terra.style.background = "transparent";
         };
 
-        btn_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        btn_water.onmouseover = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.border = "0.1rem solid #00c234";
             btn_water.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_water.ontouchend = function () {
+        btn_water.onmouseout = function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_water.style.background = "transparent";
         };
 
-        image_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        image_water.onmouseover = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.border = "0.1rem solid #00c234";
             btn_water.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_water.ontouchend = function () {
+        image_water.onmouseout = function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_water.style.background = "transparent";
         };
 
-        btn_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        btn_gold.onmouseover = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.border = "0.1rem solid #00c234";
             btn_gold.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_gold.ontouchend = function () {
+        btn_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_gold.style.background = "transparent";
         };
 
-        image_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        image_gold.onmouseover = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.border = "0.1rem solid #00c234";
             btn_gold.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_gold.ontouchend = function () {
+        image_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
@@ -702,140 +702,140 @@ window.onload = function () {
         map_water.src="./img/layout/water-theme_phone270.png";
         map_terra.src="./img/layout/terra-theme_phone270.png";
 
-        btn_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        btn_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.border = "0.1rem solid #00c234";
             btn_wood.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_wood.ontouchend = function () {
+        btn_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_wood.style.background = "transparent";
         };
 
-        image_wood.ontouchstart = function () {
-            map_wood.style.display = "block";
-            text_wood.style.display = "block";
+        image_wood.onmouseover = function () {
+            map_wood.style.display = "none";
+            text_wood.style.display = "none";
             btn_wood.style.border = "0.1rem solid #00c234";
             btn_wood.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_wood.ontouchend = function () {
+        image_wood.onmouseout = function () {
             map_wood.style.display = "none";
             text_wood.style.display = "none";
             btn_wood.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_wood.style.background = "transparent";
         };
 
-        btn_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        btn_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.border = "0.1rem solid #00c234";
             btn_fire.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_fire.ontouchend = function () {
+        btn_fire.onmouseout = function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_fire.style.background = "transparent";
         };
 
-        image_fire.ontouchstart = function () {
-            map_fire.style.display = "block";
-            text_fire.style.display = "block";
+        image_fire.onmouseover = function () {
+            map_fire.style.display = "none";
+            text_fire.style.display = "none";
             btn_fire.style.border = "0.1rem solid #00c234";
             btn_fire.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_fire.ontouchend = function () {
+        image_fire.onmouseout = function () {
             map_fire.style.display = "none";
             text_fire.style.display = "none";
             btn_fire.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_fire.style.background = "transparent";
         };
 
-        btn_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        btn_terra.onmouseover = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.border = "0.1rem solid #00c234";
             btn_terra.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_terra.ontouchend = function () {
+        btn_terra.onmouseout = function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_terra.style.background = "transparent";
         };
 
-        image_terra.ontouchstart = function () {
-            map_terra.style.display = "block";
-            text_terra.style.display = "block";
+        image_terra.onmouseover = function () {
+            map_terra.style.display = "none";
+            text_terra.style.display = "none";
             btn_terra.style.border = "0.1rem solid #00c234";
             btn_terra.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_terra.ontouchend = function () {
+        image_terra.onmouseout = function () {
             map_terra.style.display = "none";
             text_terra.style.display = "none";
             btn_terra.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_terra.style.background = "transparent";
         };
 
-        btn_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        btn_water.onmouseover = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.border = "0.1rem solid #00c234";
             btn_water.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_water.ontouchend = function () {
+        btn_water.onmouseout = function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_water.style.background = "transparent";
         };
 
-        image_water.ontouchstart = function () {
-            map_water.style.display = "block";
-            text_water.style.display = "block";
+        image_water.onmouseover = function () {
+            map_water.style.display = "none";
+            text_water.style.display = "none";
             btn_water.style.border = "0.1rem solid #00c234";
             btn_water.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_water.ontouchend = function () {
+        image_water.onmouseout = function () {
             map_water.style.display = "none";
             text_water.style.display = "none";
             btn_water.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_water.style.background = "transparent";
         };
 
-        btn_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        btn_gold.onmouseover = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.border = "0.1rem solid #00c234";
             btn_gold.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        btn_gold.ontouchend = function () {
+        btn_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
             btn_gold.style.background = "transparent";
         };
 
-        image_gold.ontouchstart = function () {
-            map_gold.style.display = "block";
-            text_gold.style.display = "block";
+        image_gold.onmouseover = function () {
+            map_gold.style.display = "none";
+            text_gold.style.display = "none";
             btn_gold.style.border = "0.1rem solid #00c234";
             btn_gold.style.background = "rgba(255, 255, 255, 0.4)";
         };
 
-        image_gold.ontouchend = function () {
+        image_gold.onmouseout = function () {
             map_gold.style.display = "none";
             text_gold.style.display = "none";
             btn_gold.style.border = " 0.1rem solid rgba(0, 128, 128, 0.5)";
