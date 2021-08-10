@@ -6,7 +6,6 @@ window.onscroll= function () {
     let nav = document.getElementsByTagName("nav");
     let menu = document.getElementById("menu");
     let mq = window.matchMedia("(min-width: 768px)");
-
     if (mq.matches) {
         if (t >= 650) {
             logo.style.width = "6%";
@@ -55,5 +54,7 @@ window.onscroll= function () {
         }
     }
 }
+
+
 
 
