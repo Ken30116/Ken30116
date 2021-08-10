@@ -1,5 +1,4 @@
 window.onload = function () {
-    var mq = window.matchMedia("(min-width: 768px)");
     var song_1 = document.getElementById("song-1");
     var play_pause_1 = document.getElementById("play-pause-1");
     var song_2 = document.getElementById("song-2");
