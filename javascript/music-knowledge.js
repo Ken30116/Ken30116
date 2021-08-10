@@ -1,3 +1,5 @@
+window.opener.document.location.reload()
+window.onload = function () {
 var song_1 = document.getElementById("song-1");
 var play_pause_1 = document.getElementById("play-pause-1");
 var song_2 = document.getElementById("song-2");
@@ -54,4 +56,5 @@ play_pause_3_2.onclick = function () {
         play_pause_3_2.className = "play";
         song_3_2.pause();
     }
+}
 }
