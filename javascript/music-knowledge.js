@@ -1,4 +1,3 @@
-window.opener.document.location.reload()
 window.onload = function () {
 var song_1 = document.getElementById("song-1");
 var play_pause_1 = document.getElementById("play-pause-1");
